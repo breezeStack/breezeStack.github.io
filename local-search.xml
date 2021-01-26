@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>java在jsp页面中等比例缩放显示图片</title>
+    <link href="/2021/01/26/java%E5%9C%A8jsp%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%AD%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/"/>
+    <url>/2021/01/26/java%E5%9C%A8jsp%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%AD%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;img  <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;ylPdfAsImage_getByte?id=<span class="hljs-variable">$&#123;attrImage.id&#125;</span>&quot;</span>  <span class="hljs-attribute">onload</span>=<span class="hljs-string">&quot;javascript:if(this.height&gt;this.width) this.height=700;if(this.width&gt;this.height) this.width=700&quot;</span>  <span class="hljs-attribute">alt</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;<br></code></pre></td></tr></table></figure><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">onload</span>=<span class="hljs-string">&quot;javascript:if(this.height&gt;this.width) this.height=700;if(this.width&gt;this.height) this.width=700&quot;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>jsp等比例缩放显示图片</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>基于google工具类Thumbnailator实现图片不失真压缩</title>
     <link href="/2021/01/25/%E5%9F%BA%E4%BA%8Egoogle%E5%B7%A5%E5%85%B7%E7%B1%BBThumbnailator%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8D%E5%A4%B1%E7%9C%9F%E5%8E%8B%E7%BC%A9/"/>
     <url>/2021/01/25/%E5%9F%BA%E4%BA%8Egoogle%E5%B7%A5%E5%85%B7%E7%B1%BBThumbnailator%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8D%E5%A4%B1%E7%9C%9F%E5%8E%8B%E7%BC%A9/</url>
