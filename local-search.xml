@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>VUE项目报错Error: Cannot find module ‘webpack/lib/RuleSet‘_解决</title>
+    <link href="/2021/01/26/VUE%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99Error-Cannot-find-module-%E2%80%98webpack-lib-RuleSet%E2%80%98-%E8%A7%A3%E5%86%B3/"/>
+    <url>/2021/01/26/VUE%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99Error-Cannot-find-module-%E2%80%98webpack-lib-RuleSet%E2%80%98-%E8%A7%A3%E5%86%B3/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1、报错"><a href="#1、报错" class="headerlink" title="1、报错"></a>1、报错</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>Cannot find module &#x27;webpack/lib/RuleSet&#x27;<br></code></pre></td></tr></table></figure><p>在第一个问题的时候还试过把node_modules文件夹和package-lock.json文件删除然后再npm install,不知道有没有用，一起做个笔记把<br>解决方案：<br><a href="https://segmentfault.com/q/1010000012177571/a-1020000012180629">https://segmentfault.com/q/1010000012177571/a-1020000012180629</a><br>底下的评论<br><img src="https://img-blog.csdnimg.cn/20201127091642782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p><h3 id="2、执行完之后运行报错"><a href="#2、执行完之后运行报错" class="headerlink" title="2、执行完之后运行报错"></a>2、执行完之后运行报错</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>Rule can only have one resource source (provided resource and test +<br></code></pre></td></tr></table></figure><p>解决方案：<br><a href="https://blog.csdn.net/weixin_40643648/article/details/109444867">https://blog.csdn.net/weixin_40643648/article/details/109444867</a><br>重装webpage</p><h3 id="3、执行之后报错"><a href="#3、执行之后报错" class="headerlink" title="3、执行之后报错"></a>3、执行之后报错</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle">These <span class="hljs-keyword">dependencies</span> were not found:<br>@videojs<span class="hljs-regexp">/vhs-utils/</span>dist<span class="hljs-regexp">/byte-helpers in ./</span>node_modules<span class="hljs-regexp">/video.js/</span>dist/video.es.js<br>@videojs<span class="hljs-regexp">/vhs-utils/</span>dist<span class="hljs-regexp">/containers in ./</span>node_modules<span class="hljs-regexp">/video.js/</span>dist/video.es.js<br></code></pre></td></tr></table></figure><p>解决方案：<br>百度发现错误是缺少依赖，于是直接</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">npm install <br>yarn <span class="hljs-keyword">run</span><span class="bash"> server</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>VUE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>VUE项目报错</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>mysql无法启动服务没有报告任何错误_解决</title>
+    <link href="/2021/01/26/mysql%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%8A%A5%E5%91%8A%E4%BB%BB%E4%BD%95%E9%94%99%E8%AF%AF-%E8%A7%A3%E5%86%B3/"/>
+    <url>/2021/01/26/mysql%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%8A%A5%E5%91%8A%E4%BB%BB%E4%BD%95%E9%94%99%E8%AF%AF-%E8%A7%A3%E5%86%B3/</url>
+    
+    <content type="html"><![CDATA[<p>删除mysql安装目录下的同级date文件夹，运行命令</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">mysqld  <span class="hljs-comment">--initialize-insecure</span><br></code></pre></td></tr></table></figure><p>命令运行较慢，会在安装目录下重新生成date文件夹，然后运行命令net start mysql就可以启动mysql服务了</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>mysql</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>mysql无法启动</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>java在jsp页面中等比例缩放显示图片</title>
     <link href="/2021/01/26/java%E5%9C%A8jsp%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%AD%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/"/>
     <url>/2021/01/26/java%E5%9C%A8jsp%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%AD%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/</url>
