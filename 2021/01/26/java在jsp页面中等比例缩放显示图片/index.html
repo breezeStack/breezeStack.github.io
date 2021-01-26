@@ -224,8 +224,10 @@
             <h1 style="display: none">java在jsp页面中等比例缩放显示图片</h1>
             
             <div class="markdown-body">
-              <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;img  <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;ylPdfAsImage_getByte?id=<span class="hljs-variable">$&#123;attrImage.id&#125;</span>&quot;</span>  <span class="hljs-attribute">onload</span>=<span class="hljs-string">&quot;javascript:if(this.height&gt;this.width) this.height=700;if(this.width&gt;this.height) this.width=700&quot;</span>  <span class="hljs-attribute">alt</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
+              <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;img  <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;/实例.png&quot;</span>  <span class="hljs-attribute">onload</span>=<span class="hljs-string">&quot;javascript:if(this.height&gt;this.width) this.height=700;if(this.width&gt;this.height) this.width=700&quot;</span>  <span class="hljs-attribute">alt</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">onload</span>=<span class="hljs-string">&quot;javascript:if(this.height&gt;this.width) this.height=700;if(this.width&gt;this.height) this.width=700&quot;</span><br></code></pre></td></tr></table></figure>
+<p>当你只设定宽度和高度其中的一个为固定值时，它会进行等比例缩放，但是当你两个都设定固定值时，会导致比例发生变化</p>
+
             </div>
             <hr>
             <div>
