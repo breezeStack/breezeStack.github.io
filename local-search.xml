@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>ajax学习笔记</title>
+    <link href="/2021/01/28/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <url>/2021/01/28/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<p>1、思维导图<br><img src="https://img-blog.csdnimg.cn/20210128102220350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"><br>2、项目github仓库</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/liuwf-github/</span>ajax-study-queryprovince.git<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>ajax</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ajax学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>git使用</title>
+    <link href="/2021/01/28/git%E4%BD%BF%E7%94%A8/"/>
+    <url>/2021/01/28/git%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-如何将本地项目上传到github远程仓库上"><a href="#1-如何将本地项目上传到github远程仓库上" class="headerlink" title="1.如何将本地项目上传到github远程仓库上"></a>1.如何将本地项目上传到github远程仓库上</h2><h3 id="（1）在github上新建一个仓库"><a href="#（1）在github上新建一个仓库" class="headerlink" title="（1）在github上新建一个仓库"></a>（1）在github上新建一个仓库</h3><h3 id="（2）在本地随便新建一个文件夹克隆一下仓库到本地"><a href="#（2）在本地随便新建一个文件夹克隆一下仓库到本地" class="headerlink" title="（2）在本地随便新建一个文件夹克隆一下仓库到本地"></a>（2）在本地随便新建一个文件夹克隆一下仓库到本地</h3><p><img src="https://img-blog.csdnimg.cn/20210128102025292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70"></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/liuwf-github/</span>ajax-study-queryprovince.git<br></code></pre></td></tr></table></figure><h3 id="（3）将本地克隆的文件中的-git存在的这一级目录的所有东西复制到项目工作目录下"><a href="#（3）将本地克隆的文件中的-git存在的这一级目录的所有东西复制到项目工作目录下" class="headerlink" title="（3）将本地克隆的文件中的.git存在的这一级目录的所有东西复制到项目工作目录下"></a>（3）将本地克隆的文件中的.git存在的这一级目录的所有东西复制到项目工作目录下</h3><p><img src="https://img-blog.csdnimg.cn/20210128101506160.png"><br><img src="https://img-blog.csdnimg.cn/20210128101534286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70"></p><h3 id="（4）打开IDEA客户端，看到"><a href="#（4）打开IDEA客户端，看到" class="headerlink" title="（4）打开IDEA客户端，看到"></a>（4）打开IDEA客户端，看到</h3><p><img src="https://img-blog.csdnimg.cn/20210128101757122.png"><br>表示成功</p><h3 id="（5）打开IDEA下的dos-cd到项目目录"><a href="#（5）打开IDEA下的dos-cd到项目目录" class="headerlink" title="（5）打开IDEA下的dos,cd到项目目录"></a>（5）打开IDEA下的dos,cd到项目目录</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">git <span class="hljs-keyword">add</span> .<br>git commit -m <span class="hljs-string">&quot;提交备注信息&quot;</span><br>git <span class="hljs-keyword">push</span><br></code></pre></td></tr></table></figure><p>大功告成</p><h3 id="（6）附上一些常用的linux命令"><a href="#（6）附上一些常用的linux命令" class="headerlink" title="（6）附上一些常用的linux命令"></a>（6）附上一些常用的linux命令</h3><p><img src="https://img-blog.csdnimg.cn/20210128101950692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git使用</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>VUE项目报错Error: Cannot find module ‘webpack/lib/RuleSet‘_解决</title>
     <link href="/2021/01/26/VUE%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99Error-Cannot-find-module-%E2%80%98webpack-lib-RuleSet%E2%80%98-%E8%A7%A3%E5%86%B3/"/>
     <url>/2021/01/26/VUE%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99Error-Cannot-find-module-%E2%80%98webpack-lib-RuleSet%E2%80%98-%E8%A7%A3%E5%86%B3/</url>

@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="liuwf">
   <meta name="keywords" content="">
-  <title>VUE项目报错Error: Cannot find module ‘webpack/lib/RuleSet‘_解决 - liuwf.top</title>
+  <title>git使用 - liuwf.top</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="VUE项目报错Error: Cannot find module ‘webpack/lib/RuleSet‘_解决">
+            <span class="h2" id="subtitle" title="git使用">
               
             </span>
 
@@ -184,8 +184,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-26 10:06" pubdate>
-        January 26, 2021 am
+      <time datetime="2021-01-28 10:10" pubdate>
+        January 28, 2021 am
       </time>
     </span>
   
@@ -221,16 +221,17 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">VUE项目报错Error: Cannot find module ‘webpack/lib/RuleSet‘_解决</h1>
+            <h1 style="display: none">git使用</h1>
             
             <div class="markdown-body">
-              <h3 id="1、报错"><a href="#1、报错" class="headerlink" title="1、报错"></a>1、报错</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>Cannot find module &#x27;webpack/lib/RuleSet&#x27;<br></code></pre></td></tr></table></figure>
-<p>在第一个问题的时候还试过把node_modules文件夹和package-lock.json文件删除然后再npm install,不知道有没有用，一起做个笔记把<br>解决方案：<br><a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000012177571/a-1020000012180629">https://segmentfault.com/q/1010000012177571/a-1020000012180629</a><br>底下的评论<br><img src="https://img-blog.csdnimg.cn/20201127091642782.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif"></p>
-<h3 id="2、执行完之后运行报错"><a href="#2、执行完之后运行报错" class="headerlink" title="2、执行完之后运行报错"></a>2、执行完之后运行报错</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>Rule can only have one resource source (provided resource and test +<br></code></pre></td></tr></table></figure>
-<p>解决方案：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40643648/article/details/109444867">https://blog.csdn.net/weixin_40643648/article/details/109444867</a><br>重装webpage</p>
-<h3 id="3、执行之后报错"><a href="#3、执行之后报错" class="headerlink" title="3、执行之后报错"></a>3、执行之后报错</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle">These <span class="hljs-keyword">dependencies</span> were not found:<br>@videojs<span class="hljs-regexp">/vhs-utils/</span>dist<span class="hljs-regexp">/byte-helpers in ./</span>node_modules<span class="hljs-regexp">/video.js/</span>dist/video.es.js<br>@videojs<span class="hljs-regexp">/vhs-utils/</span>dist<span class="hljs-regexp">/containers in ./</span>node_modules<span class="hljs-regexp">/video.js/</span>dist/video.es.js<br></code></pre></td></tr></table></figure>
-<p>解决方案：<br>百度发现错误是缺少依赖，于是直接</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">npm install <br>yarn <span class="hljs-keyword">run</span><span class="bash"> server</span><br></code></pre></td></tr></table></figure>
+              <h2 id="1-如何将本地项目上传到github远程仓库上"><a href="#1-如何将本地项目上传到github远程仓库上" class="headerlink" title="1.如何将本地项目上传到github远程仓库上"></a>1.如何将本地项目上传到github远程仓库上</h2><h3 id="（1）在github上新建一个仓库"><a href="#（1）在github上新建一个仓库" class="headerlink" title="（1）在github上新建一个仓库"></a>（1）在github上新建一个仓库</h3><h3 id="（2）在本地随便新建一个文件夹克隆一下仓库到本地"><a href="#（2）在本地随便新建一个文件夹克隆一下仓库到本地" class="headerlink" title="（2）在本地随便新建一个文件夹克隆一下仓库到本地"></a>（2）在本地随便新建一个文件夹克隆一下仓库到本地</h3><p><img src="https://img-blog.csdnimg.cn/20210128102025292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif"></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/liuwf-github/</span>ajax-study-queryprovince.git<br></code></pre></td></tr></table></figure>
+<h3 id="（3）将本地克隆的文件中的-git存在的这一级目录的所有东西复制到项目工作目录下"><a href="#（3）将本地克隆的文件中的-git存在的这一级目录的所有东西复制到项目工作目录下" class="headerlink" title="（3）将本地克隆的文件中的.git存在的这一级目录的所有东西复制到项目工作目录下"></a>（3）将本地克隆的文件中的.git存在的这一级目录的所有东西复制到项目工作目录下</h3><p><img src="https://img-blog.csdnimg.cn/20210128101506160.png" srcset="/img/loading.gif"><br><img src="https://img-blog.csdnimg.cn/20210128101534286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif"></p>
+<h3 id="（4）打开IDEA客户端，看到"><a href="#（4）打开IDEA客户端，看到" class="headerlink" title="（4）打开IDEA客户端，看到"></a>（4）打开IDEA客户端，看到</h3><p><img src="https://img-blog.csdnimg.cn/20210128101757122.png" srcset="/img/loading.gif"><br>表示成功</p>
+<h3 id="（5）打开IDEA下的dos-cd到项目目录"><a href="#（5）打开IDEA下的dos-cd到项目目录" class="headerlink" title="（5）打开IDEA下的dos,cd到项目目录"></a>（5）打开IDEA下的dos,cd到项目目录</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">git <span class="hljs-keyword">add</span> .<br>git commit -m <span class="hljs-string">&quot;提交备注信息&quot;</span><br>git <span class="hljs-keyword">push</span><br></code></pre></td></tr></table></figure>
+<p>大功告成</p>
+<h3 id="（6）附上一些常用的linux命令"><a href="#（6）附上一些常用的linux命令" class="headerlink" title="（6）附上一些常用的linux命令"></a>（6）附上一些常用的linux命令</h3><p><img src="https://img-blog.csdnimg.cn/20210128101950692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif"></p>
+
             </div>
             <hr>
             <div>
@@ -239,7 +240,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/VUE/">VUE</a>
+                      <a class="hover-with-bg" href="/categories/git/">git</a>
                     
                   </div>
                 
@@ -247,7 +248,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/VUE%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99/">VUE项目报错</a>
+                      <a class="hover-with-bg" href="/tags/git%E4%BD%BF%E7%94%A8/">git使用</a>
                     
                   </div>
                 
@@ -258,9 +259,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/28/git%E4%BD%BF%E7%94%A8/">
+                      <a href="/2021/01/28/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">git使用</span>
+                        <span class="hidden-mobile">ajax学习笔记</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -268,8 +269,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/26/mysql%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%8A%A5%E5%91%8A%E4%BB%BB%E4%BD%95%E9%94%99%E8%AF%AF-%E8%A7%A3%E5%86%B3/">
-                        <span class="hidden-mobile">mysql无法启动服务没有报告任何错误_解决</span>
+                      <a href="/2021/01/26/VUE%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99Error-Cannot-find-module-%E2%80%98webpack-lib-RuleSet%E2%80%98-%E8%A7%A3%E5%86%B3/">
+                        <span class="hidden-mobile">VUE项目报错Error: Cannot find module ‘webpack/lib/RuleSet‘_解决</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
