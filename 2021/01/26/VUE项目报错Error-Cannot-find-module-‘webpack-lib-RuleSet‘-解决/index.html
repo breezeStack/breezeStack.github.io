@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"qWolHYM3Mxf04y5ltNsr3G51-gzGzoHsz","app_key":"glon5tbm5p2DR4Ez00Mr9xQo","server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -181,6 +181,11 @@
             
               <div class="mt-3">
   
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      liuwf
+    </span>
+  
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
@@ -193,10 +198,24 @@
 
 <div class="mt-1">
   
-
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      169 ��
+    </span>
   
 
   
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> ��
+      </span>
+    
   
 </div>
 
@@ -213,7 +232,6 @@
     
       
 
-
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
@@ -223,6 +241,12 @@
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">VUE项目报错Error: Cannot find module ‘webpack/lib/RuleSet‘_解决</h1>
+            
+              <p class="note note-info">
+                
+                  �����������ڣ�2 days ago
+                
+              </p>
             
             <div class="markdown-body">
               <h3 id="1、报错"><a href="#1、报错" class="headerlink" title="1、报错"></a>1、报错</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>Cannot find module &#x27;webpack/lib/RuleSet&#x27;<br></code></pre></td></tr></table></figure>
@@ -372,10 +396,33 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            �ܷ����� 
+            <span id="busuanzi_value_site_pv"></span>
+             ��
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            �ܷÿ��� 
+            <span id="busuanzi_value_site_uv"></span>
+             ��
+          </span>
+      
+    
+  </div>
+
 
   
 
-  
   
 </footer>
 
@@ -427,6 +474,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
