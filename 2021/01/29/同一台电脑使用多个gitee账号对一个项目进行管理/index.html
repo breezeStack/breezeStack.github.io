@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+<html lang="ZH" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="liuwf">
+  <meta name="keywords" content="">
+  <title>同一台电脑使用多个gitee账号对一个项目进行管理 - liuwf.top</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"qWolHYM3Mxf04y5ltNsr3G51-gzGzoHsz","app_key":"glon5tbm5p2DR4Ez00Mr9xQo","server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>liuwf blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="同一台电脑使用多个gitee账号对一个项目进行管理">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      liuwf
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-29 21:20" pubdate>
+        January 29, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      916 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">同一台电脑使用多个gitee账号对一个项目进行管理</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 hours ago
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="一、先决条件"><a href="#一、先决条件" class="headerlink" title="一、先决条件"></a>一、先决条件</h2><p>先在一个账号上创建一个仓库<br>创建一个项目<br>将另一个账号添加到这个项目的管理者</p>
+<h2 id="二、生成对应秘钥配置到对应账号中"><a href="#二、生成对应秘钥配置到对应账号中" class="headerlink" title="二、生成对应秘钥配置到对应账号中"></a>二、生成对应秘钥配置到对应账号中</h2><h3 id="1、生成ssh秘钥"><a href="#1、生成ssh秘钥" class="headerlink" title="1、生成ssh秘钥"></a>1、生成ssh秘钥</h3><p>分别生成这两个账号的rsa密钥、并分别配置到对应的gitee中<br>在这边发现只能将密钥生成在c盘用户目录下</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">C:<span class="hljs-symbol">\U</span>sers<span class="hljs-symbol">\S</span>tack<span class="hljs-symbol">\.</span>ssh<br></code></pre></td></tr></table></figure>
+<p>不能在其他路径，不然后面</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">ssh <span class="hljs-operator">-</span>T <span class="hljs-keyword">User</span><span class="hljs-variable">@Host</span><br></code></pre></td></tr></table></figure>
+<p>会报错，无法解决（血与泪的教训）</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">ssh-keygen -t rsa -C <span class="hljs-string">&quot;你的邮箱&quot;</span> <span class="hljs-regexp">//</span>格式<br>ssh-keygen -t rsa -C “liuwf17859719373@<span class="hljs-number">126</span>.com” <span class="hljs-regexp">//</span>例子<br></code></pre></td></tr></table></figure>
+<p>记得将每个rsa重命名并记住</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">id_rsa_liuwf17859719373 <span class="hljs-regexp">//</span>例子<br></code></pre></td></tr></table></figure>
+<p>生成后添加到对应gitee账号的秘钥ssh秘钥中</p>
+<h3 id="2、在-ssh目录下增加配置config文件（没有后缀名）"><a href="#2、在-ssh目录下增加配置config文件（没有后缀名）" class="headerlink" title="2、在.ssh目录下增加配置config文件（没有后缀名）"></a>2、在.ssh目录下增加配置config文件（没有后缀名）</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-comment">#liuwf17859719373</span><br>Host liuwf17859719373 <span class="hljs-comment">#别名</span><br>HostName gitee.com <span class="hljs-comment">#远程仓库真实地址也有可能是ip地址xxx.xxx.xxx.xxx</span><br><span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>IdentityFile ~/.ssh/id_rsa_liuwf17859719373 <span class="hljs-comment">#id_ssh秘钥地址</span><br><span class="hljs-comment">#liuwf13015946150</span><br>Host liuwf13015946150<br>HostName gitee.com<br><span class="hljs-keyword">User</span> <span class="hljs-title">git</span><br>IdentityFile ~/.ssh/id_rsa_liuwf13015946150<br></code></pre></td></tr></table></figure>
+<p>注意：这样设置后克隆仓库只能用ssh方式克隆，不能用http方式</p>
+<h3 id="3、测试是否配置成功"><a href="#3、测试是否配置成功" class="headerlink" title="3、测试是否配置成功"></a>3、测试是否配置成功</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">ssh -T <span class="hljs-symbol">User@</span>Host <span class="hljs-comment">//格式</span><br>ssh -T <span class="hljs-symbol">git@</span>liuwf17859719373 <span class="hljs-comment">//例子</span><br></code></pre></td></tr></table></figure>
+<p><img src="C:\Users\Stack\AppData\Roaming\Typora\typora-user-images\image-20210129214722833.png" srcset="/img/loading.gif"></p>
+<p><img src="C:\Users\Stack\AppData\Roaming\Typora\typora-user-images\image-20210129214757732.png" srcset="/img/loading.gif" alt="image-20210129214757732"></p>
+<h2 id="三、用账号1管理仓库-108-105-x75-119-102-49-x37-56-x35-x39-x37-49-x39-51-55-x33-x40-x31-x32-x36-46-x63-111-x6d"><a href="#三、用账号1管理仓库-108-105-x75-119-102-49-x37-56-x35-x39-x37-49-x39-51-55-x33-x40-x31-x32-x36-46-x63-111-x6d" class="headerlink" title="三、用账号1管理仓库:&#108;&#105;&#x75;&#119;&#102;&#49;&#x37;&#56;&#x35;&#x39;&#x37;&#49;&#x39;&#51;&#55;&#x33;&#x40;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#x6d;"></a>三、用账号1管理仓库:<a href="mailto:&#108;&#105;&#x75;&#119;&#102;&#49;&#x37;&#56;&#x35;&#x39;&#x37;&#49;&#x39;&#51;&#55;&#x33;&#x40;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#x6d;">&#108;&#105;&#x75;&#119;&#102;&#49;&#x37;&#56;&#x35;&#x39;&#x37;&#49;&#x39;&#51;&#55;&#x33;&#x40;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#x6d;</a></h2><h3 id="1、克隆仓库"><a href="#1、克隆仓库" class="headerlink" title="1、克隆仓库"></a>1、克隆仓库</h3><p>gitee上复制的克隆地址：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">git</span>@gitee.com:liuwf<span class="hljs-number">17859719373</span>/liuwf<span class="hljs-number">17859719373</span>.git<br></code></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">//代码格式<br>git <span class="hljs-keyword">clone</span> <span class="hljs-title">User</span>@Host:仓库地址.git <br></code></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">//例子<br>git <span class="hljs-keyword">clone</span> <span class="hljs-title">git</span>@liuwf17859719373:liuwf17859719373/liuwf17859719373.git <br></code></pre></td></tr></table></figure>
+<h3 id="2、删除全局配置"><a href="#2、删除全局配置" class="headerlink" title="2、删除全局配置"></a>2、删除全局配置</h3><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-built_in">--global</span> <span class="hljs-built_in">--unset</span> <span class="hljs-string">&#x27;user.name&#x27;</span><br><span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-built_in">--global</span> <span class="hljs-built_in">--unset</span> <span class="hljs-string">&#x27;user.email&#x27;</span><br></code></pre></td></tr></table></figure>
+<h3 id="3、设置当前本地仓库的user-name和user-email"><a href="#3、设置当前本地仓库的user-name和user-email" class="headerlink" title="3、设置当前本地仓库的user.name和user.email"></a>3、设置当前本地仓库的user.name和user.email</h3><figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nsis">git config <span class="hljs-literal">user</span>.name <span class="hljs-string">`liuwf17859719373`</span><br>git config <span class="hljs-literal">user</span>.email <span class="hljs-string">`liuwf17859719373@126.com`</span><br></code></pre></td></tr></table></figure>
+<p>注意,在设置结束之后,创建git repo(<code>git init</code>)的时候,一定要再次检查一下用户名和用户邮箱,如果不对, 需要再次设置.<br> 如果发现修改不成功，可能是凭证缓存没清除：<br> 到控制面板搜索Windows凭证删除普通凭证中的gitee凭证。</p>
+<h3 id="4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中"><a href="#4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中" class="headerlink" title="4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中"></a>4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">//查看是否是目标账号</span><br>git <span class="hljs-built_in">config</span> user.name<br>git <span class="hljs-built_in">config</span> user.email<br></code></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-comment">//上传代码</span><br><span class="hljs-symbol">git</span> <span class="hljs-keyword">add</span> .<br><span class="hljs-symbol">git</span> commit -m <span class="hljs-string">&quot;上传文件备注&quot;</span><br><span class="hljs-symbol">git</span> <span class="hljs-keyword">push</span> origin master<br></code></pre></td></tr></table></figure>
+<h2 id="四、使用账号2管理仓库-108-105-117-x77-102-x31-51-x30-49-53-x39-x34-54-x31-53-x30-64-49-x32-54-x2e-99-111-x6d"><a href="#四、使用账号2管理仓库-108-105-117-x77-102-x31-51-x30-49-53-x39-x34-54-x31-53-x30-64-49-x32-54-x2e-99-111-x6d" class="headerlink" title="四、使用账号2管理仓库:&#108;&#105;&#117;&#x77;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#53;&#x30;&#64;&#49;&#x32;&#54;&#x2e;&#99;&#111;&#x6d;"></a>四、使用账号2管理仓库:<a href="mailto:&#108;&#105;&#117;&#x77;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#53;&#x30;&#64;&#49;&#x32;&#54;&#x2e;&#99;&#111;&#x6d;">&#108;&#105;&#117;&#x77;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#53;&#x30;&#64;&#49;&#x32;&#54;&#x2e;&#99;&#111;&#x6d;</a></h2><h3 id="1、使用账号-x6c-105-x75-119-102-x31-x33-48-x31-53-x39-52-x36-49-x35-48-x40-x31-50-x36-x2e-99-x6f-x6d-克隆仓库"><a href="#1、使用账号-x6c-105-x75-119-102-x31-x33-48-x31-53-x39-52-x36-49-x35-48-x40-x31-50-x36-x2e-99-x6f-x6d-克隆仓库" class="headerlink" title="1、使用账号&#x6c;&#105;&#x75;&#119;&#102;&#x31;&#x33;&#48;&#x31;&#53;&#x39;&#52;&#x36;&#49;&#x35;&#48;&#x40;&#x31;&#50;&#x36;&#x2e;&#99;&#x6f;&#x6d;克隆仓库"></a>1、使用账号<a href="mailto:&#x6c;&#105;&#x75;&#119;&#102;&#x31;&#x33;&#48;&#x31;&#53;&#x39;&#52;&#x36;&#49;&#x35;&#48;&#x40;&#x31;&#50;&#x36;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#105;&#x75;&#119;&#102;&#x31;&#x33;&#48;&#x31;&#53;&#x39;&#52;&#x36;&#49;&#x35;&#48;&#x40;&#x31;&#50;&#x36;&#x2e;&#99;&#x6f;&#x6d;</a>克隆仓库</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elixir">git clone git<span class="hljs-variable">@liuwf13015946150</span><span class="hljs-symbol">:liuwf17859719373/liuwf17859719373</span>.git<br></code></pre></td></tr></table></figure>
+<h3 id="2、设置本地仓库user-name和user-email"><a href="#2、设置本地仓库user-name和user-email" class="headerlink" title="2、设置本地仓库user.name和user.email"></a>2、设置本地仓库user.name和user.email</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git config <span class="hljs-keyword">user</span>.name &quot;liuwf13015946150&quot;<br>git config <span class="hljs-keyword">user</span>.email &quot;liuwf13015946150@126.com&quot;<br></code></pre></td></tr></table></figure>
+<h3 id="3、查看本地user账户信息是否修改成功"><a href="#3、查看本地user账户信息是否修改成功" class="headerlink" title="3、查看本地user账户信息是否修改成功"></a>3、查看本地user账户信息是否修改成功</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git config <span class="hljs-keyword">user</span>.name<br>git config <span class="hljs-keyword">user</span>.email<br></code></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">git branch<span class="hljs-regexp">//</span>查看当前分支<br>git pull<span class="hljs-regexp">//</span>更新代码到本地<br></code></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git add .<br>git <span class="hljs-built_in">status</span><br>git commit -m <span class="hljs-string">&quot;message&quot;</span><br>git <span class="hljs-built_in">push</span> <span class="hljs-built_in">origin</span> master<br></code></pre></td></tr></table></figure>
+<h2 id="五、在提交前记得先更新代码"><a href="#五、在提交前记得先更新代码" class="headerlink" title="五、在提交前记得先更新代码"></a>五、在提交前记得先更新代码</h2><pre><code>   在多人协作开发时，经常碰到同事把最新修改推送到远程库，你在本地也做了修改，这个时候无论是执行git pull还是执行git push都会提示错误，我的解决方式如下：</code></pre>
+<p>先隐藏掉本地的修改，然后执行git pull从代码块拉取最新代码，<br>具体步骤如下：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-number">1</span>.输入 git status 查看本地的修改<br><span class="hljs-number">2</span>.输入git stash 隐藏掉本地修改<br><span class="hljs-number">3</span>.输入 git pull 从代码库拉取更新<br><span class="hljs-number">4</span>.输入 git stash <span class="hljs-keyword">pop</span> stash<span class="hljs-comment">@&#123;版本号&#125;</span><br><span class="hljs-number">5</span>.然后再git <span class="hljs-keyword">add</span> git commit git <span class="hljs-keyword">push</span> 就行了<br></code></pre></td></tr></table></figure>
+<p>参考博客：<br><a target="_blank" rel="noopener" href="https://www.shenxt.info/post/2020-03-11-multi-github-in-one-pc/">https://www.shenxt.info/post/2020-03-11-multi-github-in-one-pc/</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wowoniuzailushang/article/details/78517744">https://blog.csdn.net/wowoniuzailushang/article/details/78517744</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Git%E5%AD%A6%E4%B9%A0/">Git学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AAgitee%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93/">一台电脑使用多个gitee账号管理一个仓库</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/28/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">ajax学习笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "9AbS90P3EqVELAvUsH9ycTpW-gzGzoHsz",
+          app_key: "suv4YMHVW2NxF650P1W3BMl4",
+          placeholder: "Hello,welcome to my blog!",
+          path: window.location.pathname,
+          avatar: "robohash",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
