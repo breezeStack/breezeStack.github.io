@@ -204,7 +204,7 @@
           
           1、问题：
 2、原因：maven本地仓库目录一看，发现命名都被系统改掉了，难怪识别不出来
-3、解决：（1）删除后面的多余的后缀：.lastUpdated
+3、解决：（1）删除后面有多余后缀：.lastUpdated的文件，然后重新Upadate Project（有这个后缀表示这个jar包没有下载下来，或者下载下来的损坏的）
 
 （2）maven -&gt;update project
 
