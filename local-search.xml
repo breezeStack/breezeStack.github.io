@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>yarn:无法加载文件C:\Users\Administrator\AppData\Roaming\npm\yarn.ps1,因为在此系统上禁止运行脚本</title>
+    <link href="/2021/02/18/yarn-%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC/"/>
+    <url>/2021/02/18/yarn-%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-搜索powershell，右键以管理员身份运行"><a href="#1-搜索powershell，右键以管理员身份运行" class="headerlink" title="1.搜索powershell，右键以管理员身份运行"></a>1.搜索powershell，右键以管理员身份运行</h2><h2 id="2-输入：set-ExecutionPolicy-RemoteSigned"><a href="#2-输入：set-ExecutionPolicy-RemoteSigned" class="headerlink" title="2.输入：set-ExecutionPolicy RemoteSigned"></a>2.输入：set-ExecutionPolicy RemoteSigned</h2><p>然后：输入 y</p><h2 id="3-关闭命令窗口-即可"><a href="#3-关闭命令窗口-即可" class="headerlink" title="3.关闭命令窗口 即可"></a>3.关闭命令窗口 即可</h2><p>参考：<a href="https://www.jianshu.com/p/6af4880f4018">https://www.jianshu.com/p/6af4880f4018</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>yarn</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>yarn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>eclipse console打印出ClassNotFoundException:org.jbpm.api.ProcessEngine_解决</title>
     <link href="/2021/02/08/eclipse-console%E6%89%93%E5%8D%B0%E5%87%BAClassNotFoundException-org-jbpm-api-ProcessEngine-%E8%A7%A3%E5%86%B3/"/>
     <url>/2021/02/08/eclipse-console%E6%89%93%E5%8D%B0%E5%87%BAClassNotFoundException-org-jbpm-api-ProcessEngine-%E8%A7%A3%E5%86%B3/</url>
