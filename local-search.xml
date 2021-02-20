@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>eclipse安装lombok</title>
+    <link href="/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/"/>
+    <url>/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1、下载lombok-jar包"><a href="#1、下载lombok-jar包" class="headerlink" title="1、下载lombok.jar包"></a>1、下载lombok.jar包</h2><p><a href="https://projectlombok.org/download">https://projectlombok.org/download</a> 下载lombok 支持jar包lombok.jar</p><h2 id="2、将lombok-jar复制到eclipse安装目录下"><a href="#2、将lombok-jar复制到eclipse安装目录下" class="headerlink" title="2、将lombok.jar复制到eclipse安装目录下"></a>2、将lombok.jar复制到eclipse安装目录下</h2><img src="/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/image-20210220183429806.png" class=""><img src="/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/image-20210220183457851.png" class=""><h2 id="3、打开cmd执行命令，安装lombok-jar"><a href="#3、打开cmd执行命令，安装lombok-jar" class="headerlink" title="3、打开cmd执行命令，安装lombok.jar"></a>3、打开cmd执行命令，安装lombok.jar</h2><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">java -jar D:<span class="hljs-symbol">\T</span>ools<span class="hljs-symbol">\E</span>clipse<span class="hljs-symbol">\E</span>clipse_2020<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\e</span>clipse<span class="hljs-symbol">\l</span>ombok.jar<br></code></pre></td></tr></table></figure><img src="/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/image-20210220183706706.png" class="" title="表示找不到需要安装lombok.jar的IDE 点击确定"><img src="/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/image-20210220183857361.png" class="" title="点击Specify location...查找eclipse的安装程序，选中到eclipse.exe"><img src="/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/image-20210220183930891.png" class="" title="点击Install进行安装，安装结束后quit"><img src="/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/image-20210220184006828.png" class="" title="打开eclipse.ini文件查看是否安装成功"><img src="/2021/02/20/eclipse%E5%AE%89%E8%A3%85lombok/image-20210220184036572.png" class="" title="安装成功">]]></content>
+    
+    
+    <categories>
+      
+      <category>lombok.jar</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Eclipse安装lombok.jar</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>解决Typora编写博客图片显示不出来</title>
     <link href="/2021/02/20/%E8%A7%A3%E5%86%B3Typora%E7%BC%96%E5%86%99%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%87%BA%E6%9D%A5/"/>
     <url>/2021/02/20/%E8%A7%A3%E5%86%B3Typora%E7%BC%96%E5%86%99%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%87%BA%E6%9D%A5/</url>
