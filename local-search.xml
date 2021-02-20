@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Oracle出现ora-01045的解决方法</title>
+    <link href="/2021/02/20/ORA-01045/"/>
+    <url>/2021/02/20/ORA-01045/</url>
+    
+    <content type="html"><![CDATA[<p>Oracle出现ora-01045的解决方法</p><p>解决办法：</p><p>使用系统用户登录后，使用如下sql语句给出错用户赋权限</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> UserName;(UserName是登录出错的用户名)<br></code></pre></td></tr></table></figure><p>如想给scott赋予权限：使用 </p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> scott;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Oracle</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Oracle</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>pom.xml文件报错：maven missing artifact，但是本地仓库存在jar</title>
     <link href="/2021/02/19/mavenMissingArtifact/"/>
     <url>/2021/02/19/mavenMissingArtifact/</url>
