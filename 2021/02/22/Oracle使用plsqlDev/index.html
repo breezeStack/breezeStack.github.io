@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      206 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -253,17 +253,50 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：3 days ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              
+              <h2 id="1、安装Oracle-11g-64位"><a href="#1、安装Oracle-11g-64位" class="headerlink" title="1、安装Oracle 11g 64位"></a>1、安装Oracle 11g 64位</h2><h2 id="2、安装32位的Oracle客户端（-instantclient-basic-win32-11-2-0-1-0）"><a href="#2、安装32位的Oracle客户端（-instantclient-basic-win32-11-2-0-1-0）" class="headerlink" title="2、安装32位的Oracle客户端（ instantclient-basic-win32-11.2.0.1.0）"></a>2、安装32位的Oracle客户端（ instantclient-basic-win32-11.2.0.1.0）</h2><p>下载instantclient-basic-win32-11.2.0.1.0.zip (一定得是32位的，不要下错了版本，Oracle官网有下载）</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/cn/topics/winsoft-095945-zhs.html">http://www.oracle.com/technetwork/cn/topics/winsoft-095945-zhs.html</a></p>
+<p>将其解压至Oracle安装目录的Product下（本机命名为：instantclient_11_1）</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\O</span>RACLE<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\p</span>roduct<span class="hljs-symbol">\i</span>nstantclient_11_1<br></code></pre></td></tr></table></figure>
+<img src="/2021/02/22/Oracle%E4%BD%BF%E7%94%A8plsqlDev/image-20210225164332613.png" srcset="/img/loading.gif" class="">
+
+<p>拷贝数据库安装根目录下的一个目录</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\O</span>RACLE<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\p</span>roduct<span class="hljs-symbol">\1</span>1.2.0<span class="hljs-symbol">\d</span>bhome_1NETWORK<br></code></pre></td></tr></table></figure>
+<p>到Oracle客户端目录下</p>
+<img src="/2021/02/22/Oracle%E4%BD%BF%E7%94%A8plsqlDev/image-20210225164641791.png" srcset="/img/loading.gif" class="">
+
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\O</span>RACLE<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\p</span>roduct<span class="hljs-symbol">\i</span>nstantclient_11_1（其实只需要 NETWORK<span class="hljs-symbol">\A</span>DMIN<span class="hljs-symbol">\t</span>nsnames.ora）<br></code></pre></td></tr></table></figure>
+<img src="/2021/02/22/Oracle%E4%BD%BF%E7%94%A8plsqlDev/image-20210225164356022.png" srcset="/img/loading.gif" class="">
+
+<h2 id="3、安装PL-SQL-Developer"><a href="#3、安装PL-SQL-Developer" class="headerlink" title="3、安装PL/SQL Developer"></a>3、安装PL/SQL Developer</h2><p>安装 PL/SQL Developer，在perference-&gt;Connection里面设置OCI Library和Oracle_Home，例如本机设置为：</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">Oracle Home ：D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\O</span>RACLE<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\p</span>roduct<span class="hljs-symbol">\i</span>nstantclient_11_1<br>OCI Library ：D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\O</span>RACLE<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\p</span>roduct<span class="hljs-symbol">\i</span>nstantclient_11_1<span class="hljs-symbol">\o</span>ci.dll<br></code></pre></td></tr></table></figure>
+<img src="/2021/02/22/Oracle%E4%BD%BF%E7%94%A8plsqlDev/image-20210225164515462.png" srcset="/img/loading.gif" class="">
+<p>启动 PL/SQL Developer ，运行无问题。 </p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lee_charles/article/details/81949959">https://blog.csdn.net/lee_charles/article/details/81949959</a></p>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Oracle%E5%B7%A5%E5%85%B7/">Oracle工具</a>
+                    
+                  </div>
                 
               </div>
               
@@ -272,9 +305,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/23/%E4%B8%A5%E9%87%8D-An-exception-or-error-occurred-in-the-container-during-the-request-processing/">
+                      <a href="/2021/02/25/%E4%BD%BF%E7%94%A8%E5%9B%BD%E4%BA%A7%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%937%E6%9B%BF%E6%8D%A2oracle%E6%95%B0%E6%8D%AE%E5%BA%93/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">严重: An exception or error occurred in the container during the request processing</span>
+                        <span class="hidden-mobile">使用国产化数据库达梦数据库7替换oracle数据库</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
