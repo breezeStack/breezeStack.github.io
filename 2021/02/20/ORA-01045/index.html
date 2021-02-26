@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      67 字
+      69 字
     </span>
   
 
@@ -253,17 +253,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：5 days ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <p>Oracle出现ora-01045的解决方法</p>
-<p>解决办法：</p>
-<p>使用系统用户登录后，使用如下sql语句给出错用户赋权限</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> UserName;(UserName是登录出错的用户名)<br></code></pre></td></tr></table></figure>
-<p>如想给scott赋予权限：使用 </p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> scott;<br></code></pre></td></tr></table></figure>
+              <h3 id="1、Oracle出现ora-01045的解决方法"><a href="#1、Oracle出现ora-01045的解决方法" class="headerlink" title="1、Oracle出现ora-01045的解决方法"></a>1、Oracle出现ora-01045的解决方法</h3><h3 id="2、解决办法："><a href="#2、解决办法：" class="headerlink" title="2、解决办法："></a>2、解决办法：</h3><p>（1）使用系统用户登录后，使用如下sql语句给出错用户赋权限</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> UserName;(UserName是登录出错的用户名)<br>如想给scott赋予权限：使用 <br><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> scott;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -272,7 +268,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Oracle/">Oracle</a>
+                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
                     
                   </div>
                 

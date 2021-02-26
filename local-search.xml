@@ -221,12 +221,12 @@
     <link href="/2021/02/20/ORA-01045/"/>
     <url>/2021/02/20/ORA-01045/</url>
     
-    <content type="html"><![CDATA[<p>Oracle出现ora-01045的解决方法</p><p>解决办法：</p><p>使用系统用户登录后，使用如下sql语句给出错用户赋权限</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> UserName;(UserName是登录出错的用户名)<br></code></pre></td></tr></table></figure><p>如想给scott赋予权限：使用 </p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> scott;<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="1、Oracle出现ora-01045的解决方法"><a href="#1、Oracle出现ora-01045的解决方法" class="headerlink" title="1、Oracle出现ora-01045的解决方法"></a>1、Oracle出现ora-01045的解决方法</h3><h3 id="2、解决办法："><a href="#2、解决办法：" class="headerlink" title="2、解决办法："></a>2、解决办法：</h3><p>（1）使用系统用户登录后，使用如下sql语句给出错用户赋权限</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> UserName;(UserName是登录出错的用户名)<br>如想给scott赋予权限：使用 <br><span class="hljs-keyword">grant</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">session</span> <span class="hljs-keyword">to</span> scott;<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
       
-      <category>Oracle</category>
+      <category>工作</category>
       
     </categories>
     
