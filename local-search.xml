@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Context namespace element &#39;component-scan&#39; and its parser class [org.springframework.context.annotation.ComponentScanBeanDefinitionParser] are only available on JDK 1.5 and higher</title>
+    <link href="/2021/03/02/Eclipse%E6%8A%A5%E9%94%99%E9%A1%B9%E7%9B%AEJDK%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E/"/>
+    <url>/2021/03/02/Eclipse%E6%8A%A5%E9%94%99%E9%A1%B9%E7%9B%AEJDK%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-built_in">Context</span> namespace element <span class="hljs-string">&#x27;component-scan&#x27;</span> <span class="hljs-keyword">and </span>its  parser class  [<span class="hljs-keyword">org.springframework.context.annotation.ComponentScanBeanDefinitionParser] </span>are only available on <span class="hljs-keyword">JDK </span><span class="hljs-number">1</span>.<span class="hljs-number">5</span> <span class="hljs-keyword">and </span>higher<br></code></pre></td></tr></table></figure><h3 id="原因：在项目的Compile中不要对项目进行特殊设置"><a href="#原因：在项目的Compile中不要对项目进行特殊设置" class="headerlink" title="原因：在项目的Compile中不要对项目进行特殊设置"></a>原因：在项目的Compile中不要对项目进行特殊设置</h3><img src="/2021/03/02/Eclipse%E6%8A%A5%E9%94%99%E9%A1%B9%E7%9B%AEJDK%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E/image-20210302100531778.png" class="">]]></content>
+    
+    
+    <categories>
+      
+      <category>工作</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Eclipse</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>plsqlx64导入dmp文件闪退终极办法,真实有效</title>
     <link href="/2021/02/25/plsqlx64%E5%AF%BC%E5%85%A5dmp%E6%96%87%E4%BB%B6%E9%97%AA%E9%80%80%E7%BB%88%E6%9E%81%E5%8A%9E%E6%B3%95-%E7%9C%9F%E5%AE%9E%E6%9C%89%E6%95%88/"/>
     <url>/2021/02/25/plsqlx64%E5%AF%BC%E5%85%A5dmp%E6%96%87%E4%BB%B6%E9%97%AA%E9%80%80%E7%BB%88%E6%9E%81%E5%8A%9E%E6%B3%95-%E7%9C%9F%E5%AE%9E%E6%9C%89%E6%95%88/</url>
