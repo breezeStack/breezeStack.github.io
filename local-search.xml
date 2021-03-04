@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Oracle修改表空间名</title>
+    <link href="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/"/>
+    <url>/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/</url>
+    
+    <content type="html"><![CDATA[<p>1、查看表空间名</p><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs axapta">PlSqlDev的SQLwindow:<br><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> Dba_Tablespaces 查看所有表空间的信息<br><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> user_users 查看当前用户的表空间名信息<br></code></pre></td></tr></table></figure><img src="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/image-20210304120118424.png" class=""><p>2、打开Oracle的SQLPlus</p><img src="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/image-20210304120215254.png" class=""><p>（1）首先输入账号密码连接到Oracle</p><img src="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/image-20210304120320790.png" class=""><p>（2）连接到管理员权限</p><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cos"><span class="hljs-built_in">$sqlplus</span> / <span class="hljs-keyword">as</span> sysdba<br></code></pre></td></tr></table></figure><img src="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/image-20210304120351078.png" class=""><p>（3）修改表空间名称</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">tablespace</span> 旧名称 <span class="hljs-keyword">rename</span> <span class="hljs-keyword">to</span> 新名称;<br></code></pre></td></tr></table></figure><p>（4）遇到问题：表空间处于脱机状态</p><img src="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/image-20210304120613310.png" class=""><p>（5）将表空间状态改为在线</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span>space USERS online;<br></code></pre></td></tr></table></figure><p>（6）修改表空间</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">tablespace</span> 旧名称 <span class="hljs-keyword">rename</span> <span class="hljs-keyword">to</span> 新名称;<br><span class="hljs-keyword">select</span> <span class="hljs-type">name</span> <span class="hljs-keyword">from</span> v$<span class="hljs-keyword">tablespace</span>; 查看修改后的所有表空间名称<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>工作</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Oracle</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Context namespace element &#39;component-scan&#39; and its parser class [org.springframework.context.annotation.ComponentScanBeanDefinitionParser] are only available on JDK 1.5 and higher</title>
     <link href="/2021/03/02/Eclipse%E6%8A%A5%E9%94%99%E9%A1%B9%E7%9B%AEJDK%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E/"/>
     <url>/2021/03/02/Eclipse%E6%8A%A5%E9%94%99%E9%A1%B9%E7%9B%AEJDK%E7%89%88%E6%9C%AC%E8%BF%87%E4%BD%8E/</url>
