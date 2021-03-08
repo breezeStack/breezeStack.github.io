@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      150 字
+      310 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      4
        分钟
     </span>
   
@@ -253,7 +253,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：a few seconds ago
+                  本文最后更新于：2 days ago
                 
               </p>
             
@@ -281,7 +281,13 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span>space USERS online;<br></code></pre></td></tr></table></figure>
 <p>（6）修改表空间</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">tablespace</span> 旧名称 <span class="hljs-keyword">rename</span> <span class="hljs-keyword">to</span> 新名称;<br><span class="hljs-keyword">select</span> <span class="hljs-type">name</span> <span class="hljs-keyword">from</span> v$<span class="hljs-keyword">tablespace</span>; 查看修改后的所有表空间名称<br></code></pre></td></tr></table></figure>
-
+<p>3、新建用户步骤</p>
+<p>（1）新建表空间</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">*分为四步 */<br><span class="hljs-comment">/*第1步：创建临时表空间  */</span><br><span class="hljs-keyword">create</span> <span class="hljs-keyword">temporary</span> <span class="hljs-keyword">tablespace</span> user_temp <br>tempfile <span class="hljs-string">&#x27;D:\oracle\oradata\Oracle9i\user_temp.dbf&#x27;</span><br>size <span class="hljs-number">50</span>m <br>autoextend <span class="hljs-keyword">on</span> <br>next <span class="hljs-number">50</span>m maxsize <span class="hljs-number">20480</span>m <br>extent management <span class="hljs-keyword">local</span>; <br> <br><span class="hljs-comment">/*第2步：创建数据表空间  */</span><br><span class="hljs-keyword">create</span> <span class="hljs-keyword">tablespace</span> user_data <br>logging <br>datafile <span class="hljs-string">&#x27;D:\oracle\oradata\Oracle9i\user_data.dbf&#x27;</span><br>size <span class="hljs-number">50</span>m <br>autoextend <span class="hljs-keyword">on</span> <br>next <span class="hljs-number">50</span>m maxsize <span class="hljs-number">20480</span>m <br>extent management <span class="hljs-keyword">local</span>; <br> <br><span class="hljs-comment">/*第3步：创建用户并指定表空间  */</span><br><span class="hljs-keyword">create</span> <span class="hljs-keyword">user</span> username identified <span class="hljs-keyword">by</span> <span class="hljs-keyword">password</span> <br><span class="hljs-keyword">default</span> <span class="hljs-keyword">tablespace</span> user_data <br><span class="hljs-keyword">temporary</span> <span class="hljs-keyword">tablespace</span> user_temp; <br> <br><span class="hljs-comment">/*第4步：给用户授予权限  */</span><br><span class="hljs-keyword">grant</span> <span class="hljs-keyword">connect</span>,resource,dba <span class="hljs-keyword">to</span> username;<br></code></pre></td></tr></table></figure>
+<p>（2）新建用户</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">plsql</span> dev 工具可以直接新建用户<br></code></pre></td></tr></table></figure>
+<p>4、修改用户默认表空间</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> TEST <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">TABLESPACE</span> TEST_DATA;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -308,6 +314,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/03/05/eclipse%E6%8A%A5%E9%94%99component-scan-are-only-available-on-JDK-1-5-and-higher/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Context namespace element 'component-scan' and its parser class [org.springframework.context.annotation.ComponentScanBeanDefinitionParser] are only available on JDK 1.5 and higher</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
