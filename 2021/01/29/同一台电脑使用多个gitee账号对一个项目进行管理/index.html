@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      977 字
+      931 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13
+      12
        分钟
     </span>
   
@@ -253,15 +253,12 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：a month ago
+                  本文最后更新于：11 minutes ago
                 
               </p>
             
             <div class="markdown-body">
-              <hr>
-<p>title: 同一台电脑使用多个gitee账号对一个项目进行管理<br>date: 2021-01-29 21:20:27<br>categories: Git<br>tags: 一台电脑使用多个gitee账号管理一个仓库</p>
-<hr>
-<h2 id="一、先决条件"><a href="#一、先决条件" class="headerlink" title="一、先决条件"></a>一、先决条件</h2><p>先在一个账号上创建一个仓库<br>创建一个项目<br>将另一个账号添加到这个项目的管理者</p>
+              <h2 id="一、先决条件"><a href="#一、先决条件" class="headerlink" title="一、先决条件"></a>一、先决条件</h2><p>先在一个账号上创建一个仓库<br>创建一个项目<br>将另一个账号添加到这个项目的管理者</p>
 <h2 id="二、生成对应秘钥配置到对应账号中"><a href="#二、生成对应秘钥配置到对应账号中" class="headerlink" title="二、生成对应秘钥配置到对应账号中"></a>二、生成对应秘钥配置到对应账号中</h2><h3 id="1、生成ssh秘钥"><a href="#1、生成ssh秘钥" class="headerlink" title="1、生成ssh秘钥"></a>1、生成ssh秘钥</h3><p>分别生成这两个账号的rsa密钥、并分别配置到对应的gitee中<br>在这边发现只能将密钥生成在c盘用户目录下</p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">C:<span class="hljs-symbol">\U</span>sers<span class="hljs-symbol">\S</span>tack<span class="hljs-symbol">\.</span>ssh<br></code></pre></td></tr></table></figure>
 <p>不能在其他路径，不然后面</p>
@@ -276,7 +273,7 @@
 <h3 id="3、测试是否配置成功"><a href="#3、测试是否配置成功" class="headerlink" title="3、测试是否配置成功"></a>3、测试是否配置成功</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">ssh -T <span class="hljs-symbol">User@</span>Host <span class="hljs-comment">//格式</span><br>ssh -T <span class="hljs-symbol">git@</span>liuwf17859719373 <span class="hljs-comment">//例子</span><br></code></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/2021020511060114.png#pic_center" srcset="/img/loading.gif"></p>
 <p><img src="https://img-blog.csdnimg.cn/20210205110609958.png#pic_center" srcset="/img/loading.gif"></p>
-<h2 id="三、用账号1管理仓库-x6c-x69-x75-119-102-x31-x37-x38-53-57-55-x31-x39-51-x37-x33-x40-49-x32-54-46-x63-111-x6d"><a href="#三、用账号1管理仓库-x6c-x69-x75-119-102-x31-x37-x38-53-57-55-x31-x39-51-x37-x33-x40-49-x32-54-46-x63-111-x6d" class="headerlink" title="三、用账号1管理仓库:&#x6c;&#x69;&#x75;&#119;&#102;&#x31;&#x37;&#x38;&#53;&#57;&#55;&#x31;&#x39;&#51;&#x37;&#x33;&#x40;&#49;&#x32;&#54;&#46;&#x63;&#111;&#x6d;"></a>三、用账号1管理仓库:<a href="mailto:&#x6c;&#x69;&#x75;&#119;&#102;&#x31;&#x37;&#x38;&#53;&#57;&#55;&#x31;&#x39;&#51;&#x37;&#x33;&#x40;&#49;&#x32;&#54;&#46;&#x63;&#111;&#x6d;">&#x6c;&#x69;&#x75;&#119;&#102;&#x31;&#x37;&#x38;&#53;&#57;&#55;&#x31;&#x39;&#51;&#x37;&#x33;&#x40;&#49;&#x32;&#54;&#46;&#x63;&#111;&#x6d;</a></h2><h3 id="1、克隆仓库"><a href="#1、克隆仓库" class="headerlink" title="1、克隆仓库"></a>1、克隆仓库</h3><p>gitee上复制的克隆地址：</p>
+<h2 id="三、用账号1管理仓库-108-x69-117-119-102-49-x37-56-53-57-x37-49-x39-x33-x37-x33-64-x31-x32-x36-46-99-x6f-109"><a href="#三、用账号1管理仓库-108-x69-117-119-102-49-x37-56-53-57-x37-49-x39-x33-x37-x33-64-x31-x32-x36-46-99-x6f-109" class="headerlink" title="三、用账号1管理仓库:&#108;&#x69;&#117;&#119;&#102;&#49;&#x37;&#56;&#53;&#57;&#x37;&#49;&#x39;&#x33;&#x37;&#x33;&#64;&#x31;&#x32;&#x36;&#46;&#99;&#x6f;&#109;"></a>三、用账号1管理仓库:<a href="mailto:&#108;&#x69;&#117;&#119;&#102;&#49;&#x37;&#56;&#53;&#57;&#x37;&#49;&#x39;&#x33;&#x37;&#x33;&#64;&#x31;&#x32;&#x36;&#46;&#99;&#x6f;&#109;">&#108;&#x69;&#117;&#119;&#102;&#49;&#x37;&#56;&#53;&#57;&#x37;&#49;&#x39;&#x33;&#x37;&#x33;&#64;&#x31;&#x32;&#x36;&#46;&#99;&#x6f;&#109;</a></h2><h3 id="1、克隆仓库"><a href="#1、克隆仓库" class="headerlink" title="1、克隆仓库"></a>1、克隆仓库</h3><p>gitee上复制的克隆地址：</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">git</span>@gitee.com:liuwf<span class="hljs-number">17859719373</span>/liuwf<span class="hljs-number">17859719373</span>.git<br></code></pre></td></tr></table></figure>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">//代码格式<br>git <span class="hljs-keyword">clone</span> <span class="hljs-title">User</span>@Host:仓库地址.git <br></code></pre></td></tr></table></figure>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">//例子<br>git <span class="hljs-keyword">clone</span> <span class="hljs-title">git</span>@liuwf17859719373:liuwf17859719373/liuwf17859719373.git <br></code></pre></td></tr></table></figure>
@@ -285,7 +282,7 @@
 <p>注意,在设置结束之后,创建git repo(<code>git init</code>)的时候,一定要再次检查一下用户名和用户邮箱,如果不对, 需要再次设置.<br> 如果发现修改不成功，可能是凭证缓存没清除：<br> 到控制面板搜索Windows凭证删除普通凭证中的gitee凭证。</p>
 <h3 id="4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中"><a href="#4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中" class="headerlink" title="4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中"></a>4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">//查看是否是目标账号</span><br>git <span class="hljs-built_in">config</span> user.name<br>git <span class="hljs-built_in">config</span> user.email<br></code></pre></td></tr></table></figure>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-comment">//上传代码</span><br><span class="hljs-symbol">git</span> <span class="hljs-keyword">add</span> .<br><span class="hljs-symbol">git</span> commit -m <span class="hljs-string">&quot;上传文件备注&quot;</span><br><span class="hljs-symbol">git</span> <span class="hljs-keyword">push</span> origin master<br></code></pre></td></tr></table></figure>
-<h2 id="四、使用账号2管理仓库-108-x69-117-x77-x66-x31-x33-48-x31-53-57-x34-54-49-53-x30-64-49-50-54-x2e-x63-111-109"><a href="#四、使用账号2管理仓库-108-x69-117-x77-x66-x31-x33-48-x31-53-57-x34-54-49-53-x30-64-49-50-54-x2e-x63-111-109" class="headerlink" title="四、使用账号2管理仓库:&#108;&#x69;&#117;&#x77;&#x66;&#x31;&#x33;&#48;&#x31;&#53;&#57;&#x34;&#54;&#49;&#53;&#x30;&#64;&#49;&#50;&#54;&#x2e;&#x63;&#111;&#109;"></a>四、使用账号2管理仓库:<a href="mailto:&#108;&#x69;&#117;&#x77;&#x66;&#x31;&#x33;&#48;&#x31;&#53;&#57;&#x34;&#54;&#49;&#53;&#x30;&#64;&#49;&#50;&#54;&#x2e;&#x63;&#111;&#109;">&#108;&#x69;&#117;&#x77;&#x66;&#x31;&#x33;&#48;&#x31;&#53;&#57;&#x34;&#54;&#49;&#53;&#x30;&#64;&#49;&#50;&#54;&#x2e;&#x63;&#111;&#109;</a></h2><h3 id="1、使用账号-108-x69-x75-119-102-x31-51-48-49-53-57-x34-x36-x31-x35-x30-64-x31-x32-54-46-x63-x6f-x6d-克隆仓库"><a href="#1、使用账号-108-x69-x75-119-102-x31-51-48-49-53-57-x34-x36-x31-x35-x30-64-x31-x32-54-46-x63-x6f-x6d-克隆仓库" class="headerlink" title="1、使用账号&#108;&#x69;&#x75;&#119;&#102;&#x31;&#51;&#48;&#49;&#53;&#57;&#x34;&#x36;&#x31;&#x35;&#x30;&#64;&#x31;&#x32;&#54;&#46;&#x63;&#x6f;&#x6d;克隆仓库"></a>1、使用账号<a href="mailto:&#108;&#x69;&#x75;&#119;&#102;&#x31;&#51;&#48;&#49;&#53;&#57;&#x34;&#x36;&#x31;&#x35;&#x30;&#64;&#x31;&#x32;&#54;&#46;&#x63;&#x6f;&#x6d;">&#108;&#x69;&#x75;&#119;&#102;&#x31;&#51;&#48;&#49;&#53;&#57;&#x34;&#x36;&#x31;&#x35;&#x30;&#64;&#x31;&#x32;&#54;&#46;&#x63;&#x6f;&#x6d;</a>克隆仓库</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elixir">git clone git<span class="hljs-variable">@liuwf13015946150</span><span class="hljs-symbol">:liuwf17859719373/liuwf17859719373</span>.git<br></code></pre></td></tr></table></figure>
+<h2 id="四、使用账号2管理仓库-x6c-x69-x75-119-x66-x31-x33-x30-x31-53-57-x34-54-49-53-x30-x40-x31-x32-x36-46-x63-111-109"><a href="#四、使用账号2管理仓库-x6c-x69-x75-119-x66-x31-x33-x30-x31-53-57-x34-54-49-53-x30-x40-x31-x32-x36-46-x63-111-109" class="headerlink" title="四、使用账号2管理仓库:&#x6c;&#x69;&#x75;&#119;&#x66;&#x31;&#x33;&#x30;&#x31;&#53;&#57;&#x34;&#54;&#49;&#53;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#109;"></a>四、使用账号2管理仓库:<a href="mailto:&#x6c;&#x69;&#x75;&#119;&#x66;&#x31;&#x33;&#x30;&#x31;&#53;&#57;&#x34;&#54;&#49;&#53;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#109;">&#x6c;&#x69;&#x75;&#119;&#x66;&#x31;&#x33;&#x30;&#x31;&#53;&#57;&#x34;&#54;&#49;&#53;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#x63;&#111;&#109;</a></h2><h3 id="1、使用账号-108-105-117-119-102-x31-x33-48-49-53-x39-x34-x36-x31-x35-48-x40-49-x32-x36-x2e-x63-x6f-x6d-克隆仓库"><a href="#1、使用账号-108-105-117-119-102-x31-x33-48-49-53-x39-x34-x36-x31-x35-48-x40-49-x32-x36-x2e-x63-x6f-x6d-克隆仓库" class="headerlink" title="1、使用账号&#108;&#105;&#117;&#119;&#102;&#x31;&#x33;&#48;&#49;&#53;&#x39;&#x34;&#x36;&#x31;&#x35;&#48;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#x6f;&#x6d;克隆仓库"></a>1、使用账号<a href="mailto:&#108;&#105;&#117;&#119;&#102;&#x31;&#x33;&#48;&#49;&#53;&#x39;&#x34;&#x36;&#x31;&#x35;&#48;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#x6f;&#x6d;">&#108;&#105;&#117;&#119;&#102;&#x31;&#x33;&#48;&#49;&#53;&#x39;&#x34;&#x36;&#x31;&#x35;&#48;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#x6f;&#x6d;</a>克隆仓库</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elixir">git clone git<span class="hljs-variable">@liuwf13015946150</span><span class="hljs-symbol">:liuwf17859719373/liuwf17859719373</span>.git<br></code></pre></td></tr></table></figure>
 <h3 id="2、设置本地仓库user-name和user-email"><a href="#2、设置本地仓库user-name和user-email" class="headerlink" title="2、设置本地仓库user.name和user.email"></a>2、设置本地仓库user.name和user.email</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git config <span class="hljs-keyword">user</span>.name &quot;liuwf13015946150&quot;<br>git config <span class="hljs-keyword">user</span>.email &quot;liuwf13015946150@126.com&quot;<br></code></pre></td></tr></table></figure>
 <h3 id="3、查看本地user账户信息是否修改成功"><a href="#3、查看本地user账户信息是否修改成功" class="headerlink" title="3、查看本地user账户信息是否修改成功"></a>3、查看本地user账户信息是否修改成功</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git config <span class="hljs-keyword">user</span>.name<br>git config <span class="hljs-keyword">user</span>.email<br></code></pre></td></tr></table></figure>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">git branch<span class="hljs-regexp">//</span>查看当前分支<br>git pull<span class="hljs-regexp">//</span>更新代码到本地<br></code></pre></td></tr></table></figure>
@@ -303,7 +300,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Git/">Git</a>
+                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
                     
                   </div>
                 
@@ -311,7 +308,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AAgitee%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93/">一台电脑使用多个gitee账号管理一个仓库</a>
+                      <a class="hover-with-bg" href="/tags/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AAGitee%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93/">一台电脑使用多个Gitee账号管理一个仓库</a>
                     
                   </div>
                 
@@ -324,7 +321,7 @@
                     
                       <a href="/2021/02/05/%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AEmaven%E4%B8%8B%E8%BD%BD%E4%B8%8D%E4%B8%8B%E6%9D%A5-%E8%A7%A3%E5%86%B3/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">导入maven项目maven下载不下来_解决</span>
+                        <span class="hidden-mobile">导入maven项目pom.xml文件报错</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -333,7 +330,7 @@
                     
                     
                       <a href="/2021/01/28/Windows10%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E5%88%87%E6%8D%A2%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84JDK/">
-                        <span class="hidden-mobile">Windows10一台电脑上切换多个版本的JDK</span>
+                        <span class="hidden-mobile">Windows10一台电脑上安装切换多个版本的JDK</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
