@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<html lang="ZH" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="liuwf">
+  <meta name="keywords" content="">
+  <title>多版本MySQL安装 - liuwf.top</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"qWolHYM3Mxf04y5ltNsr3G51-gzGzoHsz","app_key":"glon5tbm5p2DR4Ez00Mr9xQo","server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>liuwf blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="多版本MySQL安装">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      liuwf
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-12 09:30" pubdate>
+        March 12, 2021 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      803 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">多版本MySQL安装</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：a few seconds ago
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h3 id="一、安装MySQL57"><a href="#一、安装MySQL57" class="headerlink" title="一、安装MySQL57"></a>一、安装MySQL57</h3><h4 id="1、官网下载压缩包"><a href="#1、官网下载压缩包" class="headerlink" title="1、官网下载压缩包"></a>1、官网下载压缩包</h4><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/5.7.html">https://dev.mysql.com/downloads/mysql/5.7.html</a></p>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312102453011.png" srcset="/img/loading.gif" class="">
+
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312093026544.png" srcset="/img/loading.gif" class="">
+
+<h4 id="2、解压"><a href="#2、解压" class="headerlink" title="2、解压"></a>2、解压</h4><img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312102534172.png" srcset="/img/loading.gif" class="" title="目录结构">
+
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312102603635.png" srcset="/img/loading.gif" class="" title="目录结构">
+
+<h4 id="3、在安装根目录下新增my-ini文件"><a href="#3、在安装根目录下新增my-ini文件" class="headerlink" title="3、在安装根目录下新增my.ini文件"></a>3、在安装根目录下新增my.ini文件</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[mysql]</span><br> <br><span class="hljs-comment"># 设置mysql客户端默认字符集</span><br><span class="hljs-attr">default-character-set</span>=utf8 <br><br><span class="hljs-section">[mysqld]</span><br> <br><span class="hljs-comment">#设置3306端口</span><br><span class="hljs-attr">port</span> = <span class="hljs-number">3306</span><br> <br><span class="hljs-comment"># 设置mysql的安装目录</span><br><span class="hljs-attr">basedir</span>=D:\\Environment\\MySql\\Install\\mysql57<br> <br><span class="hljs-comment"># 设置mysql数据库的数据的存放目录</span><br><span class="hljs-attr">datadir</span>=D:\\Environment\\MySql\\Install\\mysql57\\data<br> <br><span class="hljs-comment"># 允许最大连接数</span><br><span class="hljs-attr">max_connections</span>=<span class="hljs-number">200</span><br> <br><span class="hljs-comment"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="hljs-attr">character-set-server</span>=utf8<br> <br><span class="hljs-comment"># 创建新表时将使用的默认存储引擎</span><br><span class="hljs-attr">default-storage-engine</span>=INNODB<br></code></pre></td></tr></table></figure>
+<h4 id="4、环境变量配置"><a href="#4、环境变量配置" class="headerlink" title="4、环境变量配置"></a>4、环境变量配置</h4><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">//MySQL57安装目录bin目录<br>D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\M</span>ySql<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\m</span>ysql57<span class="hljs-symbol">\b</span>in<br>//MySQL80安装目录bin目录<br>D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\M</span>ySql<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\m</span>ysql80<span class="hljs-symbol">\b</span>in<br></code></pre></td></tr></table></figure>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312102944304.png" srcset="/img/loading.gif" class="" title="path环境变量配置">
+
+<h4 id="5、在安装目录bin下打开cmd"><a href="#5、在安装目录bin下打开cmd" class="headerlink" title="5、在安装目录bin下打开cmd"></a>5、在安装目录bin下打开cmd</h4><img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312102801049.png" srcset="/img/loading.gif" class="">
+
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>安装服务<br>mysqld install MySQL57 --default-file=<span class="hljs-string">&quot;D:\Environment\MySql\Install\mysql57\my.ini&quot;</span><br><span class="hljs-regexp">//</span>初始化 创建data文件夹<br>mysqld --initialize<br></code></pre></td></tr></table></figure>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312093235341.png" srcset="/img/loading.gif" class="" title="安装服务">
+
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312093148121.png" srcset="/img/loading.gif" class="" title="初始化MySQL">
+
+<h4 id="6、修改注册表ImagePath信息"><a href="#6、修改注册表ImagePath信息" class="headerlink" title="6、修改注册表ImagePath信息"></a>6、修改注册表ImagePath信息</h4><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">&quot;D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\M</span>ySql<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\m</span>ysql57<span class="hljs-symbol">\b</span>in<span class="hljs-symbol">\m</span>ysqld&quot; MySQL57<br></code></pre></td></tr></table></figure>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312093531222.png" srcset="/img/loading.gif" class="" title="修改注册表">
+
+<h4 id="7、修改MySQL57密码"><a href="#7、修改MySQL57密码" class="headerlink" title="7、修改MySQL57密码"></a>7、修改MySQL57密码</h4><p>在D:\Environment\MySql\Install\mysql57\data\DESKTOP-JUUSB8L.err文件中查看临时密码</p>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312093725448.png" srcset="/img/loading.gif" class="" title="image-20210312093725448">
+
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>临时密码<br>H,PmWLT!Y6.j<br><span class="hljs-regexp">//</span>登陆MySQL<br>mysql -uroot -p<br><span class="hljs-regexp">//</span>修改密码<br>set password <span class="hljs-keyword">for</span> root@localhost=password(<span class="hljs-string">&#x27;123456&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312095441470.png" srcset="/img/loading.gif" class="" title="image-20210312095441470">
+
+<h3 id="二、安装MySQL80"><a href="#二、安装MySQL80" class="headerlink" title="二、安装MySQL80"></a>二、安装MySQL80</h3><h4 id="1、官网下载压缩包-1"><a href="#1、官网下载压缩包-1" class="headerlink" title="1、官网下载压缩包"></a>1、官网下载压缩包</h4><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312102404275.png" srcset="/img/loading.gif" class="" title="image-20210312102404275">
+
+<h4 id="2、解压-1"><a href="#2、解压-1" class="headerlink" title="2、解压"></a>2、解压</h4><img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312102534172.png" srcset="/img/loading.gif" class="" title="目录结构">
+
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312103650350.png" srcset="/img/loading.gif" class="" title="目录结构">
+
+<h4 id="3、在安装根目录下新增my-ini文件-1"><a href="#3、在安装根目录下新增my-ini文件-1" class="headerlink" title="3、在安装根目录下新增my.ini文件"></a>3、在安装根目录下新增my.ini文件</h4><p>将MySQL80的端口号设置为3307</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[mysql]</span><br> <br><span class="hljs-comment"># 设置mysql客户端默认字符集</span><br><span class="hljs-attr">default-character-set</span>=utf8 <br> <br><span class="hljs-section">[mysqld]</span><br> <br><span class="hljs-comment">#设置3307端口</span><br><span class="hljs-attr">port</span> = <span class="hljs-number">3307</span><br> <br><span class="hljs-comment"># 设置mysql的安装目录</span><br><span class="hljs-attr">basedir</span>=D:\\Environment\\MySql\\Install\\mysql80<br> <br><span class="hljs-comment"># 设置mysql数据库的数据的存放目录</span><br><span class="hljs-attr">datadir</span>=D:\\Environment\\MySql\\Install\\mysql80\\data<br> <br><span class="hljs-comment"># 允许最大连接数</span><br><span class="hljs-attr">max_connections</span>=<span class="hljs-number">200</span><br> <br><span class="hljs-comment"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="hljs-attr">character-set-server</span>=utf8<br> <br><span class="hljs-comment"># 创建新表时将使用的默认存储引擎</span><br><span class="hljs-attr">default-storage-engine</span>=INNODB<br><br></code></pre></td></tr></table></figure>
+<h4 id="4、环境变量配置-1"><a href="#4、环境变量配置-1" class="headerlink" title="4、环境变量配置"></a>4、环境变量配置</h4><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">//MySQL57安装目录bin目录<br>D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\M</span>ySql<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\m</span>ysql57<span class="hljs-symbol">\b</span>in<br>//MySQL80安装目录bin目录<br>D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\M</span>ySql<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\m</span>ysql80<span class="hljs-symbol">\b</span>in<br></code></pre></td></tr></table></figure>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312102944304.png" srcset="/img/loading.gif" class="" title="path环境变量配置">
+
+<h4 id="5、在安装目录bin下打开cmd-1"><a href="#5、在安装目录bin下打开cmd-1" class="headerlink" title="5、在安装目录bin下打开cmd"></a>5、在安装目录bin下打开cmd</h4><img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312103839292.png" srcset="/img/loading.gif" class="">
+
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>安装服务<br>mysqld install MySQL80 --default-file=<span class="hljs-string">&quot;D:\Environment\MySql\Install\mysql80\my.ini&quot;</span><br><span class="hljs-regexp">//</span>初始化 创建data文件夹<br>mysqld --initialize<br></code></pre></td></tr></table></figure>
+<h4 id="6、修改注册表ImagePath信息-1"><a href="#6、修改注册表ImagePath信息-1" class="headerlink" title="6、修改注册表ImagePath信息"></a>6、修改注册表ImagePath信息</h4><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">&quot;D:<span class="hljs-symbol">\E</span>nvironment<span class="hljs-symbol">\M</span>ySql<span class="hljs-symbol">\I</span>nstall<span class="hljs-symbol">\m</span>ysql80<span class="hljs-symbol">\b</span>in<span class="hljs-symbol">\m</span>ysqld&quot; MySQL80<br></code></pre></td></tr></table></figure>
+<h4 id="7、修改MySQL80密码"><a href="#7、修改MySQL80密码" class="headerlink" title="7、修改MySQL80密码"></a>7、修改MySQL80密码</h4><p>在D:\Environment\MySql\Install\mysql80\data\DESKTOP-JUUSB8L.err文件中查看临时密码</p>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312104515016.png" srcset="/img/loading.gif" class="">
+
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">//临时密码</span><br><span class="hljs-selector-tag">032</span>+<span class="hljs-selector-tag">ysi</span>)<span class="hljs-selector-tag">Sc</span>(j<br><span class="hljs-comment">//登陆MySQL80</span><br>mysql -uroot -p<br><span class="hljs-comment">//失败报错：ERROR 1045 (28000): Access denied for user &#x27;root&#x27;@&#x27;localhost&#x27; (using password: YES)</span><br><span class="hljs-comment">//原因：两个版本的服务都打开着</span><br><span class="hljs-comment">//解决：关闭MySQL57服务</span><br><span class="hljs-comment">//登陆MySQL</span><br>mysql -uroot -p<br><span class="hljs-comment">//失败报错：ERROR 2003 (HY000): Can&#x27;t connect to MySQL server on &#x27;localhost&#x27; (10061)</span><br><span class="hljs-comment">//原因：没有标明端口号，默认端口3306，但是3306端口的MySQL57服务被我们关闭了</span><br><span class="hljs-comment">//解决：加上端口号，这个端口号为3307，是在my.ini中设置的</span><br>mysql -P3307  -uroot -p<br><span class="hljs-comment">//修改密码</span><br>mysql&gt; set password for root<span class="hljs-variable">@localhost</span>=password(<span class="hljs-string">&#x27;1456622145&#x27;</span>);<br><span class="hljs-comment">//报错：ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#x27;password(&#x27;1456622145&#x27;)&#x27; at line 1</span><br><span class="hljs-comment">//原因：语法错误 MySQL80 删除了passwfaord关键字，修改密码语句改变</span><br><span class="hljs-comment">//解决：修改密码语句发生变化</span><br>ALTER USER <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> IDENTIFIED WITH mysql_native_password BY <span class="hljs-string">&#x27;123456&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<img src="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/image-20210312104726187.png" srcset="/img/loading.gif" class="">
+
+
+
+
+
+
+
+
+
+
+
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44051855/article/details/113111613">https://blog.csdn.net/weixin_44051855/article/details/113111613</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/26505.htm?_t_t_t=0.35939535707756654">https://www.jb51.net/article/26505.htm?_t_t_t=0.35939535707756654</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%A4%9A%E7%89%88%E6%9C%ACMySQL%E5%AE%89%E8%A3%85/">多版本MySQL安装</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/11/%E4%BD%BF%E7%94%A8%E5%9B%BD%E4%BA%A7%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%9B%BF%E6%8D%A2Tomcat%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE/">
+                        <span class="hidden-mobile">使用国产中间件替换Tomcat启动项目</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "9AbS90P3EqVELAvUsH9ycTpW-gzGzoHsz",
+          app_key: "suv4YMHVW2NxF650P1W3BMl4",
+          placeholder: "Hello,welcome to my blog!",
+          path: window.location.pathname,
+          avatar: "robohash",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

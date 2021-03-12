@@ -193,6 +193,60 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/02/05/%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AEmaven%E4%B8%8B%E8%BD%BD%E4%B8%8D%E4%B8%8B%E6%9D%A5-%E8%A7%A3%E5%86%B3/">导入maven项目pom.xml文件报错</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/05/%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AEmaven%E4%B8%8B%E8%BD%BD%E4%B8%8D%E4%B8%8B%E6%9D%A5-%E8%A7%A3%E5%86%B3/">
+          
+          
+            
+          
+          1、问题：
+2、原因：maven本地仓库目录一看，发现命名都被系统改掉了，难怪识别不出来
+3、解决：（1）删除后面有多余后缀：.lastUpdated的文件，然后重新Upadate Project（有这个后缀表示这个jar包没有下载下来，或者下载下来的损坏的）
+
+（2）maven -&gt;update project
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-05 09:48" pubdate>
+              2021-02-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/maven-pom%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99/">maven pom文件报错</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/01/29/%E5%90%8C%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AAgitee%E8%B4%A6%E5%8F%B7%E5%AF%B9%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86/">同一台电脑使用多个gitee账号对一个项目进行管理</a>
       </h1>
 
@@ -649,61 +703,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/01/21/%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%86%B3IDEA%E4%B8%ADTomcat-%EF%BC%9Eoutput%E4%B8%AD%E6%97%A5%E5%BF%97%E6%89%93%E5%8D%B0%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/">IDEA中Tomcat output中日志打印乱码的问题</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/01/21/%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%86%B3IDEA%E4%B8%ADTomcat-%EF%BC%9Eoutput%E4%B8%AD%E6%97%A5%E5%BF%97%E6%89%93%E5%8D%B0%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/">
-          
-          
-            
-          
-          1、tomcat中的conf-&gt;logging.properties要跟电脑的编码方式相同，这样子tomcat日志打印出来就没有问题
-2、Help-&gt;Edit Custom VM Options中使用默认的就好，不然log4j日志log.info()输出会出现乱码
-3、Tomcat配置
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-01-21 17:02" pubdate>
-              2021-01-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Idea-Tomcat%E6%97%A5%E5%BF%97%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">Idea Tomcat日志问题解决</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
   
