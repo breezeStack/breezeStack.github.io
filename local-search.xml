@@ -4,31 +4,6 @@
   
   
   <entry>
-    <title>多账号管理GitLab项目</title>
-    <link href="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/"/>
-    <url>/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/</url>
-    
-    <content type="html"><![CDATA[<h4 id="1、-先用账号登陆GitLab"><a href="#1、-先用账号登陆GitLab" class="headerlink" title="1、 先用账号登陆GitLab"></a>1、 先用账号登陆GitLab</h4><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">128.64.96.200</span><br></code></pre></td></tr></table></figure><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps1.jpg" class=""> <img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps2.jpg" class=""> <img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps3.jpg" class="" title="img"> <p>2、 在项目中添加该人员，通过搜索账号</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps4.jpg" class="" title="img"> <img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps5.jpg" class="" title="img"> <img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps6.jpg" class="" title="img"> <p>3、 生成rsa密钥</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps7.jpg" class="" title="img"> <p>ssh-keygen -t rsa -C “15836206.zh”</p><p>/c/Users/majifu.zh/.ssh/id_rsa_15836206 //生成密钥的位置，必须将地址也打进去</p><p>id_rsa_15836206  //你的密钥名称</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps8.jpg" class="" title="img"> <p>4、 密钥配置</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps9.jpg" class="" title="img"> <img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps10.jpg" class="" title="img"> <p>Host 15836206 //使用的别名</p><p>HosName 128.64.96.200 //GitLab IP地址</p><p>UserName git //使用git命令对GitLab进行操作</p><p>IdentityFile ~/.ssh/id_rsa_15836206 //标注rsa文件公共钥匙密钥的位置</p><p>5、 将ssh密钥公钥添加到GitLab中</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps11.jpg" class="" title="img"> <p>cat id_rsa_15836206.pub</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps12.jpg" class="" title="img"> <img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps13.jpg" class="" title="img"> <p>6、 配置完ssh环境后ssh 和git clone测试</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps14.jpg" class="" title="img"> <p>ssh -T git@Host</p><p>ssh -T git@15836206</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps15.jpg" class="" title="img"> <img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps16.jpg" class="" title="img"> <p>git clone <a href="mailto:git@Host:仓库地址.git">git@Host:仓库地址.git</a></p><p>例如：仓库地址：<a href="mailto:git@128.64.96.200:majifu.zh/pshare.git">git@128.64.96.200:majifu.zh/pshare.git</a></p><p>那么git clone命令应该是:</p><p>git clone git@15836206:majifu.zh/pshare.git</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps17.jpg" class="" title="img"> <img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps18.jpg" class="" title="img"> <p>7、 进行代码提交</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps19.jpg" class="" title="img"> <p>git config user.name //查看用户名</p><p>git config user.email //查看用户邮箱</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps20.jpg" class="" title="img"> <p>git config user.name “林江河” //配置用户邮箱</p><p>git config user.email “15836206.zh” //配置用户邮箱</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps21.jpg" class="" title="img"> <p>正常步骤：</p><p>（1） 修改文件</p><p>（2） 拉取云端仓库到本地，进行代码冲突修复</p><p>git pull origin master</p><p>（3） 添加所有修改内容到缓存区</p><p>git add .</p><p>（4） 推送修改到本地服务器</p><p>git commit -m “备注信息</p><p>（5） 推送修改到远程服务器</p><p>git push origin master</p><img src="/2021/03/14/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86GitLab%E9%A1%B9%E7%9B%AE/wps22.jpg" class="" title="img">”<p>Linux多行复制</p><p>V + 上or下 //选择 </p><p>Y //复制</p><p>P //粘贴</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>功能</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>多账号管理GitLab项目</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>多版本MySQL安装</title>
     <link href="/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/"/>
     <url>/2021/03/12/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84MySql/</url>
