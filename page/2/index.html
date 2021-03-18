@@ -193,6 +193,68 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/">Oracle修改用户的默认表空间名</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/">
+          
+          
+            
+          
+          1、查看表空间名
+123PlSqlDev的SQLwindow:select * from Dba_Tablespaces 查看所有表空间的信息select * from user_users 查看当前用户的表空间名信息
+
+
+2、打开Oracle的SQLPlus
+
+
+（1）首先输入账号密码连接到Oracle
+
+
+（2）连接到管理员权限
+1$sqlplus / as sysdba
+
+
+（3）修改表空间
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-04 11:58" pubdate>
+              2021-03-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Oracle%E5%91%BD%E4%BB%A4/">Oracle命令</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/02/25/plsqlx64%E5%AF%BC%E5%85%A5dmp%E6%96%87%E4%BB%B6%E9%97%AA%E9%80%80%E7%BB%88%E6%9E%81%E5%8A%9E%E6%B3%95-%E7%9C%9F%E5%AE%9E%E6%9C%89%E6%95%88/">使用PLSQLDev工具导入dmp文件闪退</a>
       </h1>
 
@@ -229,6 +291,58 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93dmp%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5/">数据库dmp文件导入</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/25/eclipse%E8%BF%90%E8%A1%8C%E6%8A%A5java-lang-OutOfMemoryError-PermGen-space%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">Eclipse运行报错java.lang.OutOfMemoryError: PermGen space解决方法</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/25/eclipse%E8%BF%90%E8%A1%8C%E6%8A%A5java-lang-OutOfMemoryError-PermGen-space%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+          
+          
+            
+          
+          1、解决办法：
+
+
+
+1-Xms256m -Xmx1024m -XX:MaxNewSize=512m -XX:MaxPermSize=512m
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-25 16:26" pubdate>
+              2021-02-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Eclipse%E6%8A%A5Tomcat%E5%86%85%E5%AD%98%E4%B8%8D%E8%B6%B3/">Eclipse报Tomcat内存不足</a>
             
           </div>
         
@@ -590,105 +704,6 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/Oracle%E6%8A%A5%E9%94%99ORA-01045/">Oracle报错ORA-01045</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/02/19/mavenMissingArtifact/">pom.xml文件报错：maven missing artifact，但是本地仓库存在jar</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/02/19/mavenMissingArtifact/">
-          
-          
-            
-          
-          1、本地仓库删掉_maven.repositories和_remote.repositories文件2、update project 或 update dependency
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-19 14:21" pubdate>
-              2021-02-19
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Maven-pom%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99/">Maven pom文件报错</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/02/18/yarn-%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC/">yarn报错:无法加载文件C:\Users\Administrator\AppData\Roaming\npm\yarn.ps1,因为在此系统上禁止运行脚本</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/02/18/yarn-%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC/">
-          
-          
-            
-          
-          1.搜索powershell，右键以管理员身份运行2.输入：1set-ExecutionPolicy RemoteSigned
-然后：输入 y
-3.关闭命令窗口 即可参考：https://www.jianshu.com/p/6af4880f4018
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-18 10:27" pubdate>
-              2021-02-18
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/npm-yarn%E5%AE%89%E8%A3%85/">npm yarn安装</a>
             
           </div>
         

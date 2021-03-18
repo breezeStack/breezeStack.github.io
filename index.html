@@ -193,17 +193,18 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/18/test/">test</a>
+        <a href="/2021/03/18/hexo-g%E6%97%B6%E6%8A%A5%E9%94%99/">“hexo g时报错”</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/18/test/">
+        <a href="/2021/03/18/hexo-g%E6%97%B6%E6%8A%A5%E9%94%99/">
           
           
             
           
-          test…
+          
 
+仔细看报错位置，发现应该是title的:\这里出现问题。将\改为/,就可解决问题
         </a>
       </p>
 
@@ -211,12 +212,74 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-18 19:01" pubdate>
+            <time datetime="2021-03-18 19:12" pubdate>
               2021-03-18
             </time>
           </div>
         
         
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%8A%A5%E9%94%99/">博客报错</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/18/gitpull%E6%8A%A5%E9%94%99-%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98/">git pull 时报：cd: H:lll/repo/www:No such file or directory Cannot chdir to H:lll/repo/www,the toplevel of the working tree.</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/18/gitpull%E6%8A%A5%E9%94%99-%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98/">
+          
+          
+            
+          
+          是权限问题，将git bash 改为管理员方式启动就可以了
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-18 16:52" pubdate>
+              2021-03-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/git-pull%E6%8A%A5%E9%94%99/">git pull报错</a>
+            
+          </div>
         
       </div>
     </article>
@@ -649,68 +712,6 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/Spring%E6%A1%86%E6%9E%B6%E4%B8%8D%E8%AF%86%E5%88%ABJDK8%E6%8A%A5%E9%94%99/">Spring框架不识别JDK8报错</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/">Oracle修改用户的默认表空间名</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/">
-          
-          
-            
-          
-          1、查看表空间名
-123PlSqlDev的SQLwindow:select * from Dba_Tablespaces 查看所有表空间的信息select * from user_users 查看当前用户的表空间名信息
-
-
-2、打开Oracle的SQLPlus
-
-
-（1）首先输入账号密码连接到Oracle
-
-
-（2）连接到管理员权限
-1$sqlplus / as sysdba
-
-
-（3）修改表空间
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-04 11:58" pubdate>
-              2021-03-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Oracle%E5%91%BD%E4%BB%A4/">Oracle命令</a>
             
           </div>
         
