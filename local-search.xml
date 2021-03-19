@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>前端学习</title>
+    <link href="/2021/03/19/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"/>
+    <url>/2021/03/19/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/</url>
+    
+    <content type="html"><![CDATA[<p>1、绝对路劲和相对路劲</p><p>绝对路劲：使用反斜杆：“\”</p><p>相对路劲：使用斜杠：“/” </p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros">同一级：直接输入图片名称就可  &lt;img <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;hello.png&quot;</span> /&gt;<br><br>上一级：<span class="hljs-string">&quot;../&quot;</span>             &lt;img <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;../hello.png&quot;</span> /&gt;<br><br>下一级：<span class="hljs-string">&quot;/&quot;</span>               &lt;img <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;/images/hello.png&quot;</span> /&gt;<br></code></pre></td></tr></table></figure><p>2、单标签：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">imag</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span>&quot;<br></code></pre></td></tr></table></figure><p>3、超链接</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">&lt;<span class="hljs-keyword">a</span>&gt;&lt;/<span class="hljs-keyword">a</span><span class="hljs-comment">&gt;// anchot锚</span><br>&lt;<span class="hljs-keyword">a</span> href=<span class="hljs-string">&quot;跳转目标&quot;</span> target=<span class="hljs-string">&quot;目标窗口的弹出方式&quot;</span>&gt;文本和图像&lt;/<span class="hljs-keyword">a</span>&gt;<br></code></pre></td></tr></table></figure><p>4、</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>web前端学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>“hexo g时报错”</title>
     <link href="/2021/03/18/hexo-g%E6%97%B6%E6%8A%A5%E9%94%99/"/>
     <url>/2021/03/18/hexo-g%E6%97%B6%E6%8A%A5%E9%94%99/</url>
