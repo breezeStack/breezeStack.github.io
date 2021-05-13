@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="liuwf">
   <meta name="keywords" content="">
-  <title>Eclipse运行报错java.lang.UnsatisfiedLinkError: no jacob-1.17-M2-x64 in java.library.path - liuwf.top</title>
+  <title>Java实现Pdf转图片 - liuwf.top</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Eclipse运行报错java.lang.UnsatisfiedLinkError: no jacob-1.17-M2-x64 in java.library.path">
+            <span class="h2" id="subtitle" title="Java实现Pdf转图片">
               
             </span>
 
@@ -189,8 +189,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-05-13 09:55" pubdate>
-        May 13, 2021 am
+      <time datetime="2021-05-13 18:56" pubdate>
+        May 13, 2021 pm
       </time>
     </span>
   
@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      10 字
+      455 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      7
        分钟
     </span>
   
@@ -249,16 +249,17 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Eclipse运行报错java.lang.UnsatisfiedLinkError: no jacob-1.17-M2-x64 in java.library.path</h1>
+            <h1 style="display: none">Java实现Pdf转图片</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：9 hours ago
+                  本文最后更新于：a minute ago
                 
               </p>
             
             <div class="markdown-body">
-              <p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ordinaryprogrammerc/article/details/84141472">https://blog.csdn.net/ordinaryprogrammerc/article/details/84141472</a></p>
+              <p>1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 根据传入的Attr对象获取它的pdf路径，根据pdf来生成图片，并创建AttrImage对象，一个Attr对应多个AttrImage对象</span><br><span class="hljs-comment">	 * </span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> Attr attr 附件上传对象</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@return</span> boolean 转换是否成功</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@author</span> liuwf</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-meta">@Override</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">pdf2image</span><span class="hljs-params">(Attr attr)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;<br><br>		String punid = attr.getId();<br>		File pdfFile;<br>		File file_attrImagePath = <span class="hljs-keyword">new</span> File(attrImagePath + File.separator + punid);<br>		<span class="hljs-keyword">if</span> (!file_attrImagePath.exists()) &#123;<br>			file_attrImagePath.mkdirs();<span class="hljs-comment">// 创建文件根目录</span><br>		&#125;<br><br>		<span class="hljs-comment">// 判断待转为图片的文件是否是pdf文件</span><br>		<span class="hljs-comment">// 增加attr对象中pdfFile路径为空的判断</span><br><br>		<span class="hljs-keyword">if</span> (attr.getFilename().toLowerCase().indexOf(<span class="hljs-string">&quot;.pdf&quot;</span>) &gt; -<span class="hljs-number">1</span>) &#123;<br>			pdfFile = <span class="hljs-keyword">new</span> File(attr.getFileUrl());<br>		&#125; <span class="hljs-keyword">else</span> &#123;<br>			<span class="hljs-keyword">if</span> (attr.getPdfUrl() != <span class="hljs-keyword">null</span>) &#123;<br>				pdfFile = <span class="hljs-keyword">new</span> File(attr.getPdfUrl());<br>			&#125; <span class="hljs-keyword">else</span> &#123;<br>				<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">// 判断待转换的附件的pdfurl路径下的pdf是否存在</span><br>		<span class="hljs-keyword">if</span> (pdfFile.exists()) &#123;<br>			<span class="hljs-comment">// 开始转化pdf为图片</span><br>			<span class="hljs-comment">// 利用PdfBox生成图像</span><br>			PDDocument pdDocument = PDDocument.load(pdfFile);<br>			PDFRenderer renderer = <span class="hljs-keyword">new</span> PDFRenderer(pdDocument);<br><br>			<span class="hljs-keyword">int</span> width = <span class="hljs-number">0</span>;<br>			<span class="hljs-comment">// 保存一张图片中的RGB数据</span><br>			<span class="hljs-keyword">int</span>[] singleImgRGB;<br>			<span class="hljs-keyword">int</span> shiftHeight = <span class="hljs-number">0</span>;<br>			<span class="hljs-comment">// 保存每张图片的像素值</span><br>			BufferedImage imageResult = <span class="hljs-keyword">null</span>;<br>			<span class="hljs-comment">// 循环每个页码</span><br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, len = pdDocument.getNumberOfPages(); i &lt; len; i++) &#123;<br>				BufferedImage image = renderer.renderImageWithDPI(i, DEFAULT_DPI, ImageType.RGB);<br>				<span class="hljs-keyword">int</span> imageHeight = image.getHeight();<br>				<span class="hljs-keyword">int</span> imageWidth = image.getWidth();<br>				width = imageWidth;<br>				<span class="hljs-comment">// 保存每页图片的像素值</span><br>				imageResult = <span class="hljs-keyword">new</span> BufferedImage(width, imageHeight, BufferedImage.TYPE_INT_RGB);<br>				singleImgRGB = image.getRGB(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, width, imageHeight, <span class="hljs-keyword">null</span>, <span class="hljs-number">0</span>, width);<br>				imageResult.setRGB(<span class="hljs-number">0</span>, shiftHeight, width, imageHeight, singleImgRGB, <span class="hljs-number">0</span>, width);<br><br>				String imageName = String.format((attr.getFilename() + <span class="hljs-string">&quot;_ToImage_%d.png&quot;</span>), i);<br>				String imageUrl = attrImagePath + File.separator + punid + File.separator + imageName;<br>				String imageUrlBeforeCut = attrImagePath + File.separator + punid + File.separator<br>						+ <span class="hljs-string">&quot;imageUrlBeforeCut.png&quot;</span>;<br><br>				<span class="hljs-comment">// 写图片</span><br>				ImageIO.write(imageResult, DEFAULT_FORMAT, <span class="hljs-keyword">new</span> File(imageUrlBeforeCut));<br>				pictureCut(imageUrlBeforeCut, imageUrl);<br><br>				<span class="hljs-comment">// 每生成一张图片，就生成一条数据库记录</span><br>				AttrImage attrImage = <span class="hljs-keyword">new</span> AttrImage();<br>				attrImage.setPunid(punid);<br>				attrImage.setImageName(imageName);<br>				attrImage.setCreateTime(<span class="hljs-keyword">new</span> Date());<br>				attrImage.setImageUrl(imageUrl);<br>				attrImage.setDelFlag(<span class="hljs-keyword">null</span>);<br>				attrImage.setSort(i);<br>				<span class="hljs-comment">// 使用this.save保存数据到数据库中，this表示的服务类IAttrImageService类对象</span><br>				<span class="hljs-keyword">this</span>.save(attrImage);<br>			&#125;<br>			pdDocument.close();<br>			<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>		&#125; <span class="hljs-keyword">else</span> &#123;<br>			System.out.println(<span class="hljs-string">&quot;待转换的Attr对象的pdf不存在，装换失败&quot;</span>);<br>			<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>		&#125;<br>	&#125;<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -273,18 +274,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/05/13/Java%E4%B8%AD%E5%B0%86%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5%E5%88%B0word%E4%B8%AD%E5%B9%B6%E4%B8%94%E8%AE%BE%E7%BD%AE%E4%B8%BAA4%E5%A4%A7%E5%B0%8F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java中将图片插入到word中并且设置为A4大小</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/19/ch03-SpringMVC-url-pattern/">
-                        <span class="hidden-mobile">ch03-SpringMVC-url-pattern</span>
+                      <a href="/2021/05/13/Java%E5%AE%9E%E7%8E%B0%E5%B0%86%E5%9B%BE%E7%89%87%E7%99%BD%E8%BE%B9%E5%89%AA%E5%88%87/">
+                        <span class="hidden-mobile">Java实现将图片白边剪切</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
