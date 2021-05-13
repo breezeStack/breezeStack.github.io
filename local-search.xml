@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Eclipse运行报错java.lang.UnsatisfiedLinkError: no jacob-1.17-M2-x64 in java.library.path</title>
+    <link href="/2021/05/13/Eclipse%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99java-lang-UnsatisfiedLinkError-no-jacob-1-17-M2-x64-in-java-library-path/"/>
+    <url>/2021/05/13/Eclipse%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99java-lang-UnsatisfiedLinkError-no-jacob-1-17-M2-x64-in-java-library-path/</url>
+    
+    <content type="html"><![CDATA[<p>参考：<a href="https://blog.csdn.net/ordinaryprogrammerc/article/details/84141472">https://blog.csdn.net/ordinaryprogrammerc/article/details/84141472</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ch03-SpringMVC-url-pattern</title>
     <link href="/2021/04/19/ch03-SpringMVC-url-pattern/"/>
     <url>/2021/04/19/ch03-SpringMVC-url-pattern/</url>
