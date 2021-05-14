@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>启动windows的openoffice服务</title>
+    <link href="/2021/05/14/%E5%90%AF%E5%8A%A8windows%E7%9A%84openoffice%E6%9C%8D%E5%8A%A1/"/>
+    <url>/2021/05/14/%E5%90%AF%E5%8A%A8windows%E7%9A%84openoffice%E6%9C%8D%E5%8A%A1/</url>
+    
+    <content type="html"><![CDATA[<p>1</p><img src="/2021/05/14/%E5%90%AF%E5%8A%A8windows%E7%9A%84openoffice%E6%9C%8D%E5%8A%A1/image-20210514091921125.png" class="" title="image-20210514091921125"><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-comment">//启动服务</span><br><span class="hljs-keyword">cd</span> C:\<span class="hljs-keyword">Program</span> Files (x86)\OpenOffice 4\<span class="hljs-keyword">program</span><br>soffice -headless -accept=<span class="hljs-string">&quot;socket,host=127.0.0.1,port=8100;urp;&quot;</span> -nofirststartwizard<br><br><span class="hljs-comment">//查看端口对应的pid</span><br>netstat -<span class="hljs-keyword">ano</span>|findstr <span class="hljs-string">&quot;8100&quot;</span><br><br><span class="hljs-comment">//查看pid对应的服务程序名</span><br>tasklist|findstr <span class="hljs-string">&quot;ipd值&quot;</span><br></code></pre></td></tr></table></figure><p>参考：<a href="https://blog.csdn.net/a363722188/article/details/46775221">https://blog.csdn.net/a363722188/article/details/46775221</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>工作</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>安装openoffice服务</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java实现Pdf转图片</title>
     <link href="/2021/05/13/Java%E5%AE%9E%E7%8E%B0Pdf%E8%BD%AC%E5%9B%BE%E7%89%87/"/>
     <url>/2021/05/13/Java%E5%AE%9E%E7%8E%B0Pdf%E8%BD%AC%E5%9B%BE%E7%89%87/</url>
