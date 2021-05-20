@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>JRebel使用</title>
+    <link href="/2021/05/19/JRebel%E4%BD%BF%E7%94%A8/"/>
+    <url>/2021/05/19/JRebel%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<p>1</p><p>参考网址：<a href="https://blog.csdn.net/cnd2449294059/article/details/82011103">https://blog.csdn.net/cnd2449294059/article/details/82011103</a>  激活</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java调用jacob报错：com.jacob.com.ComFailException: Can&#39;t co-create object</title>
+    <link href="/2021/05/18/Java%E8%B0%83%E7%94%A8jacob%E6%8A%A5%E9%94%99%EF%BC%9Acom-jacob-com-ComFailException-Can-t-co-create-object/"/>
+    <url>/2021/05/18/Java%E8%B0%83%E7%94%A8jacob%E6%8A%A5%E9%94%99%EF%BC%9Acom-jacob-com-ComFailException-Can-t-co-create-object/</url>
+    
+    <content type="html"><![CDATA[<p>c</p><p>参考：com.jacob.com.ComFailException: Can’t co-create object解决办法  <a href="https://blog.csdn.net/woogfoog/article/details/50749971">https://blog.csdn.net/woogfoog/article/details/50749971</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>安装hexo到博客目录</title>
+    <link href="/2021/05/18/%E5%AE%89%E8%A3%85hexo%E5%88%B0%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/"/>
+    <url>/2021/05/18/%E5%AE%89%E8%A3%85hexo%E5%88%B0%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">先创建一个文件夹（用来存放所有blog的东西），然后<span class="hljs-built_in">cd</span>到该文件夹下。<br><br>安装hexo命令：npm i -g hexo<br><br>安装完成后，查看版本<br></code></pre></td></tr></table></figure><p>参考：hexo从零开始到搭建完整 <a href="https://www.cnblogs.com/visugar/p/6821777.html">https://www.cnblogs.com/visugar/p/6821777.html</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>test</title>
+    <link href="/2021/05/18/test/"/>
+    <url>/2021/05/18/test/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java操作word工具类</title>
     <link href="/2021/05/17/Java%E6%93%8D%E4%BD%9Cword%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     <url>/2021/05/17/Java%E6%93%8D%E4%BD%9Cword%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
