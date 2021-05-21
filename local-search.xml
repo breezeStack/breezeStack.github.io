@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Dynamic Web Module 3.1 requires Java 1.7 or newer.qywxline 1Maven Java EE Configuration Problem</title>
+    <link href="/2021/05/22/Dynamic-Web-Module-3-1-requires-Java-1-7-or-newer-qywxline-1Maven-Java-EE-Configuration-Problem/"/>
+    <url>/2021/05/22/Dynamic-Web-Module-3-1-requires-Java-1-7-or-newer-qywxline-1Maven-Java-EE-Configuration-Problem/</url>
+    
+    <content type="html"><![CDATA[<p>參考：<a href="https://blog.csdn.net/qq_31614947/article/details/70231289">https://blog.csdn.net/qq_31614947/article/details/70231289</a></p><p> 概述：使用maven构建web项目时，经常会遇见这个问题，问题原因报错讲述的很清晰明了，就是web模块需要使用java1.7及以后的版本，目前的版本不符合。因而只需要修改java版本到1.7及以上即可。</p><p>解决方法：<br>       1. 在eclipse 构建 web中关于java版本有三处需要修改统一。<br>        （1）在 Java Build Path的libraries中修改<br>        （2）在Java Compiler 中修改<br>        （3）在Project Facet中修改<br>       2. 大部分按上上述修改就应该可以了，但总是有意外，还是报错。因为使用了 maven构建项目，因而最好在pom.xml文件中的build标签中加入以下代码：</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-section">&lt;build&gt;</span><br>  <span class="hljs-section">&lt;plugins&gt;</span><br>       <span class="hljs-section">&lt;plugin&gt;</span><br>             <span class="hljs-section">&lt;groupId&gt;</span><span class="hljs-attribute">org</span>.apache.maven.plugins&lt;/groupId&gt;<br>             <span class="hljs-section">&lt;artifactId&gt;</span><span class="hljs-attribute">maven</span>-compiler-plugin&lt;/artifactId&gt;<br>             <span class="hljs-section">&lt;version&gt;</span><span class="hljs-attribute">3</span>.<span class="hljs-number">1</span>&lt;/version&gt;<br>             <span class="hljs-section">&lt;configuration&gt;</span><br>                 <span class="hljs-section">&lt;source&gt;</span><span class="hljs-attribute">1</span>.<span class="hljs-number">7</span>&lt;/source&gt;     //如果是<span class="hljs-number">1</span>.<span class="hljs-number">8</span>，修改为<span class="hljs-number">1</span>.<span class="hljs-number">8</span><br>                 <span class="hljs-section">&lt;target&gt;</span><span class="hljs-attribute">1</span>.<span class="hljs-number">7</span>&lt;/target&gt;      //如果是<span class="hljs-number">1</span>.<span class="hljs-number">8</span>，修改为<span class="hljs-number">1</span>.<span class="hljs-number">8</span><br>             <span class="hljs-section">&lt;/configuration&gt;</span><br>       <span class="hljs-section">&lt;/plugin&gt;</span><br>  <span class="hljs-section">&lt;/plugins&gt;</span><br><span class="hljs-section">&lt;/build&gt;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JRebel使用</title>
     <link href="/2021/05/19/JRebel%E4%BD%BF%E7%94%A8/"/>
     <url>/2021/05/19/JRebel%E4%BD%BF%E7%94%A8/</url>
