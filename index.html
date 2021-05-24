@@ -193,6 +193,58 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/05/24/Java%E4%BD%BF%E7%94%A8openoffice%E5%AE%9E%E7%8E%B0word2pdf%E5%AF%BC%E8%87%B4%E7%9B%AE%E5%BD%95%E9%A1%B5%E4%B8%BA%E7%A9%BA/">Java使用openoffice实现word2pdf导致目录页为空</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/05/24/Java%E4%BD%BF%E7%94%A8openoffice%E5%AE%9E%E7%8E%B0word2pdf%E5%AF%BC%E8%87%B4%E7%9B%AE%E5%BD%95%E9%A1%B5%E4%B8%BA%E7%A9%BA/">
+          
+          
+            
+          
+          测试一下，发现直接转换word的docx格式（word2007-XWPFDocument）会导致pdf的目录为空
+但是如果是doc格式（word2003-HWPFDocument）就不会发生这个问题 
+1、于是考虑将原来使用XWPFDocument工具类的word操作代码改为使用HWPFDocument工具类
+（1）XWPFDocument工具类：
+123456789101112131415161
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-05-24 14:12" pubdate>
+              2021-05-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%A7%A3%E5%86%B3word%E8%BD%ACpdf%E7%9B%AE%E5%BD%95%E9%A1%B5%E4%B8%BA%E7%A9%BA/">解决word转pdf目录页为空</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/05/22/Dynamic-Web-Module-3-1-requires-Java-1-7-or-newer-qywxline-1Maven-Java-EE-Configuration-Problem/">Dynamic Web Module 3.1 requires Java 1.7 or newer.qywxline 1Maven Java EE Configuration Problem</a>
       </h1>
 
@@ -560,41 +612,6 @@
               <a href="/tags/%E5%AE%89%E8%A3%85openoffice%E6%9C%8D%E5%8A%A1/">安装openoffice服务</a>
             
           </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/05/13/Java%E5%AE%9E%E7%8E%B0Pdf%E8%BD%AC%E5%9B%BE%E7%89%87/">Java实现Pdf转图片</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/05/13/Java%E5%AE%9E%E7%8E%B0Pdf%E8%BD%AC%E5%9B%BE%E7%89%87/">
-          
-          
-            
-          
-          1
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980/**	 * 根据传入的Attr对象获取它的pdf路径，根据pdf来生成图片，并创建AttrI
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-13 18:56" pubdate>
-              2021-05-13
-            </time>
-          </div>
-        
-        
         
       </div>
     </article>

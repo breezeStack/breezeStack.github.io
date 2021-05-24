@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<html lang="ZH" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="liuwf">
+  <meta name="keywords" content="">
+  <title>Java使用openoffice实现word2pdf导致目录页为空 - liuwf.top</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"qWolHYM3Mxf04y5ltNsr3G51-gzGzoHsz","app_key":"glon5tbm5p2DR4Ez00Mr9xQo","server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>liuwf blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java使用openoffice实现word2pdf导致目录页为空">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      liuwf
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-24 14:12" pubdate>
+        May 24, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      64
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java使用openoffice实现word2pdf导致目录页为空</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：a few seconds ago
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>测试一下，发现直接转换word的docx格式（word2007-XWPFDocument）会导致pdf的目录为空</p>
+<p>但是如果是doc格式（word2003-HWPFDocument）就不会发生这个问题 </p>
+<p>1、于是考虑将原来使用XWPFDocument工具类的word操作代码改为使用HWPFDocument工具类</p>
+<p>（1）XWPFDocument工具类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br><span class="line">669</span><br><span class="line">670</span><br><span class="line">671</span><br><span class="line">672</span><br><span class="line">673</span><br><span class="line">674</span><br><span class="line">675</span><br><span class="line">676</span><br><span class="line">677</span><br><span class="line">678</span><br><span class="line">679</span><br><span class="line">680</span><br><span class="line">681</span><br><span class="line">682</span><br><span class="line">683</span><br><span class="line">684</span><br><span class="line">685</span><br><span class="line">686</span><br><span class="line">687</span><br><span class="line">688</span><br><span class="line">689</span><br><span class="line">690</span><br><span class="line">691</span><br><span class="line">692</span><br><span class="line">693</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.feezet.modules.pfsjk.util;<br><br><span class="hljs-keyword">import</span> java.awt.image.BufferedImage;<br><span class="hljs-keyword">import</span> java.io.File;<br><span class="hljs-keyword">import</span> java.io.FileInputStream;<br><span class="hljs-keyword">import</span> java.io.FileOutputStream;<br><span class="hljs-keyword">import</span> java.io.IOException;<br><span class="hljs-keyword">import</span> java.math.BigInteger;<br><span class="hljs-keyword">import</span> java.nio.channels.FileChannel;<br><span class="hljs-keyword">import</span> java.util.HashMap;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> java.util.Map;<br><br><span class="hljs-keyword">import</span> javax.imageio.ImageIO;<br><br><span class="hljs-keyword">import</span> org.apache.poi.openxml4j.exceptions.InvalidFormatException;<br><span class="hljs-keyword">import</span> org.apache.poi.openxml4j.opc.OPCPackage;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.Borders;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.BreakClear;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.BreakType;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.Document;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.LineSpacingRule;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.ParagraphAlignment;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.TextAlignment;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.UnderlinePatterns;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.VerticalAlign;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.XWPFDocument;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.XWPFParagraph;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.XWPFPictureData;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.XWPFRun;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.XWPFStyle;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.XWPFStyles;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.XWPFTable;<br><span class="hljs-keyword">import</span> org.apache.poi.xwpf.usermodel.XWPFTableCell;<br><span class="hljs-keyword">import</span> org.apache.xmlbeans.XmlException;<br><span class="hljs-keyword">import</span> org.apache.xmlbeans.XmlOptions;<br><span class="hljs-keyword">import</span> org.apache.xmlbeans.XmlToken;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualDrawingProps;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.drawingml.x2006.main.CTPositiveSize2D;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.drawingml.x2006.wordprocessingDrawing.CTInline;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDecimalNumber;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTFonts;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTOnOff;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTP;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTRPr;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTString;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTStyle;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTblWidth;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.STMerge;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.STStyleType;<br><span class="hljs-keyword">import</span> org.openxmlformats.schemas.wordprocessingml.x2006.main.STTblWidth;<br><span class="hljs-keyword">import</span> org.springframework.util.StringUtils;<br><br><span class="hljs-keyword">import</span> com.deepoove.poi.XWPFTemplate;<br><span class="hljs-keyword">import</span> com.deepoove.poi.data.PictureRenderData;<br><span class="hljs-keyword">import</span> com.feezet.modules.pfsjk.jacob.WordManager;<br><span class="hljs-keyword">import</span> com.jacob.com.Dispatch;<br><span class="hljs-keyword">import</span> com.jacob.com.Variant;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PoiUtil</span> </span>&#123;<br><br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> headingCount = <span class="hljs-number">0</span>;<br><br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> totalRows = <span class="hljs-number">39</span>;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> XWPFDocument <span class="hljs-title">createDocument</span><span class="hljs-params">()</span> </span>&#123;<br><br>		XWPFDocument doc = <span class="hljs-keyword">new</span> XWPFDocument();<br>		<span class="hljs-comment">// 添加标题</span><br>		addCustomHeadingStyle(doc, <span class="hljs-string">&quot;Heading1&quot;</span>, <span class="hljs-number">1</span>);<br>		addCustomHeadingStyle(doc, <span class="hljs-string">&quot;Heading2&quot;</span>, <span class="hljs-number">2</span>);<br>		addCustomHeadingStyle(doc, <span class="hljs-string">&quot;Heading3&quot;</span>, <span class="hljs-number">3</span>);<br>		<span class="hljs-keyword">return</span> doc;<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createTitle</span><span class="hljs-params">(XWPFDocument doc, String title)</span> </span>&#123;<br>		XWPFParagraph titleParagraph = doc.createParagraph();<br><br>		<span class="hljs-comment">// 设置段落居中</span><br>		titleParagraph.setAlignment(ParagraphAlignment.CENTER);<br><br>		XWPFRun titleParagraphRun = titleParagraph.createRun();<br>		titleParagraphRun.setText(title);<br>		titleParagraphRun.setColor(<span class="hljs-string">&quot;000000&quot;</span>);<br>		titleParagraphRun.setFontSize(<span class="hljs-number">20</span>);<br><br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * liuwf 创建标题 左对齐</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createTitleAlignleft</span><span class="hljs-params">(XWPFDocument doc, String title)</span> </span>&#123;<br>		XWPFParagraph titleParagraph = doc.createParagraph();<br><br>		<span class="hljs-comment">// 设置段落左对其</span><br>		titleParagraph.setAlignment(ParagraphAlignment.LEFT);<br><br>		XWPFRun titleParagraphRun = titleParagraph.createRun();<br>		titleParagraphRun.setText(title);<br>		titleParagraphRun.setColor(<span class="hljs-string">&quot;000000&quot;</span>);<br>		titleParagraphRun.setFontSize(<span class="hljs-number">20</span>);<br><br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> XWPFParagraph <span class="hljs-title">createHeading</span><span class="hljs-params">(XWPFDocument doc, String title)</span> </span>&#123;<br>		<span class="hljs-comment">// 段落</span><br>		XWPFParagraph paragraph = doc.createParagraph();<br>		XWPFRun run = paragraph.createRun();<br>		run.setText(title);<br><span class="hljs-comment">//        run.setColor(&quot;696969&quot;);</span><br>		run.setFontSize(<span class="hljs-number">18</span>);<br>		run.setBold(<span class="hljs-keyword">true</span>);<span class="hljs-comment">// 标题加粗</span><br>		<span class="hljs-keyword">return</span> paragraph;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 创建标题1</span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> doc</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> title</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createHeading1</span><span class="hljs-params">(XWPFDocument doc, String title)</span> </span>&#123;<br>		XWPFParagraph paragraph = createHeading(doc, title);<br>		paragraph.setStyle(<span class="hljs-string">&quot;Heading1&quot;</span>);<br>		headingCount++;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 创建标题2</span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> doc</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> title</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createHeading2</span><span class="hljs-params">(XWPFDocument doc, String title)</span> </span>&#123;<br>		XWPFParagraph paragraph = createHeading(doc, title);<br>		paragraph.setStyle(<span class="hljs-string">&quot;Heading2&quot;</span>);<br>		headingCount++;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 创建标题3</span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> doc</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> title</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createHeading3</span><span class="hljs-params">(XWPFDocument doc, String title)</span> </span>&#123;<br>		XWPFParagraph paragraph = createHeading(doc, title);<br>		paragraph.setStyle(<span class="hljs-string">&quot;Heading3&quot;</span>);<br>		headingCount++;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 创建正文</span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> doc</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> body</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createBody</span><span class="hljs-params">(XWPFDocument doc, String body)</span> </span>&#123;<br>		<span class="hljs-comment">// 正文</span><br>		XWPFParagraph paragraphX = doc.createParagraph();<br>		XWPFRun runX = paragraphX.createRun();<br>		runX.setText(body);<br>		paragraphX.setIndentationFirstLine(<span class="hljs-number">440</span>);<span class="hljs-comment">// 首行缩进：567==1厘米</span><br>	&#125;<br><br><span class="hljs-comment">// </span><br><span class="hljs-comment">//    public static void addImage(XWPFDocument doc, String imagePath, String description) &#123;</span><br><span class="hljs-comment">//        FileInputStream in = null;</span><br><span class="hljs-comment">//        ByteArrayInputStream byteInputStream = null;</span><br><span class="hljs-comment">//        try &#123;</span><br><span class="hljs-comment">//            in = new FileInputStream(imagePath);</span><br><span class="hljs-comment">//            byte[] ba = new byte[in.available()];</span><br><span class="hljs-comment">//            in.read(ba);</span><br><span class="hljs-comment">//            byteInputStream = new ByteArrayInputStream(ba);</span><br><span class="hljs-comment">//            XWPFParagraph picture = doc.createParagraph();</span><br><span class="hljs-comment">//            picture.setAlignment(ParagraphAlignment.CENTER);</span><br><span class="hljs-comment">//            //添加图片</span><br><span class="hljs-comment">//            doc.addPictureData(byteInputStream, CustomXWPFDocument.PICTURE_TYPE_JPEG);</span><br><span class="hljs-comment">//            createPicture(doc, 400, 400, picture);</span><br><span class="hljs-comment">//            addDescription(doc, description);</span><br><span class="hljs-comment">//        &#125; catch (Exception e) &#123;</span><br><span class="hljs-comment">//            e.printStackTrace();</span><br><span class="hljs-comment">//        &#125; finally &#123; </span><br><span class="hljs-comment">//            if (byteInputStream != null) &#123;</span><br><span class="hljs-comment">//                try &#123;</span><br><span class="hljs-comment">//                    byteInputStream.close();</span><br><span class="hljs-comment">//                &#125; catch (IOException e) &#123;</span><br><span class="hljs-comment">//                    e.printStackTrace();</span><br><span class="hljs-comment">//                &#125;</span><br><span class="hljs-comment">//            &#125;</span><br><span class="hljs-comment">//            if (in != null) &#123;</span><br><span class="hljs-comment">//                try &#123;</span><br><span class="hljs-comment">//                    in.close();</span><br><span class="hljs-comment">//                &#125; catch (IOException e) &#123;</span><br><span class="hljs-comment">//                    e.printStackTrace();</span><br><span class="hljs-comment">//                &#125;</span><br><span class="hljs-comment">//            &#125;</span><br><span class="hljs-comment">//        &#125;</span><br><span class="hljs-comment">//    &#125;</span><br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createTable</span><span class="hljs-params">(XWPFDocument doc, String title)</span> </span>&#123;<br>		addDescription(doc, title);<br>		XWPFTable table = doc.createTable(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>);<br>		<span class="hljs-comment">// 列宽自动分割</span><br>		CTTblWidth infoTableWidth = table.getCTTbl().addNewTblPr().addNewTblW();<br>		infoTableWidth.setType(STTblWidth.DXA);<br>		infoTableWidth.setW(BigInteger.valueOf(<span class="hljs-number">9072</span>));<br><br>		setTableFonts(table.getRow(<span class="hljs-number">0</span>).getCell(<span class="hljs-number">0</span>), <span class="hljs-string">&quot;编号&quot;</span>);<br>		setTableFonts(table.getRow(<span class="hljs-number">0</span>).getCell(<span class="hljs-number">1</span>), <span class="hljs-string">&quot;问题&quot;</span>);<br>		setTableFonts(table.getRow(<span class="hljs-number">0</span>).getCell(<span class="hljs-number">2</span>), <span class="hljs-string">&quot;应答&quot;</span>);<br>		setTableFonts(table.getRow(<span class="hljs-number">1</span>).getCell(<span class="hljs-number">0</span>), <span class="hljs-string">&quot;1&quot;</span>);<br>		setTableFonts(table.getRow(<span class="hljs-number">1</span>).getCell(<span class="hljs-number">1</span>), <span class="hljs-string">&quot;陈述日期&quot;</span>);<br>		setTableFonts(table.getRow(<span class="hljs-number">1</span>).getCell(<span class="hljs-number">2</span>), <span class="hljs-string">&quot;2017年02月17日&quot;</span>);<br>		setTableFonts(table.getRow(<span class="hljs-number">2</span>).getCell(<span class="hljs-number">0</span>), <span class="hljs-string">&quot;2&quot;</span>);<br>		setTableFonts(table.getRow(<span class="hljs-number">2</span>).getCell(<span class="hljs-number">1</span>), <span class="hljs-string">&quot;PICS序列号&quot;</span>);<br>		setTableFonts(table.getRow(<span class="hljs-number">2</span>).getCell(<span class="hljs-number">2</span>), <span class="hljs-string">&quot;121313132131&quot;</span>);<br><br>	&#125;<br><br>	<span class="hljs-comment">// word跨列合并单元格</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mergeCellsHorizontal</span><span class="hljs-params">(XWPFTable table, <span class="hljs-keyword">int</span> row, <span class="hljs-keyword">int</span> fromCell, <span class="hljs-keyword">int</span> toCell)</span> </span>&#123;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> cellIndex = fromCell; cellIndex &lt;= toCell; cellIndex++) &#123;<br>			XWPFTableCell cell = table.getRow(row).getCell(cellIndex);<br>			<span class="hljs-keyword">if</span> (cellIndex == fromCell) &#123;<br>				<span class="hljs-comment">// The first merged cell is set with RESTART merge value</span><br>				cell.getCTTc().addNewTcPr().addNewHMerge().setVal(STMerge.RESTART);<br>			&#125; <span class="hljs-keyword">else</span> &#123;<br>				<span class="hljs-comment">// Cells which join (merge) the first one, are set with CONTINUE</span><br>				cell.getCTTc().addNewTcPr().addNewHMerge().setVal(STMerge.CONTINUE);<br>			&#125;<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-comment">// word跨行并单元格</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mergeCellsVertically</span><span class="hljs-params">(XWPFTable table, <span class="hljs-keyword">int</span> col, <span class="hljs-keyword">int</span> fromRow, <span class="hljs-keyword">int</span> toRow)</span> </span>&#123;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> rowIndex = fromRow; rowIndex &lt;= toRow; rowIndex++) &#123;<br>			XWPFTableCell cell = table.getRow(rowIndex).getCell(col);<br>			<span class="hljs-keyword">if</span> (rowIndex == fromRow) &#123;<br>				<span class="hljs-comment">// The first merged cell is set with RESTART merge value</span><br>				cell.getCTTc().addNewTcPr().addNewVMerge().setVal(STMerge.RESTART);<br>			&#125; <span class="hljs-keyword">else</span> &#123;<br>				<span class="hljs-comment">// Cells which join (merge) the first one, are set with CONTINUE</span><br>				cell.getCTTc().addNewTcPr().addNewVMerge().setVal(STMerge.CONTINUE);<br>			&#125;<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 设置表格中字体</span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> cell</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> cellText</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setTableFonts</span><span class="hljs-params">(XWPFTableCell cell, String cellText)</span> </span>&#123;<br>		CTP ctp = CTP.Factory.newInstance();<br>		XWPFParagraph p = <span class="hljs-keyword">new</span> XWPFParagraph(ctp, cell);<br>		p.setAlignment(ParagraphAlignment.CENTER);<br>		XWPFRun run = p.createRun();<br>		run.setText(cellText);<br>		CTRPr rpr = run.getCTR().isSetRPr() ? run.getCTR().getRPr() : run.getCTR().addNewRPr();<br>		CTFonts fonts = rpr.isSetRFonts() ? rpr.getRFonts() : rpr.addNewRFonts();<br>		fonts.setAscii(<span class="hljs-string">&quot;仿宋&quot;</span>);<br>		fonts.setEastAsia(<span class="hljs-string">&quot;仿宋&quot;</span>);<br>		fonts.setHAnsi(<span class="hljs-string">&quot;仿宋&quot;</span>);<br>		cell.setParagraph(p);<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 添加描述信息</span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> doc</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> description</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addDescription</span><span class="hljs-params">(XWPFDocument doc, String description)</span> </span>&#123;<br>		<span class="hljs-keyword">if</span> (StringUtils.isEmpty(description)) &#123;<br>			<span class="hljs-keyword">return</span>;<br>		&#125;<br>		XWPFParagraph title = doc.createParagraph();<br>		XWPFRun run = title.createRun();<br>		run.setText(description);<br>		run.setBold(<span class="hljs-keyword">true</span>);<br>		title.setAlignment(ParagraphAlignment.CENTER);<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addEmptyRow</span><span class="hljs-params">(XWPFDocument doc)</span> </span>&#123;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; totalRows - headingCount; i++) &#123;<br>			doc.createParagraph();<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main1</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>		<span class="hljs-keyword">try</span> &#123;<br>		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>			e.printStackTrace();<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 创建目录</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createToc</span><span class="hljs-params">(String filePath)</span> </span>&#123;<br>		WordManager wordManager = <span class="hljs-keyword">new</span> WordManager(<span class="hljs-keyword">false</span>);<br>		<span class="hljs-keyword">try</span> &#123;<br>			wordManager.openDocument(filePath);<br>			wordManager.moveDown(<span class="hljs-number">42</span>);<br>			wordManager.insertToc();<br>		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>			e.printStackTrace();<br>		&#125; <span class="hljs-keyword">finally</span> &#123;<br>			wordManager.close();<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 插入分页符</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">InsertBreak</span><span class="hljs-params">(String filePath)</span> </span>&#123;<br>		WordManager wordManager = <span class="hljs-keyword">new</span> WordManager(<span class="hljs-keyword">false</span>);<br>		<span class="hljs-keyword">try</span> &#123;<br>			wordManager.openDocument(filePath);<br>			wordManager.moveDown(<span class="hljs-number">35</span>);<br>			wordManager.InsertBreak();<br>		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>			e.printStackTrace();<br>		&#125; <span class="hljs-keyword">finally</span> &#123;<br>			wordManager.close();<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> width     宽</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> height    高</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> paragraph 段落</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createPicture</span><span class="hljs-params">(XWPFDocument doc, <span class="hljs-keyword">int</span> width, <span class="hljs-keyword">int</span> height, XWPFParagraph paragraph)</span> </span>&#123;<br>		<span class="hljs-keyword">int</span> id = doc.getAllPictures().size() - <span class="hljs-number">1</span>;<br>		<span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> EMU = <span class="hljs-number">9525</span>;<br>		width *= EMU;<br>		height *= EMU;<br>		String blipId = doc.getAllPictures().get(id).getPackageRelationship().getId();<br>		CTInline inline = paragraph.createRun().getCTR().addNewDrawing().addNewInline();<br>		String picXml = <span class="hljs-string">&quot;&quot;</span> + <span class="hljs-string">&quot;&lt;a:graphic xmlns:a=\&quot;http://schemas.openxmlformats.org/drawingml/2006/main\&quot;&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;   &lt;a:graphicData uri=\&quot;http://schemas.openxmlformats.org/drawingml/2006/picture\&quot;&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;      &lt;pic:pic xmlns:pic=\&quot;http://schemas.openxmlformats.org/drawingml/2006/picture\&quot;&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;         &lt;pic:nvPicPr&gt;&quot;</span> + <span class="hljs-string">&quot;            &lt;pic:cNvPr id=\&quot;&quot;</span> + id + <span class="hljs-string">&quot;\&quot; name=\&quot;Generated\&quot;/&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;            &lt;pic:cNvPicPr/&gt;&quot;</span> + <span class="hljs-string">&quot;         &lt;/pic:nvPicPr&gt;&quot;</span> + <span class="hljs-string">&quot;         &lt;pic:blipFill&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;            &lt;a:blip r:embed=\&quot;&quot;</span> + blipId<br>				+ <span class="hljs-string">&quot;\&quot; xmlns:r=\&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships\&quot;/&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;            &lt;a:stretch&gt;&quot;</span> + <span class="hljs-string">&quot;               &lt;a:fillRect/&gt;&quot;</span> + <span class="hljs-string">&quot;            &lt;/a:stretch&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;         &lt;/pic:blipFill&gt;&quot;</span> + <span class="hljs-string">&quot;         &lt;pic:spPr&gt;&quot;</span> + <span class="hljs-string">&quot;            &lt;a:xfrm&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;               &lt;a:off x=\&quot;0\&quot; y=\&quot;0\&quot;/&gt;&quot;</span> + <span class="hljs-string">&quot;               &lt;a:ext cx=\&quot;&quot;</span> + width + <span class="hljs-string">&quot;\&quot; cy=\&quot;&quot;</span><br>				+ height + <span class="hljs-string">&quot;\&quot;/&gt;&quot;</span> + <span class="hljs-string">&quot;            &lt;/a:xfrm&gt;&quot;</span> + <span class="hljs-string">&quot;            &lt;a:prstGeom prst=\&quot;rect\&quot;&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;               &lt;a:avLst/&gt;&quot;</span> + <span class="hljs-string">&quot;            &lt;/a:prstGeom&gt;&quot;</span> + <span class="hljs-string">&quot;         &lt;/pic:spPr&gt;&quot;</span><br>				+ <span class="hljs-string">&quot;      &lt;/pic:pic&gt;&quot;</span> + <span class="hljs-string">&quot;   &lt;/a:graphicData&gt;&quot;</span> + <span class="hljs-string">&quot;&lt;/a:graphic&gt;&quot;</span>;<br><br>		inline.addNewGraphic().addNewGraphicData();<br>		XmlToken xmlToken = <span class="hljs-keyword">null</span>;<br>		<span class="hljs-keyword">try</span> &#123;<br>			xmlToken = XmlToken.Factory.parse(picXml);<br>		&#125; <span class="hljs-keyword">catch</span> (XmlException xe) &#123;<br>			xe.printStackTrace();<br>		&#125;<br>		inline.set(xmlToken);<br><br>		inline.setDistT(<span class="hljs-number">0</span>);<br>		inline.setDistB(<span class="hljs-number">0</span>);<br>		inline.setDistL(<span class="hljs-number">0</span>);<br>		inline.setDistR(<span class="hljs-number">0</span>);<br><br>		CTPositiveSize2D extent = inline.addNewExtent();<br>		extent.setCx(width);<br>		extent.setCy(height);<br><br>		CTNonVisualDrawingProps docPr = inline.addNewDocPr();<br>		docPr.setId(id);<br>		docPr.setName(<span class="hljs-string">&quot;图片名称&quot;</span>);<br>		docPr.setDescr(<span class="hljs-string">&quot;描述信息&quot;</span>);<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addCustomHeadingStyle</span><span class="hljs-params">(XWPFDocument docxDocument, String strStyleId, <span class="hljs-keyword">int</span> headingLevel)</span> </span>&#123;<br><br>		CTStyle ctStyle = CTStyle.Factory.newInstance();<br>		ctStyle.setStyleId(strStyleId);<br><br>		CTString styleName = CTString.Factory.newInstance();<br>		styleName.setVal(strStyleId);<br>		ctStyle.setName(styleName);<br><br>		CTDecimalNumber indentNumber = CTDecimalNumber.Factory.newInstance();<br>		indentNumber.setVal(BigInteger.valueOf(headingLevel));<br><br>		<span class="hljs-comment">// lower number &gt; style is more prominent in the formats bar</span><br>		ctStyle.setUiPriority(indentNumber);<br><br>		CTOnOff onoffnull = CTOnOff.Factory.newInstance();<br>		ctStyle.setUnhideWhenUsed(onoffnull);<br><br>		<span class="hljs-comment">// style shows up in the formats bar</span><br>		ctStyle.setQFormat(onoffnull);<br><br>		<span class="hljs-comment">// style defines a heading of the given level</span><br>		CTPPr ppr = CTPPr.Factory.newInstance();<br>		ppr.setOutlineLvl(indentNumber);<br>		ctStyle.setPPr(ppr);<br><br>		XWPFStyle style = <span class="hljs-keyword">new</span> XWPFStyle(ctStyle);<br><br>		<span class="hljs-comment">// is a null op if already defined</span><br>		XWPFStyles styles = docxDocument.createStyles();<br><br>		style.setType(STStyleType.PARAGRAPH);<br>		styles.addStyle(style);<br><br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * docWord辅助操作类 在传入的Word文件里插入传入的Word文档中的内容 即合拼两个word文档的内容</span><br><span class="hljs-comment">	 * </span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@author</span> liuwf</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> String docFileUrl 主文档</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> String modelDocFileUrl</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@return</span> true插入成功</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@return</span> false插入失败</span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">docFileAddDocFile</span><span class="hljs-params">(String docFileUrl, String modelDocFileUrl)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>		XWPFDocument xWPFDocument_picturemodel = docFileUrl2XWPFDocument(modelDocFileUrl);<br>		<span class="hljs-keyword">if</span> (xWPFDocument_picturemodel != <span class="hljs-keyword">null</span>) &#123;<br>			XWPFDocument xWPFDocument_shengChengWengDang = docFileUrl2XWPFDocument(docFileUrl);<br>			<span class="hljs-keyword">if</span> (xWPFDocument_shengChengWengDang != <span class="hljs-keyword">null</span>) &#123;<br>				appendBody(xWPFDocument_shengChengWengDang, xWPFDocument_picturemodel);<br>				File file = <span class="hljs-keyword">new</span> File(docFileUrl); <span class="hljs-comment">// 最终生成文档</span><br>				FileOutputStream outputStream_target = <span class="hljs-keyword">new</span> FileOutputStream(file);<br>				xWPFDocument_shengChengWengDang.write(outputStream_target);<br><br>				<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>			&#125; <span class="hljs-keyword">else</span> &#123;<br>				<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>			&#125;<br>		&#125;<br>		System.out.println(<span class="hljs-string">&quot;合并两个office文档失败，插入的文档为转化XWPFDocument失败,为null:&quot;</span> + modelDocFileUrl);<br>		<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendBody</span><span class="hljs-params">(XWPFDocument src, XWPFDocument append)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>		CTBody src1Body = src.getDocument().getBody();<br>		CTBody src2Body = append.getDocument().getBody();<br><br>		List&lt;XWPFPictureData&gt; allPictures = append.getAllPictures();<br>		<span class="hljs-comment">// 记录图片合并前及合并后的ID</span><br>		Map&lt;String, String&gt; map = <span class="hljs-keyword">new</span> HashMap();<br>		<span class="hljs-keyword">for</span> (XWPFPictureData picture : allPictures) &#123;<br>			String before = append.getRelationId(picture);<br>			<span class="hljs-comment">// 将原文档中的图片加入到目标文档中</span><br>			String after = src.addPictureData(picture.getData(), Document.PICTURE_TYPE_PNG);<br>			map.put(before, after);<br>		&#125;<br><br>		appendBody(src1Body, src2Body, map);<br><br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendBody</span><span class="hljs-params">(CTBody src, CTBody append, Map&lt;String, String&gt; map)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>		XmlOptions optionsOuter = <span class="hljs-keyword">new</span> XmlOptions();<br>		optionsOuter.setSaveOuter();<br>		String appendString = append.xmlText(optionsOuter);<br>		String srcString = src.xmlText();<br>		String prefix = srcString.substring(<span class="hljs-number">0</span>, srcString.indexOf(<span class="hljs-string">&quot;&gt;&quot;</span>) + <span class="hljs-number">1</span>);<br>		String mainPart = srcString.substring(srcString.indexOf(<span class="hljs-string">&quot;&gt;&quot;</span>) + <span class="hljs-number">1</span>, srcString.lastIndexOf(<span class="hljs-string">&quot;&lt;&quot;</span>));<br>		String sufix = srcString.substring(srcString.lastIndexOf(<span class="hljs-string">&quot;&lt;&quot;</span>));<br>		String addPart = appendString.substring(appendString.indexOf(<span class="hljs-string">&quot;&gt;&quot;</span>) + <span class="hljs-number">1</span>, appendString.lastIndexOf(<span class="hljs-string">&quot;&lt;&quot;</span>));<br>		CTBody makeBody = CTBody.Factory.parse(prefix + mainPart + addPart + sufix);<br>		src.set(makeBody);<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * docWord辅助操作类 将Word文件转化为XWPFDocument类对象返回 注意!!!:待转化的word不能是空的</span><br><span class="hljs-comment">	 * </span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@author</span> liuwf</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> String fileUrl</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@return</span> true:XWPFDocument</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@return</span> false:null</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> XWPFDocument <span class="hljs-title">docFileUrl2XWPFDocument</span><span class="hljs-params">(String fileUrl)</span> <span class="hljs-keyword">throws</span> IOException, InvalidFormatException </span>&#123;<br>		<span class="hljs-keyword">if</span> (fileUrl != <span class="hljs-keyword">null</span>) &#123;<br>			File file = <span class="hljs-keyword">new</span> File(fileUrl);<br>			<span class="hljs-keyword">if</span> (file.exists()) &#123;<br><br>				FileInputStream in = <span class="hljs-keyword">new</span> FileInputStream(file);<br>				OPCPackage open = OPCPackage.open(in);<br>				XWPFDocument xWPFDocument = <span class="hljs-keyword">new</span> XWPFDocument(open);<br>				<span class="hljs-keyword">return</span> xWPFDocument;<br>			&#125; <span class="hljs-keyword">else</span> &#123;<br>				<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>			&#125;<br>		&#125; <span class="hljs-keyword">else</span> &#123;<br>			System.out.println(<span class="hljs-string">&quot;ERROR:传入的待转化为XWPFDocument类对象的文件地址为null:&quot;</span> + fileUrl);<br>			<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * docWord辅助操作类 在传入的Word文件里插入传入的图片</span><br><span class="hljs-comment">	 * </span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@author</span> liuwf</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> String imageUrl</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> String docFileUrl_target</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertImage2docFile</span><span class="hljs-params">(String imageUrl, String docFileUrl_target)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;<br>		BufferedImage bufImage = ImageIO.read(<span class="hljs-keyword">new</span> File(imageUrl));<br>		<span class="hljs-keyword">int</span> width = bufImage.getWidth();<br>		<span class="hljs-keyword">int</span> height = bufImage.getHeight();<br><br>		<span class="hljs-keyword">int</span> widthInput = <span class="hljs-number">720</span>;<br><br>		Map&lt;String, Object&gt; datas = <span class="hljs-keyword">new</span> HashMap&lt;String, Object&gt;() &#123;<br>			&#123;<br>				put(<span class="hljs-string">&quot;localPicture&quot;</span>, <span class="hljs-keyword">new</span> PictureRenderData(widthInput, widthInput * height / width, imageUrl));<br>			&#125;<br>		&#125;;<br>		File docFile_target = <span class="hljs-keyword">new</span> File(docFileUrl_target);<br>		XWPFTemplate template = XWPFTemplate.compile(docFile_target).render(datas);<br>		docFile_target.delete();<br>		FileOutputStream out = <span class="hljs-keyword">new</span> FileOutputStream(docFile_target);<br>		template.write(out);<br>		out.flush();<br>		out.close();<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendBody</span><span class="hljs-params">(CTBody src, CTBody append)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>		XmlOptions optionsOuter = <span class="hljs-keyword">new</span> XmlOptions();<br>		optionsOuter.setSaveOuter();<br>		String appendString = append.xmlText(optionsOuter);<br>		String srcString = src.xmlText();<br>		String prefix = srcString.substring(<span class="hljs-number">0</span>, srcString.indexOf(<span class="hljs-string">&quot;&gt;&quot;</span>) + <span class="hljs-number">1</span>);<br>		String mainPart = srcString.substring(srcString.indexOf(<span class="hljs-string">&quot;&gt;&quot;</span>) + <span class="hljs-number">1</span>, srcString.lastIndexOf(<span class="hljs-string">&quot;&lt;&quot;</span>));<br>		String sufix = srcString.substring(srcString.lastIndexOf(<span class="hljs-string">&quot;&lt;&quot;</span>));<br>		String addPart = appendString.substring(appendString.indexOf(<span class="hljs-string">&quot;&gt;&quot;</span>) + <span class="hljs-number">1</span>, appendString.lastIndexOf(<span class="hljs-string">&quot;&lt;&quot;</span>));<br>		CTBody makeBody = CTBody.Factory.parse(prefix + mainPart + addPart + sufix);<br>		src.set(makeBody);<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main2</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>		XWPFDocument doc = <span class="hljs-keyword">new</span> XWPFDocument();<br><br>		XWPFParagraph p1 = doc.createParagraph();<br>		p1.setAlignment(ParagraphAlignment.CENTER);<br>		p1.setBorderBottom(Borders.DOUBLE);<br>		p1.setBorderTop(Borders.DOUBLE);<br><br>		p1.setBorderRight(Borders.DOUBLE);<br>		p1.setBorderLeft(Borders.DOUBLE);<br>		p1.setBorderBetween(Borders.SINGLE);<br><br>		p1.setVerticalAlignment(TextAlignment.TOP);<br><br>		XWPFRun r1 = p1.createRun();<br>		r1.setBold(<span class="hljs-keyword">true</span>);<br>		r1.setText(<span class="hljs-string">&quot;The quick brown fox&quot;</span>);<br>		r1.setBold(<span class="hljs-keyword">true</span>);<br>		r1.setFontFamily(<span class="hljs-string">&quot;Courier&quot;</span>);<br>		r1.setUnderline(UnderlinePatterns.DOT_DOT_DASH);<br>		r1.setTextPosition(<span class="hljs-number">100</span>);<br><br>		XWPFParagraph p2 = doc.createParagraph();<br>		p2.setAlignment(ParagraphAlignment.RIGHT);<br><br>		<span class="hljs-comment">// BORDERS</span><br>		p2.setBorderBottom(Borders.DOUBLE);<br>		p2.setBorderTop(Borders.DOUBLE);<br>		p2.setBorderRight(Borders.DOUBLE);<br>		p2.setBorderLeft(Borders.DOUBLE);<br>		p2.setBorderBetween(Borders.SINGLE);<br><br>		XWPFRun r2 = p2.createRun();<br>		r2.setText(<span class="hljs-string">&quot;jumped over the lazy dog&quot;</span>);<br>		r2.setStrike(<span class="hljs-keyword">true</span>);<br>		r2.setFontSize(<span class="hljs-number">20</span>);<br><br>		XWPFRun r3 = p2.createRun();<br>		r3.setText(<span class="hljs-string">&quot;and went away&quot;</span>);<br>		r3.setStrike(<span class="hljs-keyword">true</span>);<br>		r3.setFontSize(<span class="hljs-number">20</span>);<br>		r3.setSubscript(VerticalAlign.SUPERSCRIPT);<br><br>		XWPFParagraph p3 = doc.createParagraph();<br>		p3.setWordWrap(<span class="hljs-keyword">true</span>);<br>		p3.setPageBreak(<span class="hljs-keyword">true</span>);<br><br>		<span class="hljs-comment">// p3.setAlignment(ParagraphAlignment.DISTRIBUTE);</span><br>		p3.setAlignment(ParagraphAlignment.BOTH);<br>		p3.setSpacingLineRule(LineSpacingRule.EXACT);<br><br>		p3.setIndentationFirstLine(<span class="hljs-number">600</span>);<br><br>		XWPFRun r4 = p3.createRun();<br>		r4.setTextPosition(<span class="hljs-number">20</span>);<br>		r4.setText(<span class="hljs-string">&quot;To be, or not to be: that is the question: &quot;</span> + <span class="hljs-string">&quot;Whether &#x27;tis nobler in the mind to suffer &quot;</span><br>				+ <span class="hljs-string">&quot;The slings and arrows of outrageous fortune, &quot;</span> + <span class="hljs-string">&quot;Or to take arms against a sea of troubles, &quot;</span><br>				+ <span class="hljs-string">&quot;And by opposing end them? To die: to sleep; &quot;</span>);<br>		r4.addBreak(BreakType.PAGE);<br>		r4.setText(<span class="hljs-string">&quot;No more; and by a sleep to say we end &quot;</span> + <span class="hljs-string">&quot;The heart-ache and the thousand natural shocks &quot;</span><br>				+ <span class="hljs-string">&quot;That flesh is heir to, &#x27;tis a consummation &quot;</span> + <span class="hljs-string">&quot;Devoutly to be wish&#x27;d. To die, to sleep; &quot;</span><br>				+ <span class="hljs-string">&quot;To sleep: perchance to dream: ay, there&#x27;s the rub; &quot;</span> + <span class="hljs-string">&quot;.......&quot;</span>);<br>		r4.setItalic(<span class="hljs-keyword">true</span>);<br>		<span class="hljs-comment">// This would imply that this break shall be treated as a simple line break, and</span><br>		<span class="hljs-comment">// break the line after that word:</span><br><br>		XWPFRun r5 = p3.createRun();<br>		r5.setTextPosition(-<span class="hljs-number">10</span>);<br>		r5.setText(<span class="hljs-string">&quot;For in that sleep of death what dreams may come&quot;</span>);<br>		r5.addCarriageReturn();<br>		r5.setText(<span class="hljs-string">&quot;When we have shuffled off this mortal coil,&quot;</span> + <span class="hljs-string">&quot;Must give us pause: there&#x27;s the respect&quot;</span><br>				+ <span class="hljs-string">&quot;That makes calamity of so long life;&quot;</span>);<br>		r5.addBreak();<br>		r5.setText(<span class="hljs-string">&quot;For who would bear the whips and scorns of time,&quot;</span><br>				+ <span class="hljs-string">&quot;The oppressor&#x27;s wrong, the proud man&#x27;s contumely,&quot;</span>);<br><br>		r5.addBreak(BreakClear.ALL);<br>		r5.setText(<br>				<span class="hljs-string">&quot;The pangs of despised love, the law&#x27;s delay,&quot;</span> + <span class="hljs-string">&quot;The insolence of office and the spurns&quot;</span> + <span class="hljs-string">&quot;.......&quot;</span>);<br><br>		FileOutputStream out = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;D://simple.docx&quot;</span>);<br>		doc.write(out);<br>		out.close();<br><br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 复制word文档</span><br><span class="hljs-comment">	 * </span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@author</span> liuwf</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> File source 空文档等着复制东西进去的文档</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> File dest</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">copyFileUsingFileChannels</span><span class="hljs-params">(File source, File dest)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;<br>		FileChannel inputChannel = <span class="hljs-keyword">null</span>;<br>		FileChannel outputChannel = <span class="hljs-keyword">null</span>;<br>		<span class="hljs-keyword">try</span> &#123;<br>			inputChannel = <span class="hljs-keyword">new</span> FileInputStream(source).getChannel();<br>			outputChannel = <span class="hljs-keyword">new</span> FileOutputStream(dest).getChannel();<br>			outputChannel.transferFrom(inputChannel, <span class="hljs-number">0</span>, inputChannel.size());<br>		&#125; <span class="hljs-keyword">finally</span> &#123;<br>			inputChannel.close();<br>			outputChannel.close();<br>		&#125;<br>	&#125;<br><br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * </span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> doc3</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> title1</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> title2</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> title3</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addWordTitle</span><span class="hljs-params">(XWPFDocument doc3, String title1, String title2, String title3)</span> </span>&#123;<br>		<span class="hljs-comment">// 需要的参数 文件路径 file.getpath title1 title2 title3</span><br><br>		addCustomHeadingStyle(doc3, <span class="hljs-string">&quot;一级标题&quot;</span>, <span class="hljs-number">1</span>);<br>		addCustomHeadingStyle(doc3, <span class="hljs-string">&quot;二级标题&quot;</span>, <span class="hljs-number">2</span>);<br>		addCustomHeadingStyle(doc3, <span class="hljs-string">&quot;三级标题&quot;</span>, <span class="hljs-number">3</span>);<br><br>		XWPFParagraph paragraph1 = doc3.createParagraph();<br>		XWPFRun run1 = paragraph1.createRun();<br>		run1.setText(title1);<br>		run1.setFontSize(<span class="hljs-number">18</span>);<br>		run1.setBold(<span class="hljs-keyword">true</span>);<span class="hljs-comment">// 标题加粗</span><br>		paragraph1.setStyle(<span class="hljs-string">&quot;一级标题&quot;</span>);<br><br>		XWPFParagraph paragraph2 = doc3.createParagraph();<br>		XWPFRun run2 = paragraph2.createRun();<br>		run2.setText(title2);<br>		run2.setFontSize(<span class="hljs-number">16</span>);<br>		run2.setBold(<span class="hljs-keyword">true</span>);<span class="hljs-comment">// 标题加粗</span><br>		paragraph2.setStyle(<span class="hljs-string">&quot;二级标题&quot;</span>);<br><br>		XWPFParagraph paragraph3 = doc3.createParagraph();<br>		XWPFRun run3 = paragraph3.createRun();<br>		run3.setText(title3);<br>		run3.setFontSize(<span class="hljs-number">14</span>);<br>		run3.setBold(<span class="hljs-keyword">true</span>);<span class="hljs-comment">// 标题加粗</span><br>		paragraph3.setStyle(<span class="hljs-string">&quot;三级标题&quot;</span>);<br><br>	&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>2、后面发现没得必要，直接将docx转换为doc，就可以解决word转pdf没有目录的问题了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*** doc 格式 */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> DOC_FMT = <span class="hljs-number">0</span>;<br><span class="hljs-comment">/*** docx 格式 */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> DOCX_FMT = <span class="hljs-number">12</span>;<br></code></pre></td></tr></table></figure>
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * 根据格式类型转换 word 文件</span><br><span class="hljs-comment">	 *</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> srcPath  源文件</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> descPath 目标文件</span><br><span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> fmt      所转格式 </span><br><span class="hljs-comment">	 * doc格式:DOC_FMT    </span><br><span class="hljs-comment">	 * docx格式:DOCX_FMT</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> File <span class="hljs-title">convertDocFmt</span><span class="hljs-params">(String srcPath, String descPath, <span class="hljs-keyword">int</span> fmt)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br><br>		<span class="hljs-comment">// 实例化ComThread线程与ActiveXComponent</span><br>		ComThread.InitSTA();<br>		ActiveXComponent app = <span class="hljs-keyword">new</span> ActiveXComponent(<span class="hljs-string">&quot;Word.Application&quot;</span>);<br>		<span class="hljs-keyword">try</span> &#123;<br>			<span class="hljs-comment">// 文档隐藏时进行应用操作</span><br>			app.setProperty(<span class="hljs-string">&quot;Visible&quot;</span>, <span class="hljs-keyword">new</span> Variant(<span class="hljs-keyword">false</span>));<br>			<span class="hljs-comment">// 实例化模板Document对象</span><br>			Dispatch document = app.getProperty(<span class="hljs-string">&quot;Documents&quot;</span>).toDispatch();<br>			<span class="hljs-comment">// 打开Document进行另存为操作</span><br>			Dispatch doc = Dispatch.invoke(document, <span class="hljs-string">&quot;Open&quot;</span>, Dispatch.Method,<br>					<span class="hljs-keyword">new</span> Object[] &#123; srcPath, <span class="hljs-keyword">new</span> Variant(<span class="hljs-keyword">true</span>), <span class="hljs-keyword">new</span> Variant(<span class="hljs-keyword">true</span>) &#125;, <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">1</span>]).toDispatch();<br>			Dispatch.invoke(doc, <span class="hljs-string">&quot;SaveAs&quot;</span>, Dispatch.Method, <span class="hljs-keyword">new</span> Object[] &#123; descPath, <span class="hljs-keyword">new</span> Variant(fmt) &#125;, <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">1</span>]);<br>			Dispatch.call(doc, <span class="hljs-string">&quot;Close&quot;</span>, <span class="hljs-keyword">new</span> Variant(<span class="hljs-keyword">false</span>));<br>			<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> File(descPath);<br>		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>			<span class="hljs-keyword">throw</span> e;<br>		&#125; <span class="hljs-keyword">finally</span> &#123;<br>			<span class="hljs-comment">// 释放线程与ActiveXComponent</span><br>			app.invoke(<span class="hljs-string">&quot;Quit&quot;</span>, <span class="hljs-keyword">new</span> Variant[] &#123;&#125;);<br>			ComThread.Release();<br>		&#125;<br>	&#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//将原本是2007版本的word转换为2003版本的word，解决word转pdf导致目录为空的问题</span><br>PoiUtil.convertDocFmt(savePath, doc_path, PoiUtil.DOC_FMT);<br>DocConverterUtil d = <span class="hljs-keyword">new</span> DocConverterUtil(doc_path);<br></code></pre></td></tr></table></figure>
+
+
+
+
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chbyiming-bky/articles/8611703.html">java实现word文档doc和docx两种格式互转</a>  <a target="_blank" rel="noopener" href="https://www.cnblogs.com/chbyiming-bky/articles/8611703.html">https://www.cnblogs.com/chbyiming-bky/articles/8611703.html</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%A7%A3%E5%86%B3word%E8%BD%ACpdf%E7%9B%AE%E5%BD%95%E9%A1%B5%E4%B8%BA%E7%A9%BA/">解决word转pdf目录页为空</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/05/22/Dynamic-Web-Module-3-1-requires-Java-1-7-or-newer-qywxline-1Maven-Java-EE-Configuration-Problem/">
+                        <span class="hidden-mobile">Dynamic Web Module 3.1 requires Java 1.7 or newer.qywxline 1Maven Java EE Configuration Problem</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "9AbS90P3EqVELAvUsH9ycTpW-gzGzoHsz",
+          app_key: "suv4YMHVW2NxF650P1W3BMl4",
+          placeholder: "Hello,welcome to my blog!",
+          path: window.location.pathname,
+          avatar: "robohash",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
