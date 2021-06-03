@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      204 字
+      266 字
     </span>
   
 
@@ -253,7 +253,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：10 days ago
+                  本文最后更新于：9 days ago
                 
               </p>
             
@@ -264,18 +264,25 @@
 <p>（2）在js代码中准备一个json数据</p>
 <p>（3）获取div对应的html dom对象</p>
 <p>（4）把json数据赋给html dom对象</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;div1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> gareen=&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;盖伦&quot;</span>,<span class="string">&quot;hp&quot;</span>:<span class="number">616</span>&#125;;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> div1=<span class="built_in">document</span>.getElementById(<span class="string">&quot;div1&quot;</span>);</span></span><br><span class="line">  div1.innerHTML=gareen.name;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;div1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br><span class="javascript">  <span class="hljs-keyword">var</span> gareen=&#123;<span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;盖伦&quot;</span>,<span class="hljs-string">&quot;hp&quot;</span>:<span class="hljs-number">616</span>&#125;;</span><br><span class="javascript">  <span class="hljs-keyword">var</span> div1=<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;div1&quot;</span>);</span><br>  div1.innerHTML=gareen.name;<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <img src="/2021/05/14/VUE%E5%AD%A6%E4%B9%A0-01-VUE%E4%B8%8EJS%E7%9A%84%E5%AF%B9%E6%AF%94/image-20210514111825075.png" srcset="/img/loading.gif" class="">
 
 <p>2、VUE方式</p>
 <p>（1）导入vue.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;http:&#x2F;&#x2F;how2j.cn&#x2F;study&#x2F;vue.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://how2j.cn/study/vue.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>（2）准备一个div元素</p>
 <p>（3）在js代码中准备一个json数据</p>
 <p>（4）创建一个Vue对象。 这个Vue对象就把数据 gareen和 视图 div1 关联起来了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	  el: &#39;#div1&#39;,</span><br><span class="line">	  data: &#123;</span><br><span class="line">	    message: gareen</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs vue">new Vue(&#123;<br>	  el: &#39;#div1&#39;,<br>	  data: &#123;<br>	    message: gareen<br>	  &#125;<br>	&#125;)<br></code></pre></td></tr></table></figure>
 <p>（5）在视图div中，将数据取出来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;gareen.name&#125;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vue">&#123;&#123;gareen.name&#125;&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>3、v-show</p>
+<p>根据真假切换元素的显示状态</p>
+<p>原理是修改元素的display，实现显示隐藏</p>
+<p>指令后面的内容，最终都会解析为布尔值</p>
+<p>数据改变之后，对应元素的显示状态会同步更新</p>
 
             </div>
             <hr>
