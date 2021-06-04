@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="liuwf">
   <meta name="keywords" content="">
-  <title>pom.xml添加＜plugins＞和＜plugin＞报错的解决办法Invalid content was found starting with element - liuwf.top</title>
+  <title>SpringBoot启动报错:Error creating Bean with name &#39;khtbAttrServiceImpl&#39; has been injected into other beans - liuwf.top</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="pom.xml添加＜plugins＞和＜plugin＞报错的解决办法Invalid content was found starting with element">
+            <span class="h2" id="subtitle" title="SpringBoot启动报错:Error creating Bean with name 'khtbAttrServiceImpl' has been injected into other beans">
               
             </span>
 
@@ -189,8 +189,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-05-17 09:58" pubdate>
-        May 17, 2021 am
+      <time datetime="2021-06-04 11:09" pubdate>
+        June 4, 2021 am
       </time>
     </span>
   
@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      70 字
+      118 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -249,44 +249,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">pom.xml添加＜plugins＞和＜plugin＞报错的解决办法Invalid content was found starting with element</h1>
+            <h1 style="display: none">SpringBoot启动报错:Error creating Bean with name &#39;khtbAttrServiceImpl&#39; has been injected into other beans</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：18 days ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <h3 id="解决：正确的目录顺序应该是："><a href="#解决：正确的目录顺序应该是：" class="headerlink" title="解决：正确的目录顺序应该是："></a>解决：正确的目录顺序应该是：</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">defaultGoal</span>&gt;</span>clean compile<span class="hljs-tag">&lt;/<span class="hljs-name">defaultGoal</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+              <p>1</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">Error creating bean <span class="hljs-keyword">with</span> name <span class="hljs-string">&#x27;khtbAttrServiceImpl&#x27;</span>: Bean <span class="hljs-keyword">with</span> name <span class="hljs-string">&#x27;khtbAttrServiceImpl&#x27;</span> has been injected <span class="hljs-keyword">into</span> other beans [khtbServiceImpl] <span class="hljs-keyword">in</span> its raw <span class="hljs-built_in">version</span> <span class="hljs-keyword">as</span> part <span class="hljs-keyword">of</span> <span class="hljs-keyword">a</span> circular reference, but has eventually been wrapped. This means that said other beans <span class="hljs-built_in">do</span> <span class="hljs-keyword">not</span> use <span class="hljs-keyword">the</span> final <span class="hljs-built_in">version</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> bean. This is often <span class="hljs-keyword">the</span> <span class="hljs-built_in">result</span> <span class="hljs-keyword">of</span> over-eager type matching - consider <span class="hljs-keyword">using</span> <span class="hljs-string">&#x27;getBeanNamesOfType&#x27;</span> <span class="hljs-keyword">with</span> <span class="hljs-keyword">the</span> <span class="hljs-string">&#x27;allowEagerInit&#x27;</span> flag turned off, <span class="hljs-keyword">for</span> example.<br></code></pre></td></tr></table></figure>
 
 
-
-
-
-
-<p>参考：pom.xml添加＜plugins＞和＜plugin＞报错的解决办法Invalid content was found starting with element</p>
-<p>​            <a target="_blank" rel="noopener" href="https://blog.csdn.net/moso_wang/article/details/109560460">https://blog.csdn.net/moso_wang/article/details/109560460</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/heboy19/article/details/79373832">https://blog.csdn.net/heboy19/article/details/79373832</a> 解决spring循环依赖的问题：has been injected into other beans</p>
+<p>解决：将方法移动到同一个ServiceImpl中即可</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C/">工作</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/pom-element%E6%8A%A5%E9%94%99/">pom element报错</a>
-                    
-                  </div>
                 
               </div>
               
@@ -295,18 +278,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/05/17/Java%E6%93%8D%E4%BD%9Cword%E5%B7%A5%E5%85%B7%E7%B1%BB/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java操作word工具类</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/05/14/VUE%E5%AD%A6%E4%B9%A0-01-VUE%E4%B8%8EJS%E7%9A%84%E5%AF%B9%E6%AF%94/">
-                        <span class="hidden-mobile">VUE学习_01_VUE与JS的对比</span>
+                      <a href="/2021/06/03/VUE-%E6%98%BE%E7%A4%BA%E5%88%97%E8%A1%A8%E7%9A%84%E6%97%B6%E5%80%99%E5%A2%9E%E5%8A%A0%E5%88%A4%E6%96%AD%EF%BC%8C%E4%BE%8B%E5%A6%821%E6%94%B9%E4%B8%BA%E5%AE%8C%E6%88%90%EF%BC%8C0%E6%94%B9%E4%B8%BA%E6%9C%AA%E5%AE%8C%E6%88%90/">
+                        <span class="hidden-mobile">VUE_显示列表的时候增加判断，例如1改为完成，0改为未完成</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
