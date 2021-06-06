@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>svn: E155004: There are unfinished work items in *** run &#39;svn cleanup&#39; first.</title>
+    <link href="/2021/06/06/svn-E155004-There-are-unfinished-work-items-in-run-svn-cleanup-first/"/>
+    <url>/2021/06/06/svn-E155004-There-are-unfinished-work-items-in-run-svn-cleanup-first/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1、遇到问题："><a href="#1、遇到问题：" class="headerlink" title="1、遇到问题："></a>1、遇到问题：</h3><p>在eclipse上开发项目的时候，svn突然更新不了，报错</p><p>svn: E155004: There are unfinished work items in ‘D:\Tools\Eclipse\Eclipse_2020\Data\Feezet_Project\XAPF_XMPF\xmpf’; run ‘svn cleanup’ first.</p><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210606110951777.png" alt="image-20210606110951777"></p><h3 id="2、解决问题："><a href="#2、解决问题：" class="headerlink" title="2、解决问题："></a>2、解决问题：</h3><p>百度了一下，发现是被锁住了，于是在eclipse里的Team中进行svn cleanup结果还是报同样的错误，于是到目录下进行cmd svn cleanup，发现电脑没安装svn，于是上官网安装</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">网址<br>https:<span class="hljs-regexp">//</span>tortoisesvn.net/downloads.zh.html<br>https:<span class="hljs-regexp">//</span>osdn.net<span class="hljs-regexp">/projects/</span>tortoisesvn<span class="hljs-regexp">/storage/</span><span class="hljs-number">1.14</span>.<span class="hljs-number">1</span><span class="hljs-regexp">/Application/</span>TortoiseSVN-<span class="hljs-number">1.14</span>.<span class="hljs-number">1.29085</span>-x64-svn-<span class="hljs-number">1.14</span>.<span class="hljs-number">1</span>.msi/<br></code></pre></td></tr></table></figure><p>安装后在项目目录下右键打开svn的cleanup，选择Break write locks，clean完成提示success</p><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210606111051831.png" alt="image-20210606111051831"></p><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210606111102038.png" alt="image-20210606111102038"></p><p>再更新项目就可以了</p><p>参考网址：svn: E155004: There are unfinished work items 问题解决  <a href="https://blog.csdn.net/gjp014/article/details/84857016">https://blog.csdn.net/gjp014/article/details/84857016</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>工作</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Eclipse svn更新失败报错</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SpringBoot启动报错:Error creating Bean with name &#39;khtbAttrServiceImpl&#39; has been injected into other beans</title>
     <link href="/2021/06/04/SpringBoot%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99-Error-creating-Bean-with-name-khtbAttrServiceImpl-has-been-injected-into-other-beans/"/>
     <url>/2021/06/04/SpringBoot%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99-Error-creating-Bean-with-name-khtbAttrServiceImpl-has-been-injected-into-other-beans/</url>
