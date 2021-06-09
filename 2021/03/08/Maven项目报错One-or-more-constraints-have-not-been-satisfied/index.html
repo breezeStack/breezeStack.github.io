@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      193 字
+      210 字
     </span>
   
 
@@ -253,40 +253,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：3 months ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <h3 id="1、Maven报错：One-or-more-constraints-have-not-been-satisfied"><a href="#1、Maven报错：One-or-more-constraints-have-not-been-satisfied" class="headerlink" title="1、Maven报错：One or more constraints have not been satisfied"></a>1、Maven报错：One or more constraints have not been satisfied</h3><h3 id="2、解决办法：pom-xml的project节点中加上"><a href="#2、解决办法：pom-xml的project节点中加上" class="headerlink" title="2、解决办法：pom.xml的project节点中加上"></a>2、解决办法：pom.xml的project节点中加上</h3><pre><code>&lt;!-- liuwf --&gt;
-&lt;profiles&gt;
-    &lt;profile&gt;
-        &lt;id&gt;jdk-1.8&lt;/id&gt;
-        &lt;!-- 另外一种激活方式 --&gt;
-        &lt;activation&gt;
-            &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
-            &lt;jdk&gt;1.8&lt;/jdk&gt;
-        &lt;/activation&gt;
-        &lt;properties&gt;
-            &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
-            &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
-            &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;
-        &lt;/properties&gt;
-    &lt;/profile&gt;
-&lt;/profiles&gt;
-&lt;!-- liuwf --&gt;
-&lt;plugins&gt;
-    &lt;plugin&gt;
-        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-        &lt;version&gt;3.8.1&lt;/version&gt;
-        &lt;configuration&gt;
-            &lt;source&gt;1.8&lt;/source&gt;
-            &lt;target&gt;1.8&lt;/target&gt;
-            &lt;encoding&gt;UTF8&lt;/encoding&gt;
-        &lt;/configuration&gt;
-    &lt;/plugin&gt;
-&lt;/plugins&gt;</code></pre>
+              <h3 id="1、Maven报错：One-or-more-constraints-have-not-been-satisfied"><a href="#1、Maven报错：One-or-more-constraints-have-not-been-satisfied" class="headerlink" title="1、Maven报错：One or more constraints have not been satisfied"></a>1、Maven报错：One or more constraints have not been satisfied</h3><h3 id="2、解决办法：pom-xml的project节点中加上"><a href="#2、解决办法：pom-xml的project节点中加上" class="headerlink" title="2、解决办法：pom.xml的project节点中加上"></a>2、解决办法：pom.xml的project节点中加上</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;!-- liuwf 加在project节点中--&gt;<br>&lt;profiles&gt;<br>	&lt;profile&gt;<br>		&lt;id&gt;jdk-1.8&lt;/id&gt;<br>		&lt;!-- 另外一种激活方式 --&gt;<br>		&lt;activation&gt;<br>			&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;<br>			&lt;jdk&gt;1.8&lt;/jdk&gt;<br>		&lt;/activation&gt;<br>		&lt;properties&gt;<br>			&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;<br>			&lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;<br>			&lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;<br>		&lt;/properties&gt;<br>	&lt;/profile&gt;<br>&lt;/profiles&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;!-- liuwf 加在project节点中的build节点中--&gt;<br>&lt;plugins&gt;<br>	&lt;plugin&gt;<br>		&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;<br>		&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;<br>		&lt;version&gt;3.8.1&lt;/version&gt;<br>		&lt;configuration&gt;<br>			&lt;source&gt;1.8&lt;/source&gt;<br>			&lt;target&gt;1.8&lt;/target&gt;<br>			&lt;encoding&gt;UTF8&lt;/encoding&gt;<br>		&lt;/configuration&gt;<br>	&lt;/plugin&gt;<br>&lt;/plugins&gt;<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
