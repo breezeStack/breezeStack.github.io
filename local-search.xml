@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>MySql_sql语句学习</title>
+    <link href="/2021/06/10/MySql-sql%E8%AF%AD%E5%8F%A5%E5%AD%A6%E4%B9%A0/"/>
+    <url>/2021/06/10/MySql-sql%E8%AF%AD%E5%8F%A5%E5%AD%A6%E4%B9%A0/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">/</span><span class="hljs-operator">/</span>先运行存储路径的记录<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> fzt_attr_new(<br>id,filename,punid,filesize,type,file_url,create_by,create_time,update_by,update_time,del_flag,pdf_url,document_type) <br><span class="hljs-keyword">SELECT</span> <br>unid,filename,punid,filesize,TYPE,file_url,create_by,create_time,update_by,update_time,del_flag,<span class="hljs-keyword">NULL</span>,<span class="hljs-keyword">NULL</span><br><span class="hljs-keyword">FROM</span> fzt_attr <br><span class="hljs-keyword">WHERE</span> (del_flag<span class="hljs-operator">&lt;&gt;</span><span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-keyword">OR</span> del_flag <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>) <br><span class="hljs-keyword">AND</span> (content<span class="hljs-operator">=</span><span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-keyword">OR</span> content <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>)<br><span class="hljs-keyword">AND</span> (file_url <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">OR</span> file_url<span class="hljs-operator">&lt;&gt;</span><span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-keyword">AND</span> (save_type<span class="hljs-operator">=</span><span class="hljs-string">&#x27;0&#x27;</span>)<br><br><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span>再运行存储在大字段里面的文件 file_url先设为<span class="hljs-keyword">Null</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> fzt_attr_new(<br>id,filename,punid,filesize,type,file_url,create_by,create_time,update_by,update_time,del_flag,pdf_url,document_type) <br><span class="hljs-keyword">SELECT</span> <br>unid,filename,punid,filesize,TYPE,<br>CONCAT(<span class="hljs-string">&#x27;D:\\attr\\file_old\\&#x27;</span>,fzt_attr.unid,<span class="hljs-string">&#x27;\\&#x27;</span>,fzt_attr.unid,<span class="hljs-string">&#x27;.&#x27;</span>,<span class="hljs-keyword">RIGHT</span>(RTRIM(fzt_attr.filename), LOCATE(<span class="hljs-string">&#x27;.&#x27;</span>,REVERSE(RTRIM(fzt_attr.filename))) <span class="hljs-operator">-</span> <span class="hljs-number">1</span>)) <span class="hljs-keyword">AS</span> file_url<br>,create_by,create_time,update_by,update_time,del_flag,<span class="hljs-keyword">NULL</span>,<span class="hljs-keyword">NULL</span><br><span class="hljs-keyword">FROM</span> fzt_attr <br><span class="hljs-keyword">WHERE</span> (del_flag<span class="hljs-operator">&lt;&gt;</span><span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-keyword">OR</span> del_flag <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>) <br><span class="hljs-keyword">AND</span> (content<span class="hljs-operator">&lt;&gt;</span><span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-keyword">OR</span> content <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>)<br><span class="hljs-keyword">AND</span> (file_url <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">OR</span> file_url<span class="hljs-operator">=</span><span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-keyword">AND</span> (save_type<span class="hljs-operator">=</span><span class="hljs-string">&#x27;1&#x27;</span>)<br></code></pre></td></tr></table></figure><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">/</span><span class="hljs-operator">/</span>拼接字符串<br>CONCAT(<span class="hljs-string">&#x27;D:\\attr\\file_old\\&#x27;</span>,fzt_attr.unid,<span class="hljs-string">&#x27;\\&#x27;</span>,fzt_attr.unid,<span class="hljs-string">&#x27;.&#x27;</span>,<span class="hljs-keyword">RIGHT</span>(RTRIM(fzt_attr.filename),LOCATE(<span class="hljs-string">&#x27;.&#x27;</span>,REVERSE(RTRIM(fzt_attr.filename))) <span class="hljs-operator">-</span> <span class="hljs-number">1</span>)) <span class="hljs-keyword">AS</span> file_url<br><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span>获取文件名称(fzt_attr.filename)的后缀名不含.<br><span class="hljs-keyword">RIGHT</span>(RTRIM(fzt_attr.filename),LOCATE(<span class="hljs-string">&#x27;.&#x27;</span>,REVERSE(RTRIM(fzt_attr.filename))) <span class="hljs-operator">-</span> <span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>工作</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySql学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>VUE_参考文档</title>
     <link href="/2021/06/06/VUE-%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/"/>
     <url>/2021/06/06/VUE-%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</url>

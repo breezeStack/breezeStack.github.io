@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="liuwf">
   <meta name="keywords" content="">
-  <title>Java将图片插入到word中并且设置为A4大小 - liuwf.top</title>
+  <title>MySql_sql语句学习 - liuwf.top</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -174,7 +174,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Java将图片插入到word中并且设置为A4大小">
+            <span class="h2" id="subtitle" title="MySql_sql语句学习">
               
             </span>
 
@@ -189,8 +189,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-05-13 14:07" pubdate>
-        May 13, 2021 pm
+      <time datetime="2021-06-10 10:21" pubdate>
+        June 10, 2021 am
       </time>
     </span>
   
@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      177 字
+      247 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      4
        分钟
     </span>
   
@@ -249,22 +249,17 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java将图片插入到word中并且设置为A4大小</h1>
+            <h1 style="display: none">MySql_sql语句学习</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：24 days ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 工具类 在Word文件里插入图片 待插入的word不能为空</span><br><span class="hljs-comment"> * @author liuwf</span><br><span class="hljs-comment"> * @param String imageUrl</span><br><span class="hljs-comment"> * @param String docFileUrl_target</span><br><span class="hljs-comment"> * @return</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertImage2docFile</span><span class="hljs-params">(<span class="hljs-keyword">String</span> imageUrl, <span class="hljs-keyword">String</span> docFileUrl_target)</span> throws IOException </span>&#123;<br>	<br>	BufferedImage bufImage = ImageIO.<span class="hljs-built_in">read</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">File</span>(imageUrl));<br>	<span class="hljs-keyword">int</span> <span class="hljs-built_in">width</span>=bufImage.getWidth();<br>	<span class="hljs-keyword">int</span> <span class="hljs-built_in">height</span>=bufImage.getHeight();<br>	<span class="hljs-keyword">int</span> widthInput=<span class="hljs-number">790</span>;<br>	Map&lt;<span class="hljs-keyword">String</span>, Object&gt; datas = <span class="hljs-keyword">new</span> HashMap&lt;<span class="hljs-keyword">String</span>, Object&gt;() &#123;<br>		&#123;<br>			<span class="hljs-built_in">put</span>(<span class="hljs-string">&quot;localPicture&quot;</span>, <span class="hljs-keyword">new</span> PictureRenderData(widthInput, widthInput * <span class="hljs-built_in">height</span> / <span class="hljs-built_in">width</span>, imageUrl));<br>		&#125;<br>	&#125;;<br>	<span class="hljs-built_in">File</span> docFile_target = <span class="hljs-keyword">new</span> <span class="hljs-built_in">File</span>(docFileUrl_target);<br>	XWPFTemplate <span class="hljs-keyword">template</span> = XWPFTemplate.compile(docFile_target).render(datas);<br>	docFile_target.<span class="hljs-keyword">delete</span>();<br>	FileOutputStream out = <span class="hljs-keyword">new</span> FileOutputStream(docFile_target);<br>	<span class="hljs-keyword">template</span>.<span class="hljs-built_in">write</span>(out);<br>	out.<span class="hljs-built_in">flush</span>();<br>	out.<span class="hljs-built_in">close</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>pom.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 添加图片进word --&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>		    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.deepoove<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>		    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>poi-tl<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>		    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/gscq073240/articles/11477812.html">https://www.cnblogs.com/gscq073240/articles/11477812.html</a></p>
-<p>​            poi-tl官方文档：<a target="_blank" rel="noopener" href="http://deepoove.com/poi-tl/">http://deepoove.com/poi-tl/</a></p>
+              <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">/</span><span class="hljs-operator">/</span>先运行存储路径的记录<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> fzt_attr_new(<br>id,filename,punid,filesize,type,file_url,create_by,create_time,update_by,update_time,del_flag,pdf_url,document_type) <br><span class="hljs-keyword">SELECT</span> <br>unid,filename,punid,filesize,TYPE,file_url,create_by,create_time,update_by,update_time,del_flag,<span class="hljs-keyword">NULL</span>,<span class="hljs-keyword">NULL</span><br><span class="hljs-keyword">FROM</span> fzt_attr <br><span class="hljs-keyword">WHERE</span> (del_flag<span class="hljs-operator">&lt;&gt;</span><span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-keyword">OR</span> del_flag <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>) <br><span class="hljs-keyword">AND</span> (content<span class="hljs-operator">=</span><span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-keyword">OR</span> content <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>)<br><span class="hljs-keyword">AND</span> (file_url <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">OR</span> file_url<span class="hljs-operator">&lt;&gt;</span><span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-keyword">AND</span> (save_type<span class="hljs-operator">=</span><span class="hljs-string">&#x27;0&#x27;</span>)<br><br><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span>再运行存储在大字段里面的文件 file_url先设为<span class="hljs-keyword">Null</span><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> fzt_attr_new(<br>id,filename,punid,filesize,type,file_url,create_by,create_time,update_by,update_time,del_flag,pdf_url,document_type) <br><span class="hljs-keyword">SELECT</span> <br>unid,filename,punid,filesize,TYPE,<br>CONCAT(<span class="hljs-string">&#x27;D:\\attr\\file_old\\&#x27;</span>,fzt_attr.unid,<span class="hljs-string">&#x27;\\&#x27;</span>,fzt_attr.unid,<span class="hljs-string">&#x27;.&#x27;</span>,<span class="hljs-keyword">RIGHT</span>(RTRIM(fzt_attr.filename), LOCATE(<span class="hljs-string">&#x27;.&#x27;</span>,REVERSE(RTRIM(fzt_attr.filename))) <span class="hljs-operator">-</span> <span class="hljs-number">1</span>)) <span class="hljs-keyword">AS</span> file_url<br>,create_by,create_time,update_by,update_time,del_flag,<span class="hljs-keyword">NULL</span>,<span class="hljs-keyword">NULL</span><br><span class="hljs-keyword">FROM</span> fzt_attr <br><span class="hljs-keyword">WHERE</span> (del_flag<span class="hljs-operator">&lt;&gt;</span><span class="hljs-string">&#x27;1&#x27;</span> <span class="hljs-keyword">OR</span> del_flag <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span>) <br><span class="hljs-keyword">AND</span> (content<span class="hljs-operator">&lt;&gt;</span><span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-keyword">OR</span> content <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>)<br><span class="hljs-keyword">AND</span> (file_url <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">OR</span> file_url<span class="hljs-operator">=</span><span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-keyword">AND</span> (save_type<span class="hljs-operator">=</span><span class="hljs-string">&#x27;1&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">/</span><span class="hljs-operator">/</span>拼接字符串<br>CONCAT(<span class="hljs-string">&#x27;D:\\attr\\file_old\\&#x27;</span>,fzt_attr.unid,<span class="hljs-string">&#x27;\\&#x27;</span>,fzt_attr.unid,<span class="hljs-string">&#x27;.&#x27;</span>,<span class="hljs-keyword">RIGHT</span>(RTRIM(fzt_attr.filename),LOCATE(<span class="hljs-string">&#x27;.&#x27;</span>,REVERSE(RTRIM(fzt_attr.filename))) <span class="hljs-operator">-</span> <span class="hljs-number">1</span>)) <span class="hljs-keyword">AS</span> file_url<br><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span>获取文件名称(fzt_attr.filename)的后缀名不含.<br><span class="hljs-keyword">RIGHT</span>(RTRIM(fzt_attr.filename),LOCATE(<span class="hljs-string">&#x27;.&#x27;</span>,REVERSE(RTRIM(fzt_attr.filename))) <span class="hljs-operator">-</span> <span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -282,7 +277,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Java%E6%93%8D%E4%BD%9Cword%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">Java操作word插入图片</a>
+                      <a class="hover-with-bg" href="/tags/MySql%E5%AD%A6%E4%B9%A0/">MySql学习</a>
                     
                   </div>
                 
@@ -293,18 +288,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/05/13/Java%E5%AE%9E%E7%8E%B0%E5%B0%86%E5%9B%BE%E7%89%87%E7%99%BD%E8%BE%B9%E5%89%AA%E5%88%87/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java实现将图片白边剪切</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/05/13/Eclipse%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99java-lang-UnsatisfiedLinkError-no-jacob-1-17-M2-x64-in-java-library-path/">
-                        <span class="hidden-mobile">Eclipse运行报错java.lang.UnsatisfiedLinkError: no jacob-1.17-M2-x64 in java.library.path</span>
+                      <a href="/2021/06/06/VUE-%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/">
+                        <span class="hidden-mobile">VUE_参考文档</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
