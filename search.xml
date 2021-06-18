@@ -1562,6 +1562,61 @@
   <entry>
     <title>nodeJs_学习</title>
     <url>/2021/06/18/nodeJs-%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>11</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>webpack_学习</title>
+    <url>/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>1</p>
+<p>一、</p>
+<p>1、全局安装webpack</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">cnpm install -g webpack@<span class="number">1</span>.<span class="number">13</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>测试</p>
+<p>（1）新增a.js文件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;hello webpack&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>（2）新增index.html文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;bundle.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>（3）使用webpack命令打包a.js</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">webpack a.js bundle.js</span><br></pre></td></tr></table></figure>
+<p>（4）打开index.html文件</p>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618175510811.png" class="" title="image-20210618175510811">
+
+<p>2、增加配置文件，简化命令</p>
+<p>（1）增加webpack.config.js文件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">&#x27;./a.js&#x27;</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">&#x27;bundle.js&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>（2）cmd运行webpack就可自动打包了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack</span><br></pre></td></tr></table></figure>
+<p>3、使用webpack-dev-server微服务器打开index.html</p>
+<p>（1）全局安装webpack-dev-server</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g webpack-dev-server@1.15.0</span><br></pre></td></tr></table></figure>
+<p>（2）运行webpack-dev-server</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack-dev-server --open</span><br></pre></td></tr></table></figure>
+<p>会自动访问</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:8080&#x2F;webpack-dev-server&#x2F;</span><br></pre></td></tr></table></figure>
+<p>这个地址打开默认的index.html页面</p>
+<p>（3）我们可以通过修改配置文件修改默认的端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;a.js&#39;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#39;bundle.js&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        port:8088</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4、使用webpack-dev-server实现热更新</p>
+<p>（1）修改配置文件webpack.config.js</p>
+<p>​    导入 webpack 模块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var webpack &#x3D; require(&#39;webpack&#39;)</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;a.js&#39;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#39;bundle.js&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">   plugins:[</span><br><span class="line">        new webpack.HotModuleReplacementPlugin()</span><br><span class="line">    ],</span><br><span class="line">   devServer: &#123;</span><br><span class="line">        port:8088,</span><br><span class="line">        inline:true,</span><br><span class="line">        hot:true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）重要：因为webpack是全局的，这种导入有可能不被识别，需要进行一次链接</p>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180637143.png" class="" title="未链接前">
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm link webpack</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180655020.png" class="" title="image-20210618180655020">
+
+<p>（3）重新启动webpack-dev-server</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack-dev-server --open</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180702320.png" class="" title="image-20210618180702320">
+
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>webpack_学习</tag>
+      </tags>
   </entry>
 </search>
