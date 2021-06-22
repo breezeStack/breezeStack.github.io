@@ -1662,4 +1662,58 @@
 <p>参考：<a href="https://www.cnblogs.com/bwcode/p/7159624.html">https://www.cnblogs.com/bwcode/p/7159624.html</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Hexo_自建博客网站_域名解析</title>
+    <url>/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<p>1</p>
+<p>一、申请域名（要钱）</p>
+<p>liuwf.top</p>
+<p>二、域名解析</p>
+<p>网址：<a href="https://console.dnspod.cn/dns/list">https://console.dnspod.cn/dns/list</a></p>
+<p>1、添加待解析的域名</p>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154258490.png" class="" title="image-20210622154258490">
+
+<p>2、快速解析域名</p>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154341152.png" class="" title="image-20210622154341152">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154422456.png" class="" title="image-20210622154422456">
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;你的github名称加上.github.com</span><br><span class="line">&#x2F;&#x2F;https:&#x2F;&#x2F;github.com&#x2F;liuwf-github</span><br><span class="line">ping liuwf-github.github.com</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154536165.png" class="" title="image-20210622154536165">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154442491.png" class="" title="image-20210622154442491">
+
+<p>将这个ip地址添加到刚才的快速添加解析中就可</p>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154730998.png" class="" title="image-20210622154730998">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154826207.png" class="" title="image-20210622154826207">
+
+<p>三、在github中设置域名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;liuwf-github</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154935910.png" class="" title="image-20210622154935910">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155000458.png" class="" title="image-20210622155000458">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155029172.png" class="" title="image-20210622155029172">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155052223.png" class="" title="image-20210622155052223">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155118073.png" class="" title="image-20210622155118073">
+
+<p>四、大功告成</p>
+<p>尝试访问liuwf.top</p>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155156910.png" class="" title="image-20210622155156910">
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>博客设置域名</tag>
+      </tags>
+  </entry>
 </search>
