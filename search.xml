@@ -1611,6 +1611,34 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack-dev-server --open</span><br></pre></td></tr></table></figure>
 <img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180702320.png" class="" title="image-20210618180702320">
 
+<p>二、不适用webpack-dev-server启动，而使用npm方式启动</p>
+<p>1、进行package.json配置文件的初始化</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618182925147.png" class="" title="image-20210618182925147">
+
+<p>2、修改package.json，增加脚本：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --open&quot;</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183607241.png" class="" title="image-20210618183607241">
+
+<p>3、运行命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>就跟之前的webpack-dev-server –open功能相同</p>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183820232.png" class="" title="image-20210618183820232">
+
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183853759.png" class="" title="image-20210618183853759">
+
+<p>三、使用npm打包多个js文件</p>
+<p>1、新建两个js文件</p>
+<p>（1）a.js</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.write(&quot;hello webpack from a.js&lt;br&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>（2）b.js</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.write(&quot;hello webpack from b.js&lt;br&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>2、修改webpack.config.json配置文件</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        bundle1: &#x27;./a.js&#x27;,</span><br><span class="line">        bundle2: &#x27;./b.js&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#x27;[name].js&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        port:8088</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618185010668.png" class="" title="image-20210618185010668">
+
+
+
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1618,5 +1646,13 @@
       <tags>
         <tag>webpack_学习</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>查找spire的依赖</title>
+    <url>/2021/06/22/%E6%9F%A5%E6%89%BEspire%E7%9A%84%E4%BE%9D%E8%B5%96/</url>
+    <content><![CDATA[<p>1</p>
+<p>参考：<a href="https://blog.csdn.net/Eiceblue/article/details/88239741">https://blog.csdn.net/Eiceblue/article/details/88239741</a></p>
+<p>​    <a href="http://repo.e-iceblue.cn/#browse/search/maven">http://repo.e-iceblue.cn/#browse/search/maven</a></p>
+]]></content>
   </entry>
 </search>
