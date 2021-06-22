@@ -783,6 +783,12 @@
       </tags>
   </entry>
   <entry>
+    <title>nodeJs_学习</title>
+    <url>/2021/06/18/nodeJs-%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>11</p>
+]]></content>
+  </entry>
+  <entry>
     <title>使用PLSQLDev工具导入dmp文件闪退</title>
     <url>/2021/02/25/plsqlx64%E5%AF%BC%E5%85%A5dmp%E6%96%87%E4%BB%B6%E9%97%AA%E9%80%80%E7%BB%88%E6%9E%81%E5%8A%9E%E6%B3%95-%E7%9C%9F%E5%AE%9E%E6%9C%89%E6%95%88/</url>
     <content><![CDATA[<h4 id="1、解决办法：添加两个环境变量"><a href="#1、解决办法：添加两个环境变量" class="headerlink" title="1、解决办法：添加两个环境变量"></a>1、解决办法：添加两个环境变量</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ORACLE_HOME: D:\oracle_base\oracle(我自己的oracle安装目录)</span><br><span class="line">ORACLE_SID: 导入的数据库名称</span><br></pre></td></tr></table></figure>
@@ -849,20 +855,6 @@
       </tags>
   </entry>
   <entry>
-    <title>yarn报错:无法加载文件C:\Users\Administrator\AppData\Roaming\npm\yarn.ps1,因为在此系统上禁止运行脚本</title>
-    <url>/2021/02/18/yarn-%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<h2 id="1-搜索powershell，右键以管理员身份运行"><a href="#1-搜索powershell，右键以管理员身份运行" class="headerlink" title="1.搜索powershell，右键以管理员身份运行"></a>1.搜索powershell，右键以管理员身份运行</h2><h2 id="2-输入："><a href="#2-输入：" class="headerlink" title="2.输入："></a>2.输入：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure>
-<p>然后：输入 y</p>
-<h2 id="3-关闭命令窗口-即可"><a href="#3-关闭命令窗口-即可" class="headerlink" title="3.关闭命令窗口 即可"></a>3.关闭命令窗口 即可</h2><p>参考：<a href="https://www.jianshu.com/p/6af4880f4018">https://www.jianshu.com/p/6af4880f4018</a></p>
-]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>npm yarn安装</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vue报错:error:D:/Tools/Eclipse/Eclipse_2020/Data/vue/node_modules/node-sass:Command failed.</title>
     <url>/2021/02/19/vue%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<h3 id="1、在使用-yarn-install命令安装VUE项目时报错"><a href="#1、在使用-yarn-install命令安装VUE项目时报错" class="headerlink" title="1、在使用 yarn install命令安装VUE项目时报错"></a>1、在使用 yarn install命令安装VUE项目时报错</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">error D:\Tools\Eclipse\Eclipse_2020\Data\vue\node_modules\node-sass: Command failed.</span><br><span class="line"> Exit code: 1</span><br></pre></td></tr></table></figure>
@@ -878,6 +870,102 @@
       </categories>
       <tags>
         <tag>vue报错</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>webpack_学习</title>
+    <url>/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>1</p>
+<p>一、</p>
+<p>1、全局安装webpack</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">cnpm install -g webpack@<span class="number">1</span>.<span class="number">13</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>测试</p>
+<p>（1）新增a.js文件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;hello webpack&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>（2）新增index.html文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;bundle.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>（3）使用webpack命令打包a.js</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">webpack a.js bundle.js</span><br></pre></td></tr></table></figure>
+<p>（4）打开index.html文件</p>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618175510811.png" class="" title="image-20210618175510811">
+
+<p>2、增加配置文件，简化命令</p>
+<p>（1）增加webpack.config.js文件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">&#x27;./a.js&#x27;</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">&#x27;bundle.js&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>（2）cmd运行webpack就可自动打包了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack</span><br></pre></td></tr></table></figure>
+<p>3、使用webpack-dev-server微服务器打开index.html</p>
+<p>（1）全局安装webpack-dev-server</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g webpack-dev-server@1.15.0</span><br></pre></td></tr></table></figure>
+<p>（2）运行webpack-dev-server</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack-dev-server --open</span><br></pre></td></tr></table></figure>
+<p>会自动访问</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:8080&#x2F;webpack-dev-server&#x2F;</span><br></pre></td></tr></table></figure>
+<p>这个地址打开默认的index.html页面</p>
+<p>（3）我们可以通过修改配置文件修改默认的端口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;a.js&#39;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#39;bundle.js&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        port:8088</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4、使用webpack-dev-server实现热更新</p>
+<p>（1）修改配置文件webpack.config.js</p>
+<p>​    导入 webpack 模块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var webpack &#x3D; require(&#39;webpack&#39;)</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;a.js&#39;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#39;bundle.js&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">   plugins:[</span><br><span class="line">        new webpack.HotModuleReplacementPlugin()</span><br><span class="line">    ],</span><br><span class="line">   devServer: &#123;</span><br><span class="line">        port:8088,</span><br><span class="line">        inline:true,</span><br><span class="line">        hot:true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）重要：因为webpack是全局的，这种导入有可能不被识别，需要进行一次链接</p>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180637143.png" class="" title="未链接前">
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm link webpack</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180655020.png" class="" title="image-20210618180655020">
+
+<p>（3）重新启动webpack-dev-server</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack-dev-server --open</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180702320.png" class="" title="image-20210618180702320">
+
+<p>二、不适用webpack-dev-server启动，而使用npm方式启动</p>
+<p>1、进行package.json配置文件的初始化</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618182925147.png" class="" title="image-20210618182925147">
+
+<p>2、修改package.json，增加脚本：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --open&quot;</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183607241.png" class="" title="image-20210618183607241">
+
+<p>3、运行命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>就跟之前的webpack-dev-server –open功能相同</p>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183820232.png" class="" title="image-20210618183820232">
+
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183853759.png" class="" title="image-20210618183853759">
+
+<p>三、使用npm打包多个js文件</p>
+<p>1、新建两个js文件</p>
+<p>（1）a.js</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.write(&quot;hello webpack from a.js&lt;br&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>（2）b.js</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.write(&quot;hello webpack from b.js&lt;br&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>2、修改webpack.config.json配置文件</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        bundle1: &#x27;./a.js&#x27;,</span><br><span class="line">        bundle2: &#x27;./b.js&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#x27;[name].js&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        port:8088</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618185010668.png" class="" title="image-20210618185010668">
+
+
+
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>webpack_学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>yarn报错:无法加载文件C:\Users\Administrator\AppData\Roaming\npm\yarn.ps1,因为在此系统上禁止运行脚本</title>
+    <url>/2021/02/18/yarn-%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6-%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<h2 id="1-搜索powershell，右键以管理员身份运行"><a href="#1-搜索powershell，右键以管理员身份运行" class="headerlink" title="1.搜索powershell，右键以管理员身份运行"></a>1.搜索powershell，右键以管理员身份运行</h2><h2 id="2-输入："><a href="#2-输入：" class="headerlink" title="2.输入："></a>2.输入：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure>
+<p>然后：输入 y</p>
+<h2 id="3-关闭命令窗口-即可"><a href="#3-关闭命令窗口-即可" class="headerlink" title="3.关闭命令窗口 即可"></a>3.关闭命令窗口 即可</h2><p>参考：<a href="https://www.jianshu.com/p/6af4880f4018">https://www.jianshu.com/p/6af4880f4018</a></p>
+]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>npm yarn安装</tag>
       </tags>
   </entry>
   <entry>
@@ -1114,7 +1202,7 @@
 <h3 id="3、测试是否配置成功"><a href="#3、测试是否配置成功" class="headerlink" title="3、测试是否配置成功"></a>3、测试是否配置成功</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T User@Host &#x2F;&#x2F;格式</span><br><span class="line">ssh -T git@liuwf17859719373 &#x2F;&#x2F;例子</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/2021020511060114.png#pic_center"></p>
 <p><img src="https://img-blog.csdnimg.cn/20210205110609958.png#pic_center"></p>
-<h2 id="三、用账号1管理仓库-x6c-x69-117-119-102-x31-x37-x38-53-57-x37-49-x39-51-55-x33-x40-x31-50-54-46-x63-111-109"><a href="#三、用账号1管理仓库-x6c-x69-117-119-102-x31-x37-x38-53-57-x37-49-x39-51-55-x33-x40-x31-50-54-46-x63-111-109" class="headerlink" title="三、用账号1管理仓库:&#x6c;&#x69;&#117;&#119;&#102;&#x31;&#x37;&#x38;&#53;&#57;&#x37;&#49;&#x39;&#51;&#55;&#x33;&#x40;&#x31;&#50;&#54;&#46;&#x63;&#111;&#109;"></a>三、用账号1管理仓库:<a href="mailto:&#x6c;&#x69;&#117;&#119;&#102;&#x31;&#x37;&#x38;&#53;&#57;&#x37;&#49;&#x39;&#51;&#55;&#x33;&#x40;&#x31;&#50;&#54;&#46;&#x63;&#111;&#109;">&#x6c;&#x69;&#117;&#119;&#102;&#x31;&#x37;&#x38;&#53;&#57;&#x37;&#49;&#x39;&#51;&#55;&#x33;&#x40;&#x31;&#50;&#54;&#46;&#x63;&#111;&#109;</a></h2><h3 id="1、克隆仓库"><a href="#1、克隆仓库" class="headerlink" title="1、克隆仓库"></a>1、克隆仓库</h3><p>gitee上复制的克隆地址：</p>
+<h2 id="三、用账号1管理仓库-x6c-x69-x75-119-x66-49-x37-56-x35-57-x37-x31-57-51-55-51-x40-49-x32-x36-x2e-x63-111-x6d"><a href="#三、用账号1管理仓库-x6c-x69-x75-119-x66-49-x37-56-x35-57-x37-x31-57-51-55-51-x40-49-x32-x36-x2e-x63-111-x6d" class="headerlink" title="三、用账号1管理仓库:&#x6c;&#x69;&#x75;&#119;&#x66;&#49;&#x37;&#56;&#x35;&#57;&#x37;&#x31;&#57;&#51;&#55;&#51;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#111;&#x6d;"></a>三、用账号1管理仓库:<a href="mailto:&#x6c;&#x69;&#x75;&#119;&#x66;&#49;&#x37;&#56;&#x35;&#57;&#x37;&#x31;&#57;&#51;&#55;&#51;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x69;&#x75;&#119;&#x66;&#49;&#x37;&#56;&#x35;&#57;&#x37;&#x31;&#57;&#51;&#55;&#51;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#111;&#x6d;</a></h2><h3 id="1、克隆仓库"><a href="#1、克隆仓库" class="headerlink" title="1、克隆仓库"></a>1、克隆仓库</h3><p>gitee上复制的克隆地址：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git@gitee.com:liuwf17859719373&#x2F;liuwf17859719373.git</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;代码格式</span><br><span class="line">git clone User@Host:仓库地址.git </span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;例子</span><br><span class="line">git clone git@liuwf17859719373:liuwf17859719373&#x2F;liuwf17859719373.git </span><br></pre></td></tr></table></figure>
@@ -1123,7 +1211,7 @@
 <p>注意,在设置结束之后,创建git repo(<code>git init</code>)的时候,一定要再次检查一下用户名和用户邮箱,如果不对, 需要再次设置.<br> 如果发现修改不成功，可能是凭证缓存没清除：<br> 到控制面板搜索Windows凭证删除普通凭证中的gitee凭证。</p>
 <h3 id="4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中"><a href="#4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中" class="headerlink" title="4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中"></a>4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;查看是否是目标账号</span><br><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;上传代码</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;上传文件备注&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<h2 id="四、使用账号2管理仓库-x6c-105-117-x77-x66-x31-51-48-x31-x35-x39-52-x36-49-x35-x30-x40-x31-50-54-46-99-111-109"><a href="#四、使用账号2管理仓库-x6c-105-117-x77-x66-x31-51-48-x31-x35-x39-52-x36-49-x35-x30-x40-x31-50-54-46-99-111-109" class="headerlink" title="四、使用账号2管理仓库:&#x6c;&#105;&#117;&#x77;&#x66;&#x31;&#51;&#48;&#x31;&#x35;&#x39;&#52;&#x36;&#49;&#x35;&#x30;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#109;"></a>四、使用账号2管理仓库:<a href="mailto:&#x6c;&#105;&#117;&#x77;&#x66;&#x31;&#51;&#48;&#x31;&#x35;&#x39;&#52;&#x36;&#49;&#x35;&#x30;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#109;">&#x6c;&#105;&#117;&#x77;&#x66;&#x31;&#51;&#48;&#x31;&#x35;&#x39;&#52;&#x36;&#49;&#x35;&#x30;&#x40;&#x31;&#50;&#54;&#46;&#99;&#111;&#109;</a></h2><h3 id="1、使用账号-x6c-x69-117-x77-x66-49-x33-x30-x31-x35-57-x34-x36-x31-x35-48-x40-x31-x32-x36-x2e-x63-x6f-x6d-克隆仓库"><a href="#1、使用账号-x6c-x69-117-x77-x66-49-x33-x30-x31-x35-57-x34-x36-x31-x35-48-x40-x31-x32-x36-x2e-x63-x6f-x6d-克隆仓库" class="headerlink" title="1、使用账号&#x6c;&#x69;&#117;&#x77;&#x66;&#49;&#x33;&#x30;&#x31;&#x35;&#57;&#x34;&#x36;&#x31;&#x35;&#48;&#x40;&#x31;&#x32;&#x36;&#x2e;&#x63;&#x6f;&#x6d;克隆仓库"></a>1、使用账号<a href="mailto:&#x6c;&#x69;&#117;&#x77;&#x66;&#49;&#x33;&#x30;&#x31;&#x35;&#57;&#x34;&#x36;&#x31;&#x35;&#48;&#x40;&#x31;&#x32;&#x36;&#x2e;&#x63;&#x6f;&#x6d;">&#x6c;&#x69;&#117;&#x77;&#x66;&#49;&#x33;&#x30;&#x31;&#x35;&#57;&#x34;&#x36;&#x31;&#x35;&#48;&#x40;&#x31;&#x32;&#x36;&#x2e;&#x63;&#x6f;&#x6d;</a>克隆仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone git@liuwf13015946150:liuwf17859719373&#x2F;liuwf17859719373.git</span><br></pre></td></tr></table></figure>
+<h2 id="四、使用账号2管理仓库-108-x69-117-x77-x66-49-51-48-49-53-x39-52-54-x31-x35-48-64-x31-x32-54-46-99-x6f-109"><a href="#四、使用账号2管理仓库-108-x69-117-x77-x66-49-51-48-49-53-x39-52-54-x31-x35-48-64-x31-x32-54-46-99-x6f-109" class="headerlink" title="四、使用账号2管理仓库:&#108;&#x69;&#117;&#x77;&#x66;&#49;&#51;&#48;&#49;&#53;&#x39;&#52;&#54;&#x31;&#x35;&#48;&#64;&#x31;&#x32;&#54;&#46;&#99;&#x6f;&#109;"></a>四、使用账号2管理仓库:<a href="mailto:&#108;&#x69;&#117;&#x77;&#x66;&#49;&#51;&#48;&#49;&#53;&#x39;&#52;&#54;&#x31;&#x35;&#48;&#64;&#x31;&#x32;&#54;&#46;&#99;&#x6f;&#109;">&#108;&#x69;&#117;&#x77;&#x66;&#49;&#51;&#48;&#49;&#53;&#x39;&#52;&#54;&#x31;&#x35;&#48;&#64;&#x31;&#x32;&#54;&#46;&#99;&#x6f;&#109;</a></h2><h3 id="1、使用账号-x6c-105-117-119-102-x31-51-x30-49-53-x39-x34-54-x31-x35-x30-x40-x31-x32-x36-46-99-111-x6d-克隆仓库"><a href="#1、使用账号-x6c-105-117-119-102-x31-51-x30-49-53-x39-x34-54-x31-x35-x30-x40-x31-x32-x36-46-99-111-x6d-克隆仓库" class="headerlink" title="1、使用账号&#x6c;&#105;&#117;&#119;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#x35;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#99;&#111;&#x6d;克隆仓库"></a>1、使用账号<a href="mailto:&#x6c;&#105;&#117;&#119;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#x35;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#99;&#111;&#x6d;">&#x6c;&#105;&#117;&#119;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#x35;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#99;&#111;&#x6d;</a>克隆仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone git@liuwf13015946150:liuwf17859719373&#x2F;liuwf17859719373.git</span><br></pre></td></tr></table></figure>
 <h3 id="2、设置本地仓库user-name和user-email"><a href="#2、设置本地仓库user-name和user-email" class="headerlink" title="2、设置本地仓库user.name和user.email"></a>2、设置本地仓库user.name和user.email</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config user.name &quot;liuwf13015946150&quot;</span><br><span class="line">git config user.email &quot;liuwf13015946150@126.com&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="3、查看本地user账户信息是否修改成功"><a href="#3、查看本地user账户信息是否修改成功" class="headerlink" title="3、查看本地user账户信息是否修改成功"></a>3、查看本地user账户信息是否修改成功</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch&#x2F;&#x2F;查看当前分支</span><br><span class="line">git pull&#x2F;&#x2F;更新代码到本地</span><br></pre></td></tr></table></figure>
@@ -1156,6 +1244,28 @@
       </categories>
       <tags>
         <tag>安装openoffice服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于google工具类Thumbnailator实现图片不失真压缩</title>
+    <url>/2021/01/25/%E5%9F%BA%E4%BA%8Egoogle%E5%B7%A5%E5%85%B7%E7%B1%BBThumbnailator%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8D%E5%A4%B1%E7%9C%9F%E5%8E%8B%E7%BC%A9/</url>
+    <content><![CDATA[<h3 id="1、图片压缩，有下面几个要求。"><a href="#1、图片压缩，有下面几个要求。" class="headerlink" title="1、图片压缩，有下面几个要求。"></a>1、图片压缩，有下面几个要求。</h3><p>1、压缩程度可控制，想压缩成多小就多小。</p>
+<p>2、压缩之后图片尽可能的不失真。</p>
+<p>3、压缩速度要快。</p>
+<p>4、代码简单，依赖较少。</p>
+<h3 id="2、maven的地址"><a href="#2、maven的地址" class="headerlink" title="2、maven的地址"></a>2、maven的地址</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;net.coobird&lt;&#x2F;groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;thumbnailator&lt;&#x2F;artifactId&gt;</span><br><span class="line">   &lt;version&gt;0.4.8&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3、使用起来特别的简单：一行代码就搞定了"><a href="#3、使用起来特别的简单：一行代码就搞定了" class="headerlink" title="3、使用起来特别的简单：一行代码就搞定了"></a>3、使用起来特别的简单：一行代码就搞定了</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Thumbnails.of(&quot;原图文件的路径&quot;)</span><br><span class="line">        .scale(1f)</span><br><span class="line">        .outputQuality(0.5f)</span><br><span class="line">        .toFile(&quot;压缩后文件的路径&quot;);</span><br></pre></td></tr></table></figure>
+<p>其中的scale是可以指定图片的大小，值在0到1之间，1f就是原图大小，0.5就是原图的一半大小，这里的大小是指图片的长宽。</p>
+<p>而outputQuality是图片的质量，值也是在0到1，越接近于1质量越好，越接近于0质量越差。</p>
+<p>对于压缩图片来说上面就已经足够了。</p>
+<h3 id="PS：经过使用后的反馈，这个工具无法正确压缩出png格式的图片"><a href="#PS：经过使用后的反馈，这个工具无法正确压缩出png格式的图片" class="headerlink" title="PS：经过使用后的反馈，这个工具无法正确压缩出png格式的图片"></a>PS：经过使用后的反馈，这个工具无法正确压缩出png格式的图片</h3><p>因为png本身就是一种无损的图片格式，而jpg是一种压缩的图片格式；<br>当前方法目的是为了在尽可能不丢失图片质量的情况下进行的压缩；<br>建议将图片压缩后的格式设置成jpg来解决；.outputFormat(“jpg”)<br>工具源码本身最后还是调用jdk中的ImageIO.createImageOutputStream(fos);来实现的；</p>
+<h3 id="4、例子"><a href="#4、例子" class="headerlink" title="4、例子"></a>4、例子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.awt.image.BufferedImage;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.OutputStream;</span><br><span class="line"></span><br><span class="line">import javax.imageio.ImageIO;</span><br><span class="line"></span><br><span class="line">import net.coobird.thumbnailator.Thumbnails;</span><br><span class="line">import net.coobird.thumbnailator.geometry.Positions;</span><br><span class="line"></span><br><span class="line">public class ThumbnailatorTest &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * </span><br><span class="line">     * @param args</span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ThumbnailatorTest thumbnailatorTest &#x3D; new ThumbnailatorTest();</span><br><span class="line">        thumbnailatorTest.test1();</span><br><span class="line">        thumbnailatorTest.test2();</span><br><span class="line">        thumbnailatorTest.test3();</span><br><span class="line">        thumbnailatorTest.test4();</span><br><span class="line">        thumbnailatorTest.test5();</span><br><span class="line">        thumbnailatorTest.test6();</span><br><span class="line">        thumbnailatorTest.test7();</span><br><span class="line">        thumbnailatorTest.test8();</span><br><span class="line">        thumbnailatorTest.test9();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 指定大小进行缩放</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test1() throws IOException &#123;</span><br><span class="line">        &#x2F;*</span><br><span class="line">         * size(width,height) 若图片横比200小，高比300小，不变</span><br><span class="line">         * 若图片横比200小，高比300大，高缩小到300，图片比例不变 若图片横比200大，高比300小，横缩小到200，图片比例不变</span><br><span class="line">         * 若图片横比200大，高比300大，图片按比例缩小，横为200或高为300</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(200, 300).toFile(&quot;C:&#x2F;image_200x300.jpg&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(2560, 2048).toFile(&quot;C:&#x2F;image_2560x2048.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 按照比例进行缩放</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test2() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * scale(比例)</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).scale(0.25f).toFile(&quot;C:&#x2F;image_25%.jpg&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).scale(1.10f).toFile(&quot;C:&#x2F;image_110%.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 不按照比例，指定大小进行缩放</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test3() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * keepAspectRatio(false) 默认是按照比例缩放的</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(120, 120).keepAspectRatio(false).toFile(&quot;C:&#x2F;image_120x120.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 旋转</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test4() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * rotate(角度),正数：顺时针 负数：逆时针</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).rotate(90).toFile(&quot;C:&#x2F;image+90.jpg&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).rotate(-90).toFile(&quot;C:&#x2F;iamge-90.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 水印</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test5() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * watermark(位置，水印图，透明度)</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(&quot;images&#x2F;watermark.png&quot;)), 0.5f)</span><br><span class="line">                .outputQuality(0.8f).toFile(&quot;C:&#x2F;image_watermark_bottom_right.jpg&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).watermark(Positions.CENTER, ImageIO.read(new File(&quot;images&#x2F;watermark.png&quot;)), 0.5f)</span><br><span class="line">                .outputQuality(0.8f).toFile(&quot;C:&#x2F;image_watermark_center.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 裁剪</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test6() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * 图片中心400*400的区域</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).sourceRegion(Positions.CENTER, 400, 400).size(200, 200).keepAspectRatio(false)</span><br><span class="line">                .toFile(&quot;C:&#x2F;image_region_center.jpg&quot;);</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * 图片右下400*400的区域</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).sourceRegion(Positions.BOTTOM_RIGHT, 400, 400).size(200, 200).keepAspectRatio(false)</span><br><span class="line">                .toFile(&quot;C:&#x2F;image_region_bootom_right.jpg&quot;);</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * 指定坐标</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).sourceRegion(600, 500, 400, 400).size(200, 200).keepAspectRatio(false).toFile(&quot;C:&#x2F;image_region_coord.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 转化图像格式</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test7() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * outputFormat(图像格式)</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).outputFormat(&quot;png&quot;).toFile(&quot;C:&#x2F;image_1280x1024.png&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).outputFormat(&quot;gif&quot;).toFile(&quot;C:&#x2F;image_1280x1024.gif&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 输出到OutputStream</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test8() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * toOutputStream(流对象)</span><br><span class="line">         *&#x2F;</span><br><span class="line">        OutputStream os &#x3D; new FileOutputStream(&quot;C:&#x2F;image_1280x1024_OutputStream.png&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).toOutputStream(os);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 输出到BufferedImage</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test9() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * asBufferedImage() 返回BufferedImage</span><br><span class="line">         *&#x2F;</span><br><span class="line">        BufferedImage thumbnail &#x3D; Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).asBufferedImage();</span><br><span class="line">        ImageIO.write(thumbnail, &quot;jpg&quot;, new File(&quot;C:&#x2F;image_1280x1024_BufferedImage.jpg&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>无损压缩图片</tag>
       </tags>
   </entry>
   <entry>
@@ -1198,25 +1308,20 @@
 ]]></content>
   </entry>
   <entry>
-    <title>基于google工具类Thumbnailator实现图片不失真压缩</title>
-    <url>/2021/01/25/%E5%9F%BA%E4%BA%8Egoogle%E5%B7%A5%E5%85%B7%E7%B1%BBThumbnailator%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8D%E5%A4%B1%E7%9C%9F%E5%8E%8B%E7%BC%A9/</url>
-    <content><![CDATA[<h3 id="1、图片压缩，有下面几个要求。"><a href="#1、图片压缩，有下面几个要求。" class="headerlink" title="1、图片压缩，有下面几个要求。"></a>1、图片压缩，有下面几个要求。</h3><p>1、压缩程度可控制，想压缩成多小就多小。</p>
-<p>2、压缩之后图片尽可能的不失真。</p>
-<p>3、压缩速度要快。</p>
-<p>4、代码简单，依赖较少。</p>
-<h3 id="2、maven的地址"><a href="#2、maven的地址" class="headerlink" title="2、maven的地址"></a>2、maven的地址</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;net.coobird&lt;&#x2F;groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;thumbnailator&lt;&#x2F;artifactId&gt;</span><br><span class="line">   &lt;version&gt;0.4.8&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="3、使用起来特别的简单：一行代码就搞定了"><a href="#3、使用起来特别的简单：一行代码就搞定了" class="headerlink" title="3、使用起来特别的简单：一行代码就搞定了"></a>3、使用起来特别的简单：一行代码就搞定了</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Thumbnails.of(&quot;原图文件的路径&quot;)</span><br><span class="line">        .scale(1f)</span><br><span class="line">        .outputQuality(0.5f)</span><br><span class="line">        .toFile(&quot;压缩后文件的路径&quot;);</span><br></pre></td></tr></table></figure>
-<p>其中的scale是可以指定图片的大小，值在0到1之间，1f就是原图大小，0.5就是原图的一半大小，这里的大小是指图片的长宽。</p>
-<p>而outputQuality是图片的质量，值也是在0到1，越接近于1质量越好，越接近于0质量越差。</p>
-<p>对于压缩图片来说上面就已经足够了。</p>
-<h3 id="PS：经过使用后的反馈，这个工具无法正确压缩出png格式的图片"><a href="#PS：经过使用后的反馈，这个工具无法正确压缩出png格式的图片" class="headerlink" title="PS：经过使用后的反馈，这个工具无法正确压缩出png格式的图片"></a>PS：经过使用后的反馈，这个工具无法正确压缩出png格式的图片</h3><p>因为png本身就是一种无损的图片格式，而jpg是一种压缩的图片格式；<br>当前方法目的是为了在尽可能不丢失图片质量的情况下进行的压缩；<br>建议将图片压缩后的格式设置成jpg来解决；.outputFormat(“jpg”)<br>工具源码本身最后还是调用jdk中的ImageIO.createImageOutputStream(fos);来实现的；</p>
-<h3 id="4、例子"><a href="#4、例子" class="headerlink" title="4、例子"></a>4、例子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.awt.image.BufferedImage;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.OutputStream;</span><br><span class="line"></span><br><span class="line">import javax.imageio.ImageIO;</span><br><span class="line"></span><br><span class="line">import net.coobird.thumbnailator.Thumbnails;</span><br><span class="line">import net.coobird.thumbnailator.geometry.Positions;</span><br><span class="line"></span><br><span class="line">public class ThumbnailatorTest &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * </span><br><span class="line">     * @param args</span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ThumbnailatorTest thumbnailatorTest &#x3D; new ThumbnailatorTest();</span><br><span class="line">        thumbnailatorTest.test1();</span><br><span class="line">        thumbnailatorTest.test2();</span><br><span class="line">        thumbnailatorTest.test3();</span><br><span class="line">        thumbnailatorTest.test4();</span><br><span class="line">        thumbnailatorTest.test5();</span><br><span class="line">        thumbnailatorTest.test6();</span><br><span class="line">        thumbnailatorTest.test7();</span><br><span class="line">        thumbnailatorTest.test8();</span><br><span class="line">        thumbnailatorTest.test9();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 指定大小进行缩放</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test1() throws IOException &#123;</span><br><span class="line">        &#x2F;*</span><br><span class="line">         * size(width,height) 若图片横比200小，高比300小，不变</span><br><span class="line">         * 若图片横比200小，高比300大，高缩小到300，图片比例不变 若图片横比200大，高比300小，横缩小到200，图片比例不变</span><br><span class="line">         * 若图片横比200大，高比300大，图片按比例缩小，横为200或高为300</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(200, 300).toFile(&quot;C:&#x2F;image_200x300.jpg&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(2560, 2048).toFile(&quot;C:&#x2F;image_2560x2048.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 按照比例进行缩放</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test2() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * scale(比例)</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).scale(0.25f).toFile(&quot;C:&#x2F;image_25%.jpg&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).scale(1.10f).toFile(&quot;C:&#x2F;image_110%.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 不按照比例，指定大小进行缩放</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test3() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * keepAspectRatio(false) 默认是按照比例缩放的</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(120, 120).keepAspectRatio(false).toFile(&quot;C:&#x2F;image_120x120.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 旋转</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test4() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * rotate(角度),正数：顺时针 负数：逆时针</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).rotate(90).toFile(&quot;C:&#x2F;image+90.jpg&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).rotate(-90).toFile(&quot;C:&#x2F;iamge-90.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 水印</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test5() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * watermark(位置，水印图，透明度)</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(&quot;images&#x2F;watermark.png&quot;)), 0.5f)</span><br><span class="line">                .outputQuality(0.8f).toFile(&quot;C:&#x2F;image_watermark_bottom_right.jpg&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).watermark(Positions.CENTER, ImageIO.read(new File(&quot;images&#x2F;watermark.png&quot;)), 0.5f)</span><br><span class="line">                .outputQuality(0.8f).toFile(&quot;C:&#x2F;image_watermark_center.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 裁剪</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test6() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * 图片中心400*400的区域</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).sourceRegion(Positions.CENTER, 400, 400).size(200, 200).keepAspectRatio(false)</span><br><span class="line">                .toFile(&quot;C:&#x2F;image_region_center.jpg&quot;);</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * 图片右下400*400的区域</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).sourceRegion(Positions.BOTTOM_RIGHT, 400, 400).size(200, 200).keepAspectRatio(false)</span><br><span class="line">                .toFile(&quot;C:&#x2F;image_region_bootom_right.jpg&quot;);</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * 指定坐标</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).sourceRegion(600, 500, 400, 400).size(200, 200).keepAspectRatio(false).toFile(&quot;C:&#x2F;image_region_coord.jpg&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 转化图像格式</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test7() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * outputFormat(图像格式)</span><br><span class="line">         *&#x2F;</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).outputFormat(&quot;png&quot;).toFile(&quot;C:&#x2F;image_1280x1024.png&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).outputFormat(&quot;gif&quot;).toFile(&quot;C:&#x2F;image_1280x1024.gif&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 输出到OutputStream</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test8() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * toOutputStream(流对象)</span><br><span class="line">         *&#x2F;</span><br><span class="line">        OutputStream os &#x3D; new FileOutputStream(&quot;C:&#x2F;image_1280x1024_OutputStream.png&quot;);</span><br><span class="line">        Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).toOutputStream(os);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 输出到BufferedImage</span><br><span class="line">     * </span><br><span class="line">     * @throws IOException</span><br><span class="line">     *&#x2F;</span><br><span class="line">    private void test9() throws IOException &#123;</span><br><span class="line">        &#x2F;**</span><br><span class="line">         * asBufferedImage() 返回BufferedImage</span><br><span class="line">         *&#x2F;</span><br><span class="line">        BufferedImage thumbnail &#x3D; Thumbnails.of(&quot;images&#x2F;test.jpg&quot;).size(1280, 1024).asBufferedImage();</span><br><span class="line">        ImageIO.write(thumbnail, &quot;jpg&quot;, new File(&quot;C:&#x2F;image_1280x1024_BufferedImage.jpg&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>导入maven项目pom.xml文件报错</title>
+    <url>/2021/02/05/%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AEmaven%E4%B8%8B%E8%BD%BD%E4%B8%8D%E4%B8%8B%E6%9D%A5-%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h2 id="1、问题："><a href="#1、问题：" class="headerlink" title="1、问题："></a>1、问题：</h2><p><img src="https://img-blog.csdnimg.cn/20210205104723191.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>
+<h2 id="2、原因："><a href="#2、原因：" class="headerlink" title="2、原因："></a>2、原因：</h2><p>maven本地仓库目录一看，发现命名都被系统改掉了，难怪识别不出来<br><img src="https://img-blog.csdnimg.cn/20210205104749664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>
+<h2 id="3、解决："><a href="#3、解决：" class="headerlink" title="3、解决："></a>3、解决：</h2><p>（1）删除后面有多余后缀：.lastUpdated的文件，然后重新Upadate Project（有这个后缀表示这个jar包没有下载下来，或者下载下来的损坏的）</p>
+<p><img src="https://img-blog.csdnimg.cn/20210205104805736.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>
+<p>（2）maven -&gt;update project</p>
+<p><img src="https://img-blog.csdnimg.cn/20210205104817547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>
 ]]></content>
       <categories>
         <category>工作</category>
       </categories>
       <tags>
-        <tag>无损压缩图片</tag>
+        <tag>maven pom文件报错</tag>
       </tags>
   </entry>
   <entry>
@@ -1235,21 +1340,12 @@
       </tags>
   </entry>
   <entry>
-    <title>导入maven项目pom.xml文件报错</title>
-    <url>/2021/02/05/%E5%AF%BC%E5%85%A5maven%E9%A1%B9%E7%9B%AEmaven%E4%B8%8B%E8%BD%BD%E4%B8%8D%E4%B8%8B%E6%9D%A5-%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<h2 id="1、问题："><a href="#1、问题：" class="headerlink" title="1、问题："></a>1、问题：</h2><p><img src="https://img-blog.csdnimg.cn/20210205104723191.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>
-<h2 id="2、原因："><a href="#2、原因：" class="headerlink" title="2、原因："></a>2、原因：</h2><p>maven本地仓库目录一看，发现命名都被系统改掉了，难怪识别不出来<br><img src="https://img-blog.csdnimg.cn/20210205104749664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>
-<h2 id="3、解决："><a href="#3、解决：" class="headerlink" title="3、解决："></a>3、解决：</h2><p>（1）删除后面有多余后缀：.lastUpdated的文件，然后重新Upadate Project（有这个后缀表示这个jar包没有下载下来，或者下载下来的损坏的）</p>
-<p><img src="https://img-blog.csdnimg.cn/20210205104805736.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>
-<p>（2）maven -&gt;update project</p>
-<p><img src="https://img-blog.csdnimg.cn/20210205104817547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"></p>
+    <title>查找spire的依赖</title>
+    <url>/2021/06/22/%E6%9F%A5%E6%89%BEspire%E7%9A%84%E4%BE%9D%E8%B5%96/</url>
+    <content><![CDATA[<p>1</p>
+<p>参考：<a href="https://blog.csdn.net/Eiceblue/article/details/88239741">https://blog.csdn.net/Eiceblue/article/details/88239741</a></p>
+<p>​    <a href="http://repo.e-iceblue.cn/#browse/search/maven">http://repo.e-iceblue.cn/#browse/search/maven</a></p>
 ]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>maven pom文件报错</tag>
-      </tags>
   </entry>
   <entry>
     <title>Typora编写博客文章，图片无法显示</title>
@@ -1558,101 +1654,5 @@
       <tags>
         <tag>SpringMVC-处理器方法的返回值</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>nodeJs_学习</title>
-    <url>/2021/06/18/nodeJs-%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>11</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>webpack_学习</title>
-    <url>/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>1</p>
-<p>一、</p>
-<p>1、全局安装webpack</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">cnpm install -g webpack@<span class="number">1</span>.<span class="number">13</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>测试</p>
-<p>（1）新增a.js文件</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">&quot;hello webpack&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p>（2）新增index.html文件</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;bundle.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>（3）使用webpack命令打包a.js</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">webpack a.js bundle.js</span><br></pre></td></tr></table></figure>
-<p>（4）打开index.html文件</p>
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618175510811.png" class="" title="image-20210618175510811">
-
-<p>2、增加配置文件，简化命令</p>
-<p>（1）增加webpack.config.js文件</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">&#x27;./a.js&#x27;</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">&#x27;bundle.js&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>（2）cmd运行webpack就可自动打包了</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack</span><br></pre></td></tr></table></figure>
-<p>3、使用webpack-dev-server微服务器打开index.html</p>
-<p>（1）全局安装webpack-dev-server</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g webpack-dev-server@1.15.0</span><br></pre></td></tr></table></figure>
-<p>（2）运行webpack-dev-server</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack-dev-server --open</span><br></pre></td></tr></table></figure>
-<p>会自动访问</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:8080&#x2F;webpack-dev-server&#x2F;</span><br></pre></td></tr></table></figure>
-<p>这个地址打开默认的index.html页面</p>
-<p>（3）我们可以通过修改配置文件修改默认的端口</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;a.js&#39;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#39;bundle.js&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        port:8088</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>4、使用webpack-dev-server实现热更新</p>
-<p>（1）修改配置文件webpack.config.js</p>
-<p>​    导入 webpack 模块</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var webpack &#x3D; require(&#39;webpack&#39;)</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;a.js&#39;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#39;bundle.js&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">   plugins:[</span><br><span class="line">        new webpack.HotModuleReplacementPlugin()</span><br><span class="line">    ],</span><br><span class="line">   devServer: &#123;</span><br><span class="line">        port:8088,</span><br><span class="line">        inline:true,</span><br><span class="line">        hot:true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>（2）重要：因为webpack是全局的，这种导入有可能不被识别，需要进行一次链接</p>
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180637143.png" class="" title="未链接前">
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm link webpack</span><br></pre></td></tr></table></figure>
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180655020.png" class="" title="image-20210618180655020">
-
-<p>（3）重新启动webpack-dev-server</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">webpack-dev-server --open</span><br></pre></td></tr></table></figure>
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618180702320.png" class="" title="image-20210618180702320">
-
-<p>二、不适用webpack-dev-server启动，而使用npm方式启动</p>
-<p>1、进行package.json配置文件的初始化</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618182925147.png" class="" title="image-20210618182925147">
-
-<p>2、修改package.json，增加脚本：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --open&quot;</span><br></pre></td></tr></table></figure>
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183607241.png" class="" title="image-20210618183607241">
-
-<p>3、运行命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
-<p>就跟之前的webpack-dev-server –open功能相同</p>
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183820232.png" class="" title="image-20210618183820232">
-
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618183853759.png" class="" title="image-20210618183853759">
-
-<p>三、使用npm打包多个js文件</p>
-<p>1、新建两个js文件</p>
-<p>（1）a.js</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.write(&quot;hello webpack from a.js&lt;br&gt;&quot;);</span><br></pre></td></tr></table></figure>
-<p>（2）b.js</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.write(&quot;hello webpack from b.js&lt;br&gt;&quot;);</span><br></pre></td></tr></table></figure>
-<p>2、修改webpack.config.json配置文件</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        bundle1: &#x27;./a.js&#x27;,</span><br><span class="line">        bundle2: &#x27;./b.js&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &#x27;[name].js&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        port:8088</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="/2021/06/18/webpack-%E5%AD%A6%E4%B9%A0/image-20210618185010668.png" class="" title="image-20210618185010668">
-
-
-
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>webpack_学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查找spire的依赖</title>
-    <url>/2021/06/22/%E6%9F%A5%E6%89%BEspire%E7%9A%84%E4%BE%9D%E8%B5%96/</url>
-    <content><![CDATA[<p>1</p>
-<p>参考：<a href="https://blog.csdn.net/Eiceblue/article/details/88239741">https://blog.csdn.net/Eiceblue/article/details/88239741</a></p>
-<p>​    <a href="http://repo.e-iceblue.cn/#browse/search/maven">http://repo.e-iceblue.cn/#browse/search/maven</a></p>
-]]></content>
   </entry>
 </search>
