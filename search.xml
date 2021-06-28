@@ -55,10 +55,71 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hexo_自建博客网站_域名解析</title>
+    <url>/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<p>1</p>
+<p>一、申请域名（要钱）</p>
+<p>liuwf.top</p>
+<p>二、域名解析</p>
+<p>网址：<a href="https://console.dnspod.cn/dns/list">https://console.dnspod.cn/dns/list</a></p>
+<p>1、添加待解析的域名</p>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154258490.png" class="" title="image-20210622154258490">
+
+<p>2、快速解析域名</p>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154341152.png" class="" title="image-20210622154341152">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154422456.png" class="" title="image-20210622154422456">
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;你的github名称加上.github.com</span><br><span class="line">&#x2F;&#x2F;https:&#x2F;&#x2F;github.com&#x2F;liuwf-github</span><br><span class="line">ping liuwf-github.github.com</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154536165.png" class="" title="image-20210622154536165">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154442491.png" class="" title="image-20210622154442491">
+
+<p>将这个ip地址添加到刚才的快速添加解析中就可</p>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154730998.png" class="" title="image-20210622154730998">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154826207.png" class="" title="image-20210622154826207">
+
+<p>三、在github中设置域名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;liuwf-github</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154935910.png" class="" title="image-20210622154935910">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155000458.png" class="" title="image-20210622155000458">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155029172.png" class="" title="image-20210622155029172">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155052223.png" class="" title="image-20210622155052223">
+
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155118073.png" class="" title="image-20210622155118073">
+
+<p>四、大功告成</p>
+<p>尝试访问liuwf.top</p>
+<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155156910.png" class="" title="image-20210622155156910">
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>博客设置域名</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JRebel使用</title>
     <url>/2021/05/19/JRebel%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>1</p>
 <p>参考网址：<a href="https://blog.csdn.net/cnd2449294059/article/details/82011103">https://blog.csdn.net/cnd2449294059/article/details/82011103</a>  激活</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Java_slf4j的使用</title>
+    <url>/2021/06/22/Java-slf4j%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- log --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.25<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.25<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;scope&gt;test&lt;/scope&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://www.cnblogs.com/bwcode/p/7159624.html">https://www.cnblogs.com/bwcode/p/7159624.html</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -113,18 +174,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Java实现将图片白边剪切</title>
-    <url>/2021/05/13/Java%E5%AE%9E%E7%8E%B0%E5%B0%86%E5%9B%BE%E7%89%87%E7%99%BD%E8%BE%B9%E5%89%AA%E5%88%87/</url>
-    <content><![CDATA[<p>1</p>
-<p>1、获取图片的白边数据</p>
-<p>2、剪切图片</p>
-<p>参考：<a href="https://blog.csdn.net/xietansheng/article/details/78453570">https://blog.csdn.net/xietansheng/article/details/78453570</a></p>
-<p>​            <a href="https://blog.csdn.net/u014704496/article/details/25040947">https://blog.csdn.net/u014704496/article/details/25040947</a></p>
-<p>java读取图片对应坐标的颜色值：<a href="https://blog.csdn.net/light_666/article/details/83341575">https://blog.csdn.net/light_666/article/details/83341575</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">	 * 裁剪，图片保存 </span><br><span class="line">	 * @param source 待裁剪图片路径</span><br><span class="line">	 * @param target 裁剪后图片生成路径</span><br><span class="line">	 * @throws IOException</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	public static void pictureCut(String source,String target) throws IOException &#123;</span><br><span class="line">		FileInputStream is &#x3D; null;</span><br><span class="line">		ImageInputStream iis &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			BufferedImage bufImage &#x3D; ImageIO.read(new File(source));</span><br><span class="line">			int width&#x3D;bufImage.getWidth();</span><br><span class="line">			int height&#x3D;bufImage.getHeight();</span><br><span class="line">			&#x2F;&#x2F; 读取图片文件</span><br><span class="line">			is &#x3D; new FileInputStream(source);</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * 返回包含所有当前已注册 ImageReader 的 Iterator，这些 ImageReader 声称能够解码指定格式。 参数：formatName -</span><br><span class="line">			 * 包含非正式格式名称 .（例如 &quot;jpeg&quot; 或 &quot;tiff&quot;）等 。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			Iterator&lt;ImageReader&gt; it &#x3D; ImageIO.getImageReadersByFormatName(&quot;png&quot;);</span><br><span class="line">			ImageReader reader &#x3D; it.next();</span><br><span class="line">			&#x2F;&#x2F; 获取图片流</span><br><span class="line">			iis &#x3D; ImageIO.createImageInputStream(is);</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * &lt;p&gt;iis:读取源.true:只向前搜索 &lt;&#x2F;p&gt;.将它标记为 ‘只向前搜索’。 此设置意味着包含在输入源中的图像将只按顺序读取，可能允许 reader</span><br><span class="line">			 * 避免缓存包含与以前已经读取的图像关联的数据的那些输入部分。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			reader.setInput(iis, true);</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * &lt;p&gt;描述如何对流进行解码的类&lt;p&gt;.用于指定如何在输入时从 Java Image I&#x2F;O</span><br><span class="line">			 * 框架的上下文中的流转换一幅图像或一组图像。用于特定图像格式的插件 将从其 ImageReader 实现的 getDefaultReadParam</span><br><span class="line">			 * 方法中返回 ImageReadParam 的实例。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			ImageReadParam param &#x3D; reader.getDefaultReadParam();</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * 图片裁剪区域。Rectangle 指定了坐标空间中的一个区域，通过 Rectangle 对象 的左上顶点的坐标（x，y）、宽度和高度可以定义这个区域。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			Rectangle rect &#x3D; new Rectangle(width*10&#x2F;100, height*5&#x2F;100, width*80&#x2F;100, height*90&#x2F;100);</span><br><span class="line">			&#x2F;&#x2F; 提供一个 BufferedImage，将其用作解码像素数据的目标。</span><br><span class="line">			param.setSourceRegion(rect);</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * 使用所提供的 ImageReadParam 读取通过索引 imageIndex 指定的对象，并将 它作为一个完整的 BufferedImage 返回。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			BufferedImage bi &#x3D; reader.read(0, param);</span><br><span class="line">			&#x2F;&#x2F; 保存新图片</span><br><span class="line">			ImageIO.write(bi, &quot;png&quot;, new File(target));</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			if (is !&#x3D; null)</span><br><span class="line">				is.close();</span><br><span class="line">			if (iis !&#x3D; null)</span><br><span class="line">				iis.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>Java操作word工具类</title>
     <url>/2021/05/17/Java%E6%93%8D%E4%BD%9Cword%E5%B7%A5%E5%85%B7%E7%B1%BB/</url>
     <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 工具类 将Word文件转化为XWPFDocument类对象返回 注意!!!:待转化的word不能是空的</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span> liuwf</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> String fileUrl</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> true:XWPFDocument</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> false:null</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> XWPFDocument <span class="title">docFileUrl2XWPFDocument</span><span class="params">(String fileUrl)</span> <span class="keyword">throws</span> IOException, InvalidFormatException </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (fileUrl != <span class="keyword">null</span>) &#123;</span><br><span class="line">			File file = <span class="keyword">new</span> File(fileUrl);</span><br><span class="line">			<span class="keyword">if</span> (file.exists()) &#123;</span><br><span class="line"></span><br><span class="line">				FileInputStream in = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">				OPCPackage open = OPCPackage.open(in);</span><br><span class="line">				XWPFDocument xWPFDocument = <span class="keyword">new</span> XWPFDocument(open);</span><br><span class="line">				<span class="keyword">return</span> xWPFDocument;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;ERROR:传入的待转化为XWPFDocument类对象的文件地址为null:&quot;</span> + fileUrl);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 工具类 在Word文件里插入图片</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span> liuwf</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> String imageUrl</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> String docFileUrl_target</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertImage2docFile</span><span class="params">(String imageUrl, String docFileUrl_target)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		BufferedImage bufImage = ImageIO.read(<span class="keyword">new</span> File(imageUrl));</span><br><span class="line">		<span class="keyword">int</span> width=bufImage.getWidth();</span><br><span class="line">		<span class="keyword">int</span> height=bufImage.getHeight();</span><br><span class="line">		<span class="keyword">int</span> widthInput=<span class="number">790</span>;</span><br><span class="line">		Map&lt;String, Object&gt; datas = <span class="keyword">new</span> HashMap&lt;String, Object&gt;() &#123;</span><br><span class="line">			&#123;</span><br><span class="line">				put(<span class="string">&quot;localPicture&quot;</span>, <span class="keyword">new</span> PictureRenderData(widthInput, widthInput * height / width, imageUrl));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">		File docFile_target = <span class="keyword">new</span> File(docFileUrl_target);</span><br><span class="line">		XWPFTemplate template = XWPFTemplate.compile(docFile_target).render(datas);</span><br><span class="line">		docFile_target.delete();</span><br><span class="line">		FileOutputStream out = <span class="keyword">new</span> FileOutputStream(docFile_target);</span><br><span class="line">		template.write(out);</span><br><span class="line">		out.flush();</span><br><span class="line">		out.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 工具类 在Word文件里插入Word文档中的内容 即合拼两个word文档的内容</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span> liuwf</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> String docFileUrl 主文档</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> String modelDocFileUrl</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> true插入成功</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> false插入失败</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">docFileAddDocFile</span><span class="params">(String docFileUrl, String modelDocFileUrl)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		XWPFDocument xWPFDocument_picturemodel = docFileUrl2XWPFDocument(modelDocFileUrl);</span><br><span class="line">		<span class="keyword">if</span> (xWPFDocument_picturemodel != <span class="keyword">null</span>) &#123;</span><br><span class="line">			XWPFDocument xWPFDocument_shengChengWengDang = docFileUrl2XWPFDocument(docFileUrl);</span><br><span class="line">			<span class="keyword">if</span> (xWPFDocument_shengChengWengDang != <span class="keyword">null</span>) &#123;</span><br><span class="line">				appendBody(xWPFDocument_shengChengWengDang, xWPFDocument_picturemodel);</span><br><span class="line">				File file = <span class="keyword">new</span> File(docFileUrl); <span class="comment">// 最终生成文档</span></span><br><span class="line">				FileOutputStream outputStream_target = <span class="keyword">new</span> FileOutputStream(file);</span><br><span class="line">				xWPFDocument_shengChengWengDang.write(outputStream_target);</span><br><span class="line"></span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">&quot;合并两个office文档失败，插入的文档为转化XWPFDocument失败,为null:&quot;</span> + modelDocFileUrl);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 复制word文档</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span> liuwf</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> File source 空文档等着复制东西进去的文档</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> File dest</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">copyFileUsingFileChannels</span><span class="params">(File source, File dest)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		FileChannel inputChannel = <span class="keyword">null</span>;</span><br><span class="line">		FileChannel outputChannel = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			inputChannel = <span class="keyword">new</span> FileInputStream(source).getChannel();</span><br><span class="line">			outputChannel = <span class="keyword">new</span> FileOutputStream(dest).getChannel();</span><br><span class="line">			outputChannel.transferFrom(inputChannel, <span class="number">0</span>, inputChannel.size());</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">			inputChannel.close();</span><br><span class="line">			outputChannel.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 合并文档</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> src</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> append</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">appendBody</span><span class="params">(XWPFDocument src, XWPFDocument append)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		CTBody src1Body = src.getDocument().getBody();</span><br><span class="line">		CTBody src2Body = append.getDocument().getBody();</span><br><span class="line"></span><br><span class="line">		List&lt;XWPFPictureData&gt; allPictures = append.getAllPictures();</span><br><span class="line">		<span class="comment">// 记录图片合并前及合并后的ID</span></span><br><span class="line">		Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap();</span><br><span class="line">		<span class="keyword">for</span> (XWPFPictureData picture : allPictures) &#123;</span><br><span class="line">			String before = append.getRelationId(picture);</span><br><span class="line">			<span class="comment">// 将原文档中的图片加入到目标文档中</span></span><br><span class="line">			String after = src.addPictureData(picture.getData(), Document.PICTURE_TYPE_PNG);</span><br><span class="line">			map.put(before, after);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		appendBody(src1Body, src2Body, map);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> src</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> append</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> map</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">appendBody</span><span class="params">(CTBody src, CTBody append, Map&lt;String, String&gt; map)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		XmlOptions optionsOuter = <span class="keyword">new</span> XmlOptions();</span><br><span class="line">		optionsOuter.setSaveOuter();</span><br><span class="line">		String appendString = append.xmlText(optionsOuter);</span><br><span class="line">		String srcString = src.xmlText();</span><br><span class="line">		String prefix = srcString.substring(<span class="number">0</span>, srcString.indexOf(<span class="string">&quot;&gt;&quot;</span>) + <span class="number">1</span>);</span><br><span class="line">		String mainPart = srcString.substring(srcString.indexOf(<span class="string">&quot;&gt;&quot;</span>) + <span class="number">1</span>, srcString.lastIndexOf(<span class="string">&quot;&lt;&quot;</span>));</span><br><span class="line">		String sufix = srcString.substring(srcString.lastIndexOf(<span class="string">&quot;&lt;&quot;</span>));</span><br><span class="line">		String addPart = appendString.substring(appendString.indexOf(<span class="string">&quot;&gt;&quot;</span>) + <span class="number">1</span>, appendString.lastIndexOf(<span class="string">&quot;&lt;&quot;</span>));</span><br><span class="line">		CTBody makeBody = CTBody.Factory.parse(prefix + mainPart + addPart + sufix);</span><br><span class="line">		src.set(makeBody);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 删除file文件及目录</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(File file)</span> </span>&#123;</span><br><span class="line">		File[] files = file.listFiles();<span class="comment">// 将file子目录及子文件放进文件数组</span></span><br><span class="line">		<span class="keyword">if</span> (files != <span class="keyword">null</span>) &#123;<span class="comment">// 如果包含文件进行删除操作</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; files.length; i++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (files[i].isFile()) &#123;<span class="comment">// 删除子文件</span></span><br><span class="line">					files[i].delete();</span><br><span class="line">				&#125; <span class="keyword">else</span> <span class="keyword">if</span> (files[i].isDirectory()) &#123;<span class="comment">// 通过递归方法删除子目录的文件</span></span><br><span class="line">					remove(files[i]);</span><br><span class="line">				&#125;</span><br><span class="line">				files[i].delete();<span class="comment">// 删除子目录</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -137,6 +186,18 @@
       <tags>
         <tag>Java操作word</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Java实现将图片白边剪切</title>
+    <url>/2021/05/13/Java%E5%AE%9E%E7%8E%B0%E5%B0%86%E5%9B%BE%E7%89%87%E7%99%BD%E8%BE%B9%E5%89%AA%E5%88%87/</url>
+    <content><![CDATA[<p>1</p>
+<p>1、获取图片的白边数据</p>
+<p>2、剪切图片</p>
+<p>参考：<a href="https://blog.csdn.net/xietansheng/article/details/78453570">https://blog.csdn.net/xietansheng/article/details/78453570</a></p>
+<p>​            <a href="https://blog.csdn.net/u014704496/article/details/25040947">https://blog.csdn.net/u014704496/article/details/25040947</a></p>
+<p>java读取图片对应坐标的颜色值：<a href="https://blog.csdn.net/light_666/article/details/83341575">https://blog.csdn.net/light_666/article/details/83341575</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">	 * 裁剪，图片保存 </span><br><span class="line">	 * @param source 待裁剪图片路径</span><br><span class="line">	 * @param target 裁剪后图片生成路径</span><br><span class="line">	 * @throws IOException</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	public static void pictureCut(String source,String target) throws IOException &#123;</span><br><span class="line">		FileInputStream is &#x3D; null;</span><br><span class="line">		ImageInputStream iis &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			BufferedImage bufImage &#x3D; ImageIO.read(new File(source));</span><br><span class="line">			int width&#x3D;bufImage.getWidth();</span><br><span class="line">			int height&#x3D;bufImage.getHeight();</span><br><span class="line">			&#x2F;&#x2F; 读取图片文件</span><br><span class="line">			is &#x3D; new FileInputStream(source);</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * 返回包含所有当前已注册 ImageReader 的 Iterator，这些 ImageReader 声称能够解码指定格式。 参数：formatName -</span><br><span class="line">			 * 包含非正式格式名称 .（例如 &quot;jpeg&quot; 或 &quot;tiff&quot;）等 。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			Iterator&lt;ImageReader&gt; it &#x3D; ImageIO.getImageReadersByFormatName(&quot;png&quot;);</span><br><span class="line">			ImageReader reader &#x3D; it.next();</span><br><span class="line">			&#x2F;&#x2F; 获取图片流</span><br><span class="line">			iis &#x3D; ImageIO.createImageInputStream(is);</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * &lt;p&gt;iis:读取源.true:只向前搜索 &lt;&#x2F;p&gt;.将它标记为 ‘只向前搜索’。 此设置意味着包含在输入源中的图像将只按顺序读取，可能允许 reader</span><br><span class="line">			 * 避免缓存包含与以前已经读取的图像关联的数据的那些输入部分。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			reader.setInput(iis, true);</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * &lt;p&gt;描述如何对流进行解码的类&lt;p&gt;.用于指定如何在输入时从 Java Image I&#x2F;O</span><br><span class="line">			 * 框架的上下文中的流转换一幅图像或一组图像。用于特定图像格式的插件 将从其 ImageReader 实现的 getDefaultReadParam</span><br><span class="line">			 * 方法中返回 ImageReadParam 的实例。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			ImageReadParam param &#x3D; reader.getDefaultReadParam();</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * 图片裁剪区域。Rectangle 指定了坐标空间中的一个区域，通过 Rectangle 对象 的左上顶点的坐标（x，y）、宽度和高度可以定义这个区域。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			Rectangle rect &#x3D; new Rectangle(width*10&#x2F;100, height*5&#x2F;100, width*80&#x2F;100, height*90&#x2F;100);</span><br><span class="line">			&#x2F;&#x2F; 提供一个 BufferedImage，将其用作解码像素数据的目标。</span><br><span class="line">			param.setSourceRegion(rect);</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 * 使用所提供的 ImageReadParam 读取通过索引 imageIndex 指定的对象，并将 它作为一个完整的 BufferedImage 返回。</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			BufferedImage bi &#x3D; reader.read(0, param);</span><br><span class="line">			&#x2F;&#x2F; 保存新图片</span><br><span class="line">			ImageIO.write(bi, &quot;png&quot;, new File(target));</span><br><span class="line">		&#125; finally &#123;</span><br><span class="line">			if (is !&#x3D; null)</span><br><span class="line">				is.close();</span><br><span class="line">			if (iis !&#x3D; null)</span><br><span class="line">				iis.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>Java调用jacob报错：com.jacob.com.ComFailException: Can&#39;t co-create object</title>
@@ -258,6 +319,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Oracle配置字符集解决中文乱码</title>
+    <url>/2021/03/08/Oracle%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SQL*Plus: Release 11.2.0.1.0 Production on 星期一 3月 8 15:55:17 2021</span><br><span class="line"></span><br><span class="line">Copyright (c) 1982, 2010, Oracle.  All rights reserved.</span><br><span class="line"></span><br><span class="line">请输入用户名:  system</span><br><span class="line">输入口令:</span><br><span class="line"></span><br><span class="line">连接到:</span><br><span class="line">Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production</span><br><span class="line">With the Partitioning, OLAP, Data Mining and Real Application Testing options</span><br><span class="line"></span><br><span class="line">SQL&gt; $sqlplus &#x2F; as sysdba</span><br><span class="line"></span><br><span class="line">SQL*Plus: Release 11.2.0.1.0 Production on 星期一 3月 8 15:55:33 2021</span><br><span class="line"></span><br><span class="line">Copyright (c) 1982, 2010, Oracle.  All rights reserved.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">连接到:</span><br><span class="line">Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production</span><br><span class="line">With the Partitioning, OLAP, Data Mining and Real Application Testing options</span><br><span class="line"></span><br><span class="line">SQL&gt; SHUTDOWN IMMEDIATE;</span><br><span class="line">数据库已经关闭。</span><br><span class="line">已经卸载数据库。</span><br><span class="line">ORACLE 例程已经关闭。</span><br><span class="line">SQL&gt; STARTUP MOUNT;</span><br><span class="line">ORACLE 例程已经启动。</span><br><span class="line"></span><br><span class="line">Total System Global Area 1.0222E+10 bytes</span><br><span class="line">Fixed Size                  2184592 bytes</span><br><span class="line">Variable Size            5301602928 bytes</span><br><span class="line">Database Buffers         4898947072 bytes</span><br><span class="line">Redo Buffers               19075072 bytes</span><br><span class="line">数据库装载完毕。</span><br><span class="line">SQL&gt; ALTER SYSTEM ENABLE RESTRICTED SESSION;</span><br><span class="line"></span><br><span class="line">系统已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; ALTER SYSTEM SET JOB_QUEUE_PROCESSES&#x3D;0;</span><br><span class="line"></span><br><span class="line">系统已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; ALTER SYSTEM SET AQ_TM_PROCESSES&#x3D;0;</span><br><span class="line"></span><br><span class="line">系统已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; ALTER DATABASE OPEN;</span><br><span class="line"></span><br><span class="line">数据库已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; ALTER DATABASE CHARACTER SET INTERNAL_USE UTF8;</span><br><span class="line"></span><br><span class="line">数据库已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; SHUTDOWN IMMEDIATE;</span><br><span class="line">数据库已经关闭。</span><br><span class="line">已经卸载数据库。</span><br><span class="line">ORACLE 例程已经关闭。</span><br><span class="line">SQL&gt; STARTUP;</span><br><span class="line">ORACLE 例程已经启动。</span><br><span class="line"></span><br><span class="line">Total System Global Area 1.0222E+10 bytes</span><br><span class="line">Fixed Size                  2184592 bytes</span><br><span class="line">Variable Size            5301602928 bytes</span><br><span class="line">Database Buffers         4898947072 bytes</span><br><span class="line">Redo Buffers               19075072 bytes</span><br><span class="line">数据库装载完毕。</span><br><span class="line">数据库已经打开。</span><br><span class="line">SQL&gt; select userenv(&#39;language&#39;) from dual;</span><br><span class="line"></span><br><span class="line">USERENV(&#39;LANGUAGE&#39;)</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">SIMPLIFIED CHINESE_CHINA.UTF8</span><br><span class="line"></span><br><span class="line">SQL&gt;</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://blog.csdn.net/River_Continent/article/details/94732734">https://blog.csdn.net/River_Continent/article/details/94732734</a></p>
+]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>Oracle中文乱码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SpringBoot启动报错:Error creating Bean with name &#39;khtbAttrServiceImpl&#39; has been injected into other beans</title>
+    <url>/2021/06/04/SpringBoot%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99-Error-creating-Bean-with-name-khtbAttrServiceImpl-has-been-injected-into-other-beans/</url>
+    <content><![CDATA[<p>1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error creating bean with name &#39;khtbAttrServiceImpl&#39;: Bean with name &#39;khtbAttrServiceImpl&#39; has been injected into other beans [khtbServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using &#39;getBeanNamesOfType&#39; with the &#39;allowEagerInit&#39; flag turned off, for example.</span><br></pre></td></tr></table></figure>
+
+
+<p>参考：<a href="https://blog.csdn.net/heboy19/article/details/79373832">https://blog.csdn.net/heboy19/article/details/79373832</a> 解决spring循环依赖的问题：has been injected into other beans</p>
+<p>解决：将方法移动到同一个ServiceImpl中即可</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Oracle修改用户的默认表空间名</title>
     <url>/2021/03/04/Oracle%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%A9%BA%E9%97%B4%E5%90%8D/</url>
     <content><![CDATA[<p>1、查看表空间名</p>
@@ -296,30 +381,6 @@
       <tags>
         <tag>Oracle命令</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Oracle配置字符集解决中文乱码</title>
-    <url>/2021/03/08/Oracle%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SQL*Plus: Release 11.2.0.1.0 Production on 星期一 3月 8 15:55:17 2021</span><br><span class="line"></span><br><span class="line">Copyright (c) 1982, 2010, Oracle.  All rights reserved.</span><br><span class="line"></span><br><span class="line">请输入用户名:  system</span><br><span class="line">输入口令:</span><br><span class="line"></span><br><span class="line">连接到:</span><br><span class="line">Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production</span><br><span class="line">With the Partitioning, OLAP, Data Mining and Real Application Testing options</span><br><span class="line"></span><br><span class="line">SQL&gt; $sqlplus &#x2F; as sysdba</span><br><span class="line"></span><br><span class="line">SQL*Plus: Release 11.2.0.1.0 Production on 星期一 3月 8 15:55:33 2021</span><br><span class="line"></span><br><span class="line">Copyright (c) 1982, 2010, Oracle.  All rights reserved.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">连接到:</span><br><span class="line">Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production</span><br><span class="line">With the Partitioning, OLAP, Data Mining and Real Application Testing options</span><br><span class="line"></span><br><span class="line">SQL&gt; SHUTDOWN IMMEDIATE;</span><br><span class="line">数据库已经关闭。</span><br><span class="line">已经卸载数据库。</span><br><span class="line">ORACLE 例程已经关闭。</span><br><span class="line">SQL&gt; STARTUP MOUNT;</span><br><span class="line">ORACLE 例程已经启动。</span><br><span class="line"></span><br><span class="line">Total System Global Area 1.0222E+10 bytes</span><br><span class="line">Fixed Size                  2184592 bytes</span><br><span class="line">Variable Size            5301602928 bytes</span><br><span class="line">Database Buffers         4898947072 bytes</span><br><span class="line">Redo Buffers               19075072 bytes</span><br><span class="line">数据库装载完毕。</span><br><span class="line">SQL&gt; ALTER SYSTEM ENABLE RESTRICTED SESSION;</span><br><span class="line"></span><br><span class="line">系统已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; ALTER SYSTEM SET JOB_QUEUE_PROCESSES&#x3D;0;</span><br><span class="line"></span><br><span class="line">系统已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; ALTER SYSTEM SET AQ_TM_PROCESSES&#x3D;0;</span><br><span class="line"></span><br><span class="line">系统已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; ALTER DATABASE OPEN;</span><br><span class="line"></span><br><span class="line">数据库已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; ALTER DATABASE CHARACTER SET INTERNAL_USE UTF8;</span><br><span class="line"></span><br><span class="line">数据库已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; SHUTDOWN IMMEDIATE;</span><br><span class="line">数据库已经关闭。</span><br><span class="line">已经卸载数据库。</span><br><span class="line">ORACLE 例程已经关闭。</span><br><span class="line">SQL&gt; STARTUP;</span><br><span class="line">ORACLE 例程已经启动。</span><br><span class="line"></span><br><span class="line">Total System Global Area 1.0222E+10 bytes</span><br><span class="line">Fixed Size                  2184592 bytes</span><br><span class="line">Variable Size            5301602928 bytes</span><br><span class="line">Database Buffers         4898947072 bytes</span><br><span class="line">Redo Buffers               19075072 bytes</span><br><span class="line">数据库装载完毕。</span><br><span class="line">数据库已经打开。</span><br><span class="line">SQL&gt; select userenv(&#39;language&#39;) from dual;</span><br><span class="line"></span><br><span class="line">USERENV(&#39;LANGUAGE&#39;)</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">SIMPLIFIED CHINESE_CHINA.UTF8</span><br><span class="line"></span><br><span class="line">SQL&gt;</span><br></pre></td></tr></table></figure>
-<p>参考：<a href="https://blog.csdn.net/River_Continent/article/details/94732734">https://blog.csdn.net/River_Continent/article/details/94732734</a></p>
-]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>Oracle中文乱码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SpringBoot启动报错:Error creating Bean with name &#39;khtbAttrServiceImpl&#39; has been injected into other beans</title>
-    <url>/2021/06/04/SpringBoot%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99-Error-creating-Bean-with-name-khtbAttrServiceImpl-has-been-injected-into-other-beans/</url>
-    <content><![CDATA[<p>1</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error creating bean with name &#39;khtbAttrServiceImpl&#39;: Bean with name &#39;khtbAttrServiceImpl&#39; has been injected into other beans [khtbServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using &#39;getBeanNamesOfType&#39; with the &#39;allowEagerInit&#39; flag turned off, for example.</span><br></pre></td></tr></table></figure>
-
-
-<p>参考：<a href="https://blog.csdn.net/heboy19/article/details/79373832">https://blog.csdn.net/heboy19/article/details/79373832</a> 解决spring循环依赖的问题：has been injected into other beans</p>
-<p>解决：将方法移动到同一个ServiceImpl中即可</p>
-]]></content>
   </entry>
   <entry>
     <title>VUE+axios使用</title>
@@ -428,18 +489,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Ajax学习笔记</title>
-    <url>/2021/01/28/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>1、思维导图<br><img src="https://img-blog.csdnimg.cn/20210128102220350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"><br>2、项目github仓库</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;liuwf-github&#x2F;ajax-study-queryprovince.git</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>Ajax学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ch01-SpringMVC-requestmapping-使用java对象接收请求参数</title>
     <url>/2021/04/19/ch01-SpringMVC-requestmapping-%E4%BD%BF%E7%94%A8java%E5%AF%B9%E8%B1%A1%E6%8E%A5%E6%94%B6%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/</url>
     <content><![CDATA[<h2 id="一、流程"><a href="#一、流程" class="headerlink" title="一、流程"></a>一、流程</h2><h4 id="1、流程图："><a href="#1、流程图：" class="headerlink" title="1、流程图："></a>1、流程图：</h4><img src="/2021/04/19/ch01-SpringMVC-requestmapping-%E4%BD%BF%E7%94%A8java%E5%AF%B9%E8%B1%A1%E6%8E%A5%E6%94%B6%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/image-20210419155707021.png" class="" title="image-20210419155707021">
@@ -490,6 +539,18 @@
       </categories>
       <tags>
         <tag>SpringMVC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ajax学习笔记</title>
+    <url>/2021/01/28/ajax%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>1、思维导图<br><img src="https://img-blog.csdnimg.cn/20210128102220350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDIxNTM5,size_16,color_FFFFFF,t_70#pic_center"><br>2、项目github仓库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;liuwf-github&#x2F;ajax-study-queryprovince.git</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>Ajax学习</tag>
       </tags>
   </entry>
   <entry>
@@ -546,6 +607,17 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>未解决_Eclipse全局搜索时报错Problems encountered during text serch</title>
+    <url>/2021/02/20/eclipse%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2%E6%97%B6%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<img src="/2021/02/20/eclipse%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2%E6%97%B6%E6%8A%A5%E9%94%99/image-20210220180441087.png" class="">]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>Eclipse全局搜索报错</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Eclipse报错：eclipse ClassNotFoundException:org.jbpm.api.ProcessEngine</title>
     <url>/2021/02/08/eclipse-console%E6%89%93%E5%8D%B0%E5%87%BAClassNotFoundException-org-jbpm-api-ProcessEngine-%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<h2 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2021-2-8 9:33:28 org.apache.catalina.core.StandardContext listenerStart</span><br><span class="line">严重: Exception sending context initialized event to listener instance of class org.springframework.web.context.ContextLoaderListener</span><br><span class="line">java.lang.NoClassDefFoundError: org&#x2F;jbpm&#x2F;api&#x2F;ProcessEngine</span><br><span class="line">	at java.lang.Class.getDeclaredMethods0(Native Method)</span><br><span class="line">	at java.lang.Class.privateGetDeclaredMethods(Class.java:2436)</span><br><span class="line">	at java.lang.Class.getDeclaredMethods(Class.java:1793)</span><br><span class="line">	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:460)</span><br><span class="line">	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:443)</span><br><span class="line">	at org.springframework.util.ReflectionUtils.getAllDeclaredMethods(ReflectionUtils.java:484)</span><br><span class="line">	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:583)</span><br><span class="line">	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:521)</span><br><span class="line">	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1177)</span><br><span class="line">	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:222)</span><br><span class="line">	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:505)</span><br><span class="line">	at org.springframework.context.support.AbstractApplicationContext.__refresh(AbstractApplicationContext.java:362)</span><br><span class="line">	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:41010)</span><br><span class="line">	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:255)</span><br><span class="line">	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:199)</span><br><span class="line">	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:45)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4206)</span><br><span class="line">	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4705)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1057)</span><br><span class="line">	at org.apache.catalina.core.StandardHost.start(StandardHost.java:840)</span><br><span class="line">	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1057)</span><br><span class="line">	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:463)</span><br><span class="line">	at org.apache.catalina.core.StandardService.start(StandardService.java:525)</span><br><span class="line">	at org.apache.catalina.core.StandardServer.start(StandardServer.java:754)</span><br><span class="line">	at org.apache.catalina.startup.Catalina.start(Catalina.java:595)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span><br><span class="line">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)</span><br><span class="line">	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)</span><br><span class="line">	at java.lang.reflect.Method.invoke(Method.java:597)</span><br><span class="line">	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)</span><br><span class="line">	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)</span><br><span class="line">Caused by: java.lang.ClassNotFoundException: org.jbpm.api.ProcessEngine</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1680)</span><br><span class="line">	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1526)</span><br><span class="line">	... 31 more</span><br><span class="line">2021-2-8 9:33:28 org.apache.catalina.core.StandardContext start</span><br><span class="line">严重: Error listenerStart</span><br><span class="line">2021-2-8 9:33:28 org.apache.catalina.core.StandardContext start</span><br><span class="line">严重: Context [&#x2F;cms] startup failed due to previous errors</span><br><span class="line">2021-2-8 9:33:28 org.apache.catalina.core.ApplicationContext log</span><br></pre></td></tr></table></figure>
@@ -558,17 +630,6 @@
       </categories>
       <tags>
         <tag>Maven项目报错</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>未解决_Eclipse全局搜索时报错Problems encountered during text serch</title>
-    <url>/2021/02/20/eclipse%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2%E6%97%B6%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<img src="/2021/02/20/eclipse%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2%E6%97%B6%E6%8A%A5%E9%94%99/image-20210220180441087.png" class="">]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>Eclipse全局搜索报错</tag>
       </tags>
   </entry>
   <entry>
@@ -709,6 +770,37 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo&amp;nodeJs&amp;cnpm&amp;yarn_环境安装</title>
+    <url>/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>一、nodeJs安装</p>
+<p>​    傻瓜式安装，中间有个选项是自动安装所需组件，这个要勾选，勾选后安装完成会弹出PowerShell来安装必要的组件</p>
+<img src="/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20210628093321071.png" class="" title="image-20210628093321071">
+
+<img src="/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20210628093434864.png" class="" title="image-20210628093434864">
+
+<p>二、cnpm安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20210628093539138.png" class="" title="image-20210628093539138">
+
+<p>注意：安装后cnpm并不能正常使用</p>
+<img src="/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20210628094438804.png" class="" title="image-20210628094438804">
+
+<p> 解决：使用管理员打开PowerShell</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set-ExecutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20210628094515925.png" class="" title="image-20210628094515925">
+
+<img src="/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20210628094544620.png" class="" title="image-20210628094544620">
+
+<p>参考：<a href="https://blog.csdn.net/majing0520/article/details/105993470">https://blog.csdn.net/majing0520/article/details/105993470</a></p>
+<p>三、yarn安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20210628093737770.png" class="" title="image-20210628093737770">
+
+<img src="/2021/06/28/hexo-nodeJs-cnpm-yarn-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20210628093806226.png" class="" title="image-20210628093806226">
+
+]]></content>
+  </entry>
+  <entry>
     <title>hexo_博客添加搜索功能</title>
     <url>/2021/06/17/hexo-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<p>1、添加依赖</p>
@@ -781,12 +873,6 @@
       <tags>
         <tag>mysql无法启动</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>nodeJs_学习</title>
-    <url>/2021/06/18/nodeJs-%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>11</p>
-]]></content>
   </entry>
   <entry>
     <title>使用PLSQLDev工具导入dmp文件闪退</title>
@@ -1202,7 +1288,7 @@
 <h3 id="3、测试是否配置成功"><a href="#3、测试是否配置成功" class="headerlink" title="3、测试是否配置成功"></a>3、测试是否配置成功</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T User@Host &#x2F;&#x2F;格式</span><br><span class="line">ssh -T git@liuwf17859719373 &#x2F;&#x2F;例子</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/2021020511060114.png#pic_center"></p>
 <p><img src="https://img-blog.csdnimg.cn/20210205110609958.png#pic_center"></p>
-<h2 id="三、用账号1管理仓库-x6c-x69-x75-119-x66-49-x37-56-x35-57-x37-x31-57-51-55-51-x40-49-x32-x36-x2e-x63-111-x6d"><a href="#三、用账号1管理仓库-x6c-x69-x75-119-x66-49-x37-56-x35-57-x37-x31-57-51-55-51-x40-49-x32-x36-x2e-x63-111-x6d" class="headerlink" title="三、用账号1管理仓库:&#x6c;&#x69;&#x75;&#119;&#x66;&#49;&#x37;&#56;&#x35;&#57;&#x37;&#x31;&#57;&#51;&#55;&#51;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#111;&#x6d;"></a>三、用账号1管理仓库:<a href="mailto:&#x6c;&#x69;&#x75;&#119;&#x66;&#49;&#x37;&#56;&#x35;&#57;&#x37;&#x31;&#57;&#51;&#55;&#51;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x69;&#x75;&#119;&#x66;&#49;&#x37;&#56;&#x35;&#57;&#x37;&#x31;&#57;&#51;&#55;&#51;&#x40;&#49;&#x32;&#x36;&#x2e;&#x63;&#111;&#x6d;</a></h2><h3 id="1、克隆仓库"><a href="#1、克隆仓库" class="headerlink" title="1、克隆仓库"></a>1、克隆仓库</h3><p>gitee上复制的克隆地址：</p>
+<h2 id="三、用账号1管理仓库-x6c-105-x75-x77-102-49-55-56-x35-x39-55-x31-57-x33-55-51-64-x31-x32-x36-46-x63-x6f-109"><a href="#三、用账号1管理仓库-x6c-105-x75-x77-102-49-55-56-x35-x39-55-x31-57-x33-55-51-64-x31-x32-x36-46-x63-x6f-109" class="headerlink" title="三、用账号1管理仓库:&#x6c;&#105;&#x75;&#x77;&#102;&#49;&#55;&#56;&#x35;&#x39;&#55;&#x31;&#57;&#x33;&#55;&#51;&#64;&#x31;&#x32;&#x36;&#46;&#x63;&#x6f;&#109;"></a>三、用账号1管理仓库:<a href="mailto:&#x6c;&#105;&#x75;&#x77;&#102;&#49;&#55;&#56;&#x35;&#x39;&#55;&#x31;&#57;&#x33;&#55;&#51;&#64;&#x31;&#x32;&#x36;&#46;&#x63;&#x6f;&#109;">&#x6c;&#105;&#x75;&#x77;&#102;&#49;&#55;&#56;&#x35;&#x39;&#55;&#x31;&#57;&#x33;&#55;&#51;&#64;&#x31;&#x32;&#x36;&#46;&#x63;&#x6f;&#109;</a></h2><h3 id="1、克隆仓库"><a href="#1、克隆仓库" class="headerlink" title="1、克隆仓库"></a>1、克隆仓库</h3><p>gitee上复制的克隆地址：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git@gitee.com:liuwf17859719373&#x2F;liuwf17859719373.git</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;代码格式</span><br><span class="line">git clone User@Host:仓库地址.git </span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;例子</span><br><span class="line">git clone git@liuwf17859719373:liuwf17859719373&#x2F;liuwf17859719373.git </span><br></pre></td></tr></table></figure>
@@ -1211,7 +1297,7 @@
 <p>注意,在设置结束之后,创建git repo(<code>git init</code>)的时候,一定要再次检查一下用户名和用户邮箱,如果不对, 需要再次设置.<br> 如果发现修改不成功，可能是凭证缓存没清除：<br> 到控制面板搜索Windows凭证删除普通凭证中的gitee凭证。</p>
 <h3 id="4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中"><a href="#4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中" class="headerlink" title="4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中"></a>4、将本地修改的内容使用设置的不同账号上传到gitee远程仓库中</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;查看是否是目标账号</span><br><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;上传代码</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;上传文件备注&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<h2 id="四、使用账号2管理仓库-108-x69-117-x77-x66-49-51-48-49-53-x39-52-54-x31-x35-48-64-x31-x32-54-46-99-x6f-109"><a href="#四、使用账号2管理仓库-108-x69-117-x77-x66-49-51-48-49-53-x39-52-54-x31-x35-48-64-x31-x32-54-46-99-x6f-109" class="headerlink" title="四、使用账号2管理仓库:&#108;&#x69;&#117;&#x77;&#x66;&#49;&#51;&#48;&#49;&#53;&#x39;&#52;&#54;&#x31;&#x35;&#48;&#64;&#x31;&#x32;&#54;&#46;&#99;&#x6f;&#109;"></a>四、使用账号2管理仓库:<a href="mailto:&#108;&#x69;&#117;&#x77;&#x66;&#49;&#51;&#48;&#49;&#53;&#x39;&#52;&#54;&#x31;&#x35;&#48;&#64;&#x31;&#x32;&#54;&#46;&#99;&#x6f;&#109;">&#108;&#x69;&#117;&#x77;&#x66;&#49;&#51;&#48;&#49;&#53;&#x39;&#52;&#54;&#x31;&#x35;&#48;&#64;&#x31;&#x32;&#54;&#46;&#99;&#x6f;&#109;</a></h2><h3 id="1、使用账号-x6c-105-117-119-102-x31-51-x30-49-53-x39-x34-54-x31-x35-x30-x40-x31-x32-x36-46-99-111-x6d-克隆仓库"><a href="#1、使用账号-x6c-105-117-119-102-x31-51-x30-49-53-x39-x34-54-x31-x35-x30-x40-x31-x32-x36-46-99-111-x6d-克隆仓库" class="headerlink" title="1、使用账号&#x6c;&#105;&#117;&#119;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#x35;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#99;&#111;&#x6d;克隆仓库"></a>1、使用账号<a href="mailto:&#x6c;&#105;&#117;&#119;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#x35;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#99;&#111;&#x6d;">&#x6c;&#105;&#117;&#119;&#102;&#x31;&#51;&#x30;&#49;&#53;&#x39;&#x34;&#54;&#x31;&#x35;&#x30;&#x40;&#x31;&#x32;&#x36;&#46;&#99;&#111;&#x6d;</a>克隆仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone git@liuwf13015946150:liuwf17859719373&#x2F;liuwf17859719373.git</span><br></pre></td></tr></table></figure>
+<h2 id="四、使用账号2管理仓库-x6c-x69-117-119-x66-49-x33-x30-x31-x35-x39-x34-x36-x31-x35-x30-64-49-50-54-46-99-111-x6d"><a href="#四、使用账号2管理仓库-x6c-x69-117-119-x66-49-x33-x30-x31-x35-x39-x34-x36-x31-x35-x30-64-49-50-54-46-99-111-x6d" class="headerlink" title="四、使用账号2管理仓库:&#x6c;&#x69;&#117;&#119;&#x66;&#49;&#x33;&#x30;&#x31;&#x35;&#x39;&#x34;&#x36;&#x31;&#x35;&#x30;&#64;&#49;&#50;&#54;&#46;&#99;&#111;&#x6d;"></a>四、使用账号2管理仓库:<a href="mailto:&#x6c;&#x69;&#117;&#119;&#x66;&#49;&#x33;&#x30;&#x31;&#x35;&#x39;&#x34;&#x36;&#x31;&#x35;&#x30;&#64;&#49;&#50;&#54;&#46;&#99;&#111;&#x6d;">&#x6c;&#x69;&#117;&#119;&#x66;&#49;&#x33;&#x30;&#x31;&#x35;&#x39;&#x34;&#x36;&#x31;&#x35;&#x30;&#64;&#49;&#50;&#54;&#46;&#99;&#111;&#x6d;</a></h2><h3 id="1、使用账号-x6c-x69-x75-x77-x66-x31-x33-x30-x31-53-57-52-54-x31-53-x30-x40-49-50-54-46-99-x6f-109-克隆仓库"><a href="#1、使用账号-x6c-x69-x75-x77-x66-x31-x33-x30-x31-53-57-52-54-x31-53-x30-x40-49-50-54-46-99-x6f-109-克隆仓库" class="headerlink" title="1、使用账号&#x6c;&#x69;&#x75;&#x77;&#x66;&#x31;&#x33;&#x30;&#x31;&#53;&#57;&#52;&#54;&#x31;&#53;&#x30;&#x40;&#49;&#50;&#54;&#46;&#99;&#x6f;&#109;克隆仓库"></a>1、使用账号<a href="mailto:&#x6c;&#x69;&#x75;&#x77;&#x66;&#x31;&#x33;&#x30;&#x31;&#53;&#57;&#52;&#54;&#x31;&#53;&#x30;&#x40;&#49;&#50;&#54;&#46;&#99;&#x6f;&#109;">&#x6c;&#x69;&#x75;&#x77;&#x66;&#x31;&#x33;&#x30;&#x31;&#53;&#57;&#52;&#54;&#x31;&#53;&#x30;&#x40;&#49;&#50;&#54;&#46;&#99;&#x6f;&#109;</a>克隆仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone git@liuwf13015946150:liuwf17859719373&#x2F;liuwf17859719373.git</span><br></pre></td></tr></table></figure>
 <h3 id="2、设置本地仓库user-name和user-email"><a href="#2、设置本地仓库user-name和user-email" class="headerlink" title="2、设置本地仓库user.name和user.email"></a>2、设置本地仓库user.name和user.email</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config user.name &quot;liuwf13015946150&quot;</span><br><span class="line">git config user.email &quot;liuwf13015946150@126.com&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="3、查看本地user账户信息是否修改成功"><a href="#3、查看本地user账户信息是否修改成功" class="headerlink" title="3、查看本地user账户信息是否修改成功"></a>3、查看本地user账户信息是否修改成功</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch&#x2F;&#x2F;查看当前分支</span><br><span class="line">git pull&#x2F;&#x2F;更新代码到本地</span><br></pre></td></tr></table></figure>
@@ -1293,19 +1379,6 @@
       <tags>
         <tag>王者荣耀刷金币脚本</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>安装hexo到博客目录</title>
-    <url>/2021/05/18/%E5%AE%89%E8%A3%85hexo%E5%88%B0%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">先创建一个文件夹（用来存放所有blog的东西），然后cd到该文件夹下。</span><br><span class="line"></span><br><span class="line">安装hexo命令：npm i -g hexo</span><br><span class="line"></span><br><span class="line">安装完成后，查看版本</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-<p>参考：hexo从零开始到搭建完整 <a href="https://www.cnblogs.com/visugar/p/6821777.html">https://www.cnblogs.com/visugar/p/6821777.html</a></p>
-]]></content>
   </entry>
   <entry>
     <title>导入maven项目pom.xml文件报错</title>
@@ -1653,67 +1726,6 @@
       </categories>
       <tags>
         <tag>SpringMVC-处理器方法的返回值</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java_slf4j的使用</title>
-    <url>/2021/06/22/Java-slf4j%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- log --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.25<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.25<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;scope&gt;test&lt;/scope&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>参考：<a href="https://www.cnblogs.com/bwcode/p/7159624.html">https://www.cnblogs.com/bwcode/p/7159624.html</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo_自建博客网站_域名解析</title>
-    <url>/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<p>1</p>
-<p>一、申请域名（要钱）</p>
-<p>liuwf.top</p>
-<p>二、域名解析</p>
-<p>网址：<a href="https://console.dnspod.cn/dns/list">https://console.dnspod.cn/dns/list</a></p>
-<p>1、添加待解析的域名</p>
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154258490.png" class="" title="image-20210622154258490">
-
-<p>2、快速解析域名</p>
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154341152.png" class="" title="image-20210622154341152">
-
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154422456.png" class="" title="image-20210622154422456">
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;你的github名称加上.github.com</span><br><span class="line">&#x2F;&#x2F;https:&#x2F;&#x2F;github.com&#x2F;liuwf-github</span><br><span class="line">ping liuwf-github.github.com</span><br></pre></td></tr></table></figure>
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154536165.png" class="" title="image-20210622154536165">
-
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154442491.png" class="" title="image-20210622154442491">
-
-<p>将这个ip地址添加到刚才的快速添加解析中就可</p>
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154730998.png" class="" title="image-20210622154730998">
-
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154826207.png" class="" title="image-20210622154826207">
-
-<p>三、在github中设置域名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;liuwf-github</span><br></pre></td></tr></table></figure>
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622154935910.png" class="" title="image-20210622154935910">
-
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155000458.png" class="" title="image-20210622155000458">
-
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155029172.png" class="" title="image-20210622155029172">
-
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155052223.png" class="" title="image-20210622155052223">
-
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155118073.png" class="" title="image-20210622155118073">
-
-<p>四、大功告成</p>
-<p>尝试访问liuwf.top</p>
-<img src="/2021/06/22/Hexo-%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/image-20210622155156910.png" class="" title="image-20210622155156910">
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>博客设置域名</tag>
       </tags>
   </entry>
 </search>
