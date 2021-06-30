@@ -1764,4 +1764,27 @@
         <category>工作</category>
       </categories>
   </entry>
+  <entry>
+    <title>工作-Maven项目报错_Cannot change version of project facet Dynamic Web Module to 3.1</title>
+    <url>/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99-Cannot-change-version-of-project-facet-Dynamic-Web-Module-to-3-1/</url>
+    <content><![CDATA[<p>参考：<a href="https://blog.csdn.net/bug_love/article/details/72721929">https://blog.csdn.net/bug_love/article/details/72721929</a></p>
+<img src="/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99-Cannot-change-version-of-project-facet-Dynamic-Web-Module-to-3-1/image-20210629174449008.png" class="" title="image-20210629174449008">
+
+<img src="/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99-Cannot-change-version-of-project-facet-Dynamic-Web-Module-to-3-1/image-20210629174605605.png" class="" title="image-20210629174605605">
+
+<p>然后maven update一下就可以了</p>
+]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>工作-惠普1216打印机驱动</title>
+    <url>/2021/06/30/%E5%B7%A5%E4%BD%9C-%E6%83%A0%E6%99%AE1216%E6%89%93%E5%8D%B0%E6%9C%BA%E9%A9%B1%E5%8A%A8/</url>
+    <content><![CDATA[<p><a href="https://support.hp.com/cn-zh/drivers/selfservice/hp-laserjet-pro-m1216nfh-multifunction-printer-series/4292047">https://support.hp.com/cn-zh/drivers/selfservice/hp-laserjet-pro-m1216nfh-multifunction-printer-series/4292047</a></p>
+]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+  </entry>
 </search>
