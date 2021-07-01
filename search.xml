@@ -1794,4 +1794,21 @@
         <category>工作</category>
       </categories>
   </entry>
+  <entry>
+    <title>工作-Oracle导出和导入dmp文件</title>
+    <url>/2021/07/01/%E5%B7%A5%E4%BD%9C-Oracle%E5%AF%BC%E5%87%BA%E5%92%8C%E5%AF%BC%E5%85%A5dmp%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>一、导出dmp文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">exp cms&#x2F;123456@192.168.5.23:1521&#x2F;orcl file&#x3D;E:\expdir64\backup\2021-06-29\cms.dmp log&#x3D;E:\expdir64\backup\2021-06-29\cms.log</span><br></pre></td></tr></table></figure>
+<p>二、导入dmp文件</p>
+<p>1.创建表空间、临时表空间、用户以及给用户赋予权限</p>
+<p>​    注意：在执行前要知道原先的数据库中的表空间的名称和用户名称 </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--cms</span></span><br><span class="line"><span class="keyword">create</span> temporary tablespace cms_linshi </span><br><span class="line">tempfile <span class="string">&#x27;D:\app\feezet01\oradata\orcl\cms_linshi.dbf&#x27;</span></span><br><span class="line">size <span class="number">50</span>m </span><br><span class="line">autoextend <span class="keyword">on</span> </span><br><span class="line">next <span class="number">50</span>m maxsize <span class="number">20480</span>m </span><br><span class="line">extent management <span class="keyword">local</span>; </span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span>space cms </span><br><span class="line">logging </span><br><span class="line">datafile <span class="string">&#x27;D:\app\feezet01\oradata\orcl\cms.dbf&#x27;</span></span><br><span class="line">size <span class="number">50</span>m </span><br><span class="line">autoextend <span class="keyword">on</span> </span><br><span class="line">next <span class="number">50</span>m maxsize <span class="number">20480</span>m </span><br><span class="line">extent management <span class="keyword">local</span>; </span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> fjsycms identified <span class="keyword">by</span> cms </span><br><span class="line"><span class="keyword">default</span> tablespace cms </span><br><span class="line">temporary tablespace cms_linshi;</span><br><span class="line"></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>,resource,dba <span class="keyword">to</span> cms;</span><br></pre></td></tr></table></figure>
+<p>2.运行dmp文件</p>
+<p>使用cmd运行命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">imp cms&#x2F;cms@192.25.25.5:1521&#x2F;orcl file&#x3D;D:&#x2F;Datas&#x2F;cms&#x2F;cms.dmp full&#x3D;y</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+  </entry>
 </search>
