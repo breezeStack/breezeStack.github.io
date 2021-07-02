@@ -1811,4 +1811,24 @@
         <category>工作</category>
       </categories>
   </entry>
+  <entry>
+    <title>工作-webxml文件报错:Error while downloading</title>
+    <url>/2021/07/02/%E5%B7%A5%E4%BD%9C-webxml%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99-Error-while-downloading/</url>
+    <content><![CDATA[<p>报错：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error while downloading &#39;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;xml.xsd&#39; to C:\Users\Administrator\.lemminx\cache\http\www.w3.org\2001\xml.xsd.</span><br></pre></td></tr></table></figure>
+<img src="/2021/07/02/%E5%B7%A5%E4%BD%9C-webxml%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99-Error-while-downloading/image-20210702095439191.png" class="" title="image-20210702095439191">
+
+<p>解决：</p>
+<p>添加标签</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;xml-body&gt;</span><br></pre></td></tr></table></figure>
+<img src="/2021/07/02/%E5%B7%A5%E4%BD%9C-webxml%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99-Error-while-downloading/image-20210702095544292.png" class="" title="image-20210702095544292">
+
+<img src="/2021/07/02/%E5%B7%A5%E4%BD%9C-webxml%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99-Error-while-downloading/image-20210702095557595.png" class="" title="image-20210702095557595">
+
+<p>参考：<a href="https://www.cnblogs.com/zhangyuanbo/p/11250563.html">https://www.cnblogs.com/zhangyuanbo/p/11250563.html</a></p>
+]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+  </entry>
 </search>
