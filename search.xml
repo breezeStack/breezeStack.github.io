@@ -1709,8 +1709,7 @@
   <entry>
     <title>工作-Maven环境配置及本地jar包导入到仓库中</title>
     <url>/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E6%9C%AC%E5%9C%B0jar%E5%8C%85%E5%AF%BC%E5%85%A5%E5%88%B0%E4%BB%93%E5%BA%93%E4%B8%AD/</url>
-    <content><![CDATA[<p>1</p>
-<p>一、Maven环境配置</p>
+    <content><![CDATA[<p>一、Maven环境配置</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MAVEN_HOME</span><br><span class="line">D:\Environment\MAVEN\Install\apache-maven-3.6.3</span><br><span class="line"></span><br><span class="line">path</span><br><span class="line">%MAVEN_HOME%\bin</span><br></pre></td></tr></table></figure>
 
 
@@ -1734,6 +1733,14 @@
 <p>附上：在pom文件中添加阿里镜像</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- 阿里云maven仓库 --&gt;</span><br><span class="line">&lt;repositories&gt;</span><br><span class="line">	&lt;repository&gt;</span><br><span class="line">		&lt;id&gt;public&lt;&#x2F;id&gt;</span><br><span class="line">		&lt;name&gt;aliyun nexus&lt;&#x2F;name&gt;</span><br><span class="line">		&lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">		&lt;releases&gt;</span><br><span class="line">			&lt;enabled&gt;true&lt;&#x2F;enabled&gt;</span><br><span class="line">		&lt;&#x2F;releases&gt;</span><br><span class="line">	&lt;&#x2F;repository&gt;</span><br><span class="line">&lt;&#x2F;repositories&gt;</span><br><span class="line">&lt;pluginRepositories&gt;</span><br><span class="line">	&lt;pluginRepository&gt;</span><br><span class="line">		&lt;id&gt;public&lt;&#x2F;id&gt;</span><br><span class="line">		&lt;name&gt;aliyun nexus&lt;&#x2F;name&gt;</span><br><span class="line">		&lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">		&lt;releases&gt;</span><br><span class="line">			&lt;enabled&gt;true&lt;&#x2F;enabled&gt;</span><br><span class="line">		&lt;&#x2F;releases&gt;</span><br><span class="line">		&lt;snapshots&gt;</span><br><span class="line">			&lt;enabled&gt;false&lt;&#x2F;enabled&gt;</span><br><span class="line">		&lt;&#x2F;snapshots&gt;</span><br><span class="line">	&lt;&#x2F;pluginRepository&gt;</span><br><span class="line">&lt;&#x2F;pluginRepositories&gt;</span><br></pre></td></tr></table></figure>
 <img src="/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E6%9C%AC%E5%9C%B0jar%E5%8C%85%E5%AF%BC%E5%85%A5%E5%88%B0%E4%BB%93%E5%BA%93%E4%B8%AD/image-20210629170903690.png" class="" title="image-20210629170903690">
+
+<p>二、导入paoding依赖</p>
+<img src="/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E6%9C%AC%E5%9C%B0jar%E5%8C%85%E5%AF%BC%E5%85%A5%E5%88%B0%E4%BB%93%E5%BA%93%E4%B8%AD/image-20210702104754985.png" class="" title="image-20210702104754985">
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn install:install-file -Dfile&#x3D;D:\jar\paoding-analysis.jar -DgroupId&#x3D;net.paoding -DartifactId&#x3D;paoding-analysis -Dversion&#x3D;2.0 -Dpackaging&#x3D;jar</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import net.paoding.analysis.analyzer.PaodingAnalyzer;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;net.paoding&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;paoding-analysis&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E6%9C%AC%E5%9C%B0jar%E5%8C%85%E5%AF%BC%E5%85%A5%E5%88%B0%E4%BB%93%E5%BA%93%E4%B8%AD/image-20210702104824500.png" class="" title="image-20210702104824500">
 ]]></content>
       <categories>
         <category>工作</category>
@@ -1826,6 +1833,15 @@
 <img src="/2021/07/02/%E5%B7%A5%E4%BD%9C-webxml%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99-Error-while-downloading/image-20210702095557595.png" class="" title="image-20210702095557595">
 
 <p>参考：<a href="https://www.cnblogs.com/zhangyuanbo/p/11250563.html">https://www.cnblogs.com/zhangyuanbo/p/11250563.html</a></p>
+]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>工作-解决maven中jar包和jdk中jar包的冲突</title>
+    <url>/2021/07/02/%E5%B7%A5%E4%BD%9C-%E8%A7%A3%E5%86%B3maven%E4%B8%ADjar%E5%8C%85%E5%92%8Cjdk%E4%B8%ADjar%E5%8C%85%E7%9A%84%E5%86%B2%E7%AA%81/</url>
+    <content><![CDATA[<p>参考：<a href="https://blog.csdn.net/weisong530624687/article/details/56839276">https://blog.csdn.net/weisong530624687/article/details/56839276</a></p>
 ]]></content>
       <categories>
         <category>工作</category>
