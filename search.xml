@@ -1782,12 +1782,7 @@
   <entry>
     <title>工作-Maven项目报错_Cannot change version of project facet Dynamic Web Module to 3.1</title>
     <url>/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99-Cannot-change-version-of-project-facet-Dynamic-Web-Module-to-3-1/</url>
-    <content><![CDATA[<p>参考：<a href="https://blog.csdn.net/bug_love/article/details/72721929">https://blog.csdn.net/bug_love/article/details/72721929</a></p>
-<img src="/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99-Cannot-change-version-of-project-facet-Dynamic-Web-Module-to-3-1/image-20210629174449008.png" class="" title="image-20210629174449008">
-
-<img src="/2021/06/29/%E5%B7%A5%E4%BD%9C-Maven%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99-Cannot-change-version-of-project-facet-Dynamic-Web-Module-to-3-1/image-20210629174605605.png" class="" title="image-20210629174605605">
-
-<p>然后maven update一下就可以了</p>
+    <content><![CDATA[<p>参考：<a href="https://blog.csdn.net/steveguoshao/article/details/38414145">https://blog.csdn.net/steveguoshao/article/details/38414145</a></p>
 ]]></content>
       <categories>
         <category>工作</category>
