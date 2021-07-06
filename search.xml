@@ -1922,7 +1922,10 @@
     <title>工作-系统漏洞修复</title>
     <url>/2021/07/06/%E5%B7%A5%E4%BD%9C-%E7%B3%BB%E7%BB%9F%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/</url>
     <content><![CDATA[<p>一、Oracle漏洞修复</p>
+<p>1.有购买Oracle服务，下载安装补丁教程</p>
 <p>参考：<a href="http://blog.itpub.net/31397003/viewspace-2145807/">http://blog.itpub.net/31397003/viewspace-2145807/</a></p>
+<p>2.未购买Oracle服务，无法下载补丁，进行IP访问限制修复漏洞</p>
+<p>参考：<a href="https://blog.csdn.net/javaee_ssh/article/details/38400101">https://blog.csdn.net/javaee_ssh/article/details/38400101</a></p>
 ]]></content>
       <categories>
         <category>工作</category>
