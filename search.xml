@@ -1894,4 +1894,14 @@
         <category>工作</category>
       </categories>
   </entry>
+  <entry>
+    <title>学习-Oracle</title>
+    <url>/2021/07/06/%E5%AD%A6%E4%B9%A0-Oracle/</url>
+    <content><![CDATA[<p>1.查看当前数据库中的所有表的表名及其记录数量</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> T.TABLE_NAME, T.NUM_ROWS <span class="keyword">FROM</span> USER_TABLES T <span class="keyword">order</span> <span class="keyword">by</span> table_name;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+  </entry>
 </search>
